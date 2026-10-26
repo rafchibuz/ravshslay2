@@ -1,6 +1,7 @@
 export const januaryMotion = {
-  entry: 'gold-thread-to-frost',
+  entry: 'scroll-driven-snow-breakout',
   reveal: 'soft-rise',
-  durationMs: 650,
-  reduceMotion: 'instant',
+  snow: 'continuous-light-fall',
+  fireworks: 'restrained-icy-bursts',
+  reduceMotion: 'fully-revealed-static-scene',
 } as const;

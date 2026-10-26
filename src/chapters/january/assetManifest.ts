@@ -4,7 +4,7 @@ export type Asset = {
   eventId: string | null;
   role: string;
   src: string | null;
-  kind: 'real' | 'generated' | 'edited' | 'placeholder';
+  kind: 'real' | 'generated' | 'edited' | 'supplied-artwork' | 'placeholder';
   rightsStatus: 'provided-by-user' | 'missing';
   approved: boolean;
   alt: string;
@@ -18,10 +18,9 @@ export const assetManifest: Asset[] = [
     approved: false, alt: 'RavshanN в короне и королевской мантии',
   },
   {
-    assetId: 'january-atmosphere', chapterId: '2026-01', eventId: null, role: 'decorative backdrop',
-    src: null, kind: 'placeholder', rightsStatus: 'missing', approved: false,
-    alt: 'Декоративная зимняя атмосфера',
-    prompt: 'Abstract cinematic winter stage, near-black glass, restrained gold light thread, icy blue glints, subtle frost, no people, no event imagery, no typography, wide 16:9 and tall 9:16 crops.',
+    assetId: 'january-snow-breakout', chapterId: '2026-01', eventId: null, role: 'scroll scene artwork',
+    src: '/assets/visuals/ravshann-snow.png', kind: 'supplied-artwork', rightsStatus: 'provided-by-user',
+    approved: false, alt: 'Постановочная иллюстрация: RavshanN пробирается через сугроб',
   },
   ...['2026-01-01', '2026-01-02', '2026-01-03'].map((eventId) => ({
     assetId: `${eventId}-media`, chapterId: '2026-01', eventId, role: 'documentary event media',
