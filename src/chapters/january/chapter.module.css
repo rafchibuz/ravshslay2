@@ -1,28 +1,26 @@
-.chapter { position: relative; isolation: isolate; background: radial-gradient(ellipse at 48% 18%,#183955 0%,#0a1a2a 40%,#06111d 100%); }
-.chapter::before { content: ''; position: absolute; z-index: -1; inset: 0; opacity: .4; pointer-events: none; background-image: radial-gradient(circle at 20% 30%,#d4eaf5 0 1px,transparent 2px),radial-gradient(circle at 70% 60%,#d4eaf5 0 1px,transparent 2px),linear-gradient(rgba(156,212,237,.12) 1px,transparent 1px); background-size: 131px 139px,203px 177px,100% 76px; }
-.winterLight { position: absolute; top: 0; right: 3%; width: 42%; height: 750px; border-radius: 50%; background: radial-gradient(ellipse,rgba(156,212,237,.15),transparent 70%); filter: blur(30px); pointer-events: none; }
-.scene { position: relative; min-height: 780px; padding: 50px 10% 120px 14%; scroll-margin-top: 20px; border-top: 1px solid rgba(156,212,237,.25); }
-.scene::after { content: ''; position: absolute; top: 0; right: 0; bottom: 0; width: clamp(28px,7vw,125px); pointer-events: none; background: linear-gradient(90deg,transparent,rgba(189,229,248,.08)),radial-gradient(ellipse at 100% 0,rgba(219,241,251,.23),transparent 62%); border-left: 1px solid rgba(194,230,249,.08); }
-.cinema { isolation: isolate; background: linear-gradient(90deg,rgba(6,17,29,.9),rgba(7,22,36,.66)),url('/assets/generated/january-winter-night.webp') center 48% / cover no-repeat; }
-.cinema::before { content: ''; position: absolute; z-index: -1; inset: 0; opacity: .32; pointer-events: none; background-image: radial-gradient(circle at 20% 30%,#d4eaf5 0 1px,transparent 2px),radial-gradient(circle at 70% 60%,#d4eaf5 0 1px,transparent 2px); background-size: 131px 139px,203px 177px; }
+.chapter { position: relative; isolation: isolate; overflow: clip; background: radial-gradient(ellipse 55% 17% at 75% 8%,rgba(50,105,149,.28),transparent 100%),radial-gradient(ellipse 45% 25% at 15% 54%,rgba(39,90,129,.2),transparent 100%),linear-gradient(180deg,#061425 0%,#081c30 40%,#091b2e 71%,#061321 100%); }
+.chapter::before { content: ''; position: absolute; z-index: -1; inset: 0; pointer-events: none; background: url('/assets/visuals/winter-abstract.svg') center top / 100% 100% no-repeat; }
+.chapter::after { content: ''; position: absolute; z-index: -1; inset: 0; pointer-events: none; background-image: linear-gradient(180deg,#090d13 0,rgba(9,13,19,.55) 160px,transparent 380px),radial-gradient(circle at 30% 25%,rgba(212,234,245,.28) 0 1px,transparent 2px),radial-gradient(circle at 70% 60%,rgba(212,234,245,.28) 0 1px,transparent 2px); background-size: 100% 100%,157px 189px,263px 221px; }
+.winterLight { position: absolute; top: 0; right: 3%; width: 42%; height: 750px; border-radius: 50%; background: radial-gradient(ellipse,rgba(156,212,237,.12),transparent 70%); filter: blur(30px); pointer-events: none; }
+.scene { position: relative; min-height: 780px; padding: 50px 10% 120px 14%; scroll-margin-top: 20px; }
+.scene::after { content: ''; position: absolute; top: 0; right: 0; bottom: 0; width: clamp(28px,7vw,125px); pointer-events: none; background: linear-gradient(90deg,transparent,rgba(189,229,248,.035)); }
+.cinema { isolation: isolate; }
 .sceneTop { display: flex; justify-content: space-between; color: var(--ice); font-size: 10px; font-weight: 900; letter-spacing: .25em; }
 .cinemaLayout { display: grid; grid-template-columns: minmax(0,1.2fr) minmax(300px,.8fr); gap: clamp(25px,3vw,55px); align-items: stretch; margin-top: 65px; }
-.cinemaFrame, .splitFrame { position: relative; aspect-ratio: 16/9; border: 1px solid rgba(237,187,98,.28); box-shadow: 20px 25px 80px rgba(0,0,0,.5),0 0 50px rgba(156,212,237,.05); }
-.cinemaFrame { overflow: hidden; border-color: rgba(156,212,237,.64); box-shadow: 20px 25px 80px rgba(0,0,0,.5),0 0 75px rgba(156,212,237,.16); }
-.cinemaFrame::before { content: ''; position: absolute; z-index: 1; inset: -10px 10px 10px -10px; border-left: 1px solid rgba(156,212,237,.32); border-top: 1px solid rgba(156,212,237,.32); pointer-events: none; }
-.cinemaFrame::after { content: ''; position: absolute; z-index: 1; top: 0; left: 0; right: 0; height: 18%; background: linear-gradient(rgba(232,247,255,.2),transparent); pointer-events: none; }
-.cinemaFrame :global(.media-empty) { background: radial-gradient(ellipse at 56% 29%,rgba(178,218,240,.24),transparent 39%),radial-gradient(ellipse at 50% 110%,rgba(242,250,255,.26),transparent 51%),repeating-linear-gradient(105deg,transparent 0 45px,rgba(206,235,249,.04) 46px 47px),#101f2a; }
+.cinemaFrame, .splitFrame { position: relative; aspect-ratio: 16/9; }
+.cinemaFrame { overflow: hidden; -webkit-mask-image: radial-gradient(ellipse 78% 78% at center,#000 42%,transparent 100%); mask-image: radial-gradient(ellipse 78% 78% at center,#000 42%,transparent 100%); }
+.cinemaFrame :global(.media-empty) { background: radial-gradient(ellipse at 56% 29%,rgba(178,218,240,.28),transparent 42%),radial-gradient(ellipse at 50% 110%,rgba(242,250,255,.14),transparent 55%),repeating-linear-gradient(105deg,transparent 0 45px,rgba(206,235,249,.04) 46px 47px),rgba(13,36,55,.68); }
+.cinemaFrame :global(.media-empty)::before { display: none; }
 .cinemaFrame :global(.media-empty-title) { color: rgba(225,243,252,.43); }
 .streamPosterTop,.streamPosterBottom { position: absolute; z-index: 2; left: 32px; right: 32px; display: flex; justify-content: space-between; gap: 20px; pointer-events: none; color: #e4f4fc; font-size: 9px; font-weight: 900; letter-spacing: .2em; text-shadow: 0 1px 9px #071520; }
 .streamPosterTop { top: 24px; } .streamPosterBottom { bottom: 25px; color: #acd5e8; }
 .streamPosterTop span { color: #afd7eb; }
-.rollsPanel { position: relative; display: flex; flex-direction: column; justify-content: flex-end; min-width: 0; min-height: 100%; margin: 0; overflow: hidden; border: 1px solid rgba(189,224,245,.4); background: radial-gradient(ellipse at 48% 66%,rgba(126,176,211,.28),transparent 58%),linear-gradient(155deg,rgba(21,48,70,.94),rgba(4,18,31,.95)); box-shadow: 14px 20px 60px rgba(0,0,0,.35),inset 0 0 55px rgba(181,222,247,.08); }
-.rollsPanel::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 35%; pointer-events: none; background: linear-gradient(rgba(231,246,255,.14),transparent); }
-.rollsPanel::after { content: ''; position: absolute; bottom: -24px; left: -8%; width: 116%; height: 22%; pointer-events: none; background: radial-gradient(ellipse at center,rgba(226,242,252,.33),transparent 70%); filter: blur(10px); }
-.rollsPanel img { position: relative; z-index: 1; display: block; width: 110%; max-width: none; margin: auto 0 -2% -5%; object-fit: contain; filter: brightness(.9) saturate(.75) drop-shadow(0 20px 35px rgba(0,0,0,.35)); }
+.rollsPanel { position: relative; display: flex; flex-direction: column; justify-content: flex-end; min-width: 0; min-height: 100%; margin: 0; background: radial-gradient(ellipse at 50% 83%,rgba(152,212,245,.2),transparent 58%); }
+.rollsPanel::after { content: ''; position: absolute; bottom: -24px; left: -8%; width: 116%; height: 22%; pointer-events: none; background: radial-gradient(ellipse at center,rgba(226,242,252,.24),transparent 70%); filter: blur(10px); }
+.rollsPanel img { position: relative; z-index: 1; display: block; width: 115%; max-width: none; margin: auto 0 -2% -8%; object-fit: contain; filter: brightness(.9) saturate(.78) drop-shadow(0 20px 35px rgba(0,0,0,.4)); }
 .rollsTop,.rollsPanel figcaption { position: absolute; z-index: 2; left: 24px; right: 24px; color: #e4f4fc; font-size: 8px; font-weight: 900; letter-spacing: .17em; text-shadow: 0 2px 8px #081625; }
 .rollsTop { top: 20px; display: flex; justify-content: space-between; gap: 15px; }
-.rollsPanel figcaption { right: auto; bottom: 14px; margin: 0; padding: 6px 9px; background: rgba(4,18,31,.7); color: #dceffa; }
+.rollsPanel figcaption { right: auto; bottom: 3px; margin: 0; color: #dceffa; }
 .sceneCopy { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0,1.2fr) minmax(300px,.8fr); align-items: start; gap: clamp(25px,3vw,55px); padding-top: 14px; }
 .sceneSummary { padding-top: 23px; }
 .tag { display: inline-block; color: var(--gold); font-size: 10px; font-weight: 800; letter-spacing: .22em; }
@@ -31,7 +29,7 @@
 .source { max-width: 420px; margin-top: 30px; padding-top: 16px; border-top: 1px solid rgba(182,222,242,.34); color: #97b4c4; font-size: 10px; line-height: 1.6; letter-spacing: .08em; }
 .sceneNext { display: inline-flex; align-items: center; gap: 30px; margin-top: 38px; color: var(--gold); text-decoration: none; font-size: 10px; font-weight: 900; letter-spacing: .16em; }
 .sceneNext span { font-size: 28px; font-weight: 400; }
-.social { background: linear-gradient(180deg,rgba(10,29,46,.74),rgba(7,20,34,.86)),url('/assets/generated/january-winter-night.webp') center / cover no-repeat; }
+.social { isolation: isolate; }
 .socialLayout { min-height: 720px; display: grid; grid-template-columns: 1fr 390px; gap: 12%; align-items: center; }
 .socialCopy { position: relative; padding-left: 6%; }
 .socialCopy h3 { max-width: 600px; font-size: clamp(78px,8vw,135px); }
@@ -40,13 +38,13 @@
 .phoneScreen { overflow: hidden; aspect-ratio: 9/16; border-radius: 17px; }
 .phoneTop,.phoneBottom { display: block; padding: 6px 8px 11px; color: var(--gold); text-align: center; font-size: 8px; font-weight: 900; letter-spacing: .2em; }
 .phoneBottom { padding: 11px 8px 5px; color: #778994; }
-.split { min-height: 850px; background: radial-gradient(ellipse at 13% 76%,rgba(124,178,208,.18),transparent 44%),linear-gradient(180deg,#0d263a,#071724); }
+.split { min-height: 850px; }
 .splitLayout { display: grid; grid-template-columns: .75fr 1fr; gap: 45px 7%; align-items: center; padding-top: 60px; }
 .splitNumber { color: transparent; -webkit-text-stroke: 2px rgba(190,230,249,.65); font: 400 clamp(165px,21vw,370px)/.75 var(--font-display); letter-spacing: -.09em; text-shadow: 0 0 80px rgba(151,209,238,.18); }
 .splitNumber span { color: #ccecff; -webkit-text-stroke: 0; font-size: .5em; vertical-align: 20%; }
 .splitText { max-width: 560px; }
-.splitFrame { grid-column: 1 / -1; width: min(73%,900px); margin-left: auto; margin-top: -55px; }
-.end { display: flex; flex-direction: column; align-items: center; gap: 20px; padding: 120px 20px 150px; text-align: center; border-top: 1px solid rgba(189,224,245,.3); background: radial-gradient(ellipse at 50% 95%,rgba(159,215,247,.2),transparent 60%),#071724; }
+.splitFrame { grid-column: 1 / -1; width: min(73%,900px); margin-left: auto; margin-top: -55px; -webkit-mask-image: radial-gradient(ellipse 78% 78% at center,#000 42%,transparent 100%); mask-image: radial-gradient(ellipse 78% 78% at center,#000 42%,transparent 100%); }
+.end { display: flex; flex-direction: column; align-items: center; gap: 20px; padding: 120px 20px 150px; text-align: center; background: radial-gradient(ellipse at 50% 95%,rgba(159,215,247,.08),transparent 60%); }
 .end span { color: var(--gold); font-size: 10px; font-weight: 800; letter-spacing: .25em; }
 .end strong { font: 400 clamp(38px,6vw,88px)/.95 var(--font-display); }
 .end a { margin-top: 18px; color: var(--gold); font-size: 11px; font-weight: 900; letter-spacing: .14em; text-decoration: none; }

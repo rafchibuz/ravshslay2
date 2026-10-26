@@ -21,10 +21,12 @@ function Firework({ className }: { className: string }) {
 
 export function SnowBreakout() {
   const introRef = useRef<HTMLDivElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
     const intro = introRef.current;
     if (!intro) return;
+    const video = videoRef.current;
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
     let frame = 0;
 
@@ -34,22 +36,24 @@ export function SnowBreakout() {
       const travel = Math.max(1, rect.height - window.innerHeight);
       const progress = reducedMotion.matches ? 1 : Math.max(0, Math.min(1, -rect.top / travel));
       const eased = progress * progress * (3 - 2 * progress);
-      intro.style.setProperty('--portrait-rise', `${Math.round((1 - eased) * 70)}px`);
-      intro.style.setProperty('--bank-left', `${Math.round(-eased * 110)}%`);
-      intro.style.setProperty('--bank-right', `${Math.round(eased * 110)}%`);
-      intro.style.setProperty('--snow-spray', String(Math.min(1, Math.max(0, (progress - .24) * 2.4))));
       intro.style.setProperty('--fireworks-visible', String(Math.min(1, Math.max(0, (progress - .5) * 2.6))));
       intro.style.setProperty('--intro-progress', `${Math.round(progress * 100)}%`);
+      if (video && Number.isFinite(video.duration) && video.duration > 0) {
+        const time = Math.min(video.duration - .04, eased * video.duration);
+        if (Math.abs(video.currentTime - time) > .04) video.currentTime = time;
+      }
     };
     const schedule = () => { if (!frame) frame = requestAnimationFrame(update); };
     update();
     window.addEventListener('scroll', schedule, { passive: true });
     window.addEventListener('resize', schedule);
     reducedMotion.addEventListener('change', schedule);
+    video?.addEventListener('loadedmetadata', schedule);
     return () => {
       window.removeEventListener('scroll', schedule);
       window.removeEventListener('resize', schedule);
       reducedMotion.removeEventListener('change', schedule);
+      video?.removeEventListener('loadedmetadata', schedule);
       if (frame) cancelAnimationFrame(frame);
     };
   }, []);
@@ -62,22 +66,19 @@ export function SnowBreakout() {
         <h2 id="january-title">ЯНВАРЬ<span>’26</span></h2>
         <p>Год начинается со снега. Пройди сквозь сугроб вместе с RavshanN — дальше ждёт новогодний стрим.</p>
         <span className={styles.concept}>СНЕГ · НОЧЬ · НОВЫЙ ГОД</span>
-        <div className={styles.scrollCue}><span className={styles.scrollCueLine} />ЛИСТАЙ, ЧТОБЫ РАЗДВИНУТЬ СНЕГ <span aria-hidden="true">↓</span></div>
+        <div className={styles.scrollCue}><span className={styles.scrollCueLine} />ЛИСТАЙ, ЧТОБЫ ПРОЙТИ СКВОЗЬ СНЕГ <span aria-hidden="true">↓</span></div>
       </div>
       <div className={styles.art}>
-        <div className={styles.frame}>
-          <img src="/assets/visuals/ravshann-snow.png" alt="Постановочная иллюстрация: RavshanN пробирается сквозь снежный сугроб" />
-          <Firework className={styles.fireworkOne} />
-          <Firework className={styles.fireworkTwo} />
-          <div className={styles.iceVeil} aria-hidden="true" />
-          <div className={`${styles.snowbank} ${styles.snowbankLeft}`} aria-hidden="true" />
-          <div className={`${styles.snowbank} ${styles.snowbankRight}`} aria-hidden="true" />
-          <div className={styles.snowSpray} aria-hidden="true" />
-          <div className={styles.snowfall} aria-hidden="true">
-            {snow.map((flake, index) => <span key={index} style={{ left: flake.left, animationDelay: flake.delay, animationDuration: flake.duration, width: flake.size, height: flake.size }} />)}
-          </div>
-        </div>
+        <video ref={videoRef} className={styles.motion} preload="auto" muted playsInline poster="/assets/motion/ravshann-snow-start.webp" aria-label="RavshanN раздвигает снег; движение связано с прокруткой страницы">
+          <source src="/assets/motion/ravshann-snow-breakout.mp4" type="video/mp4" />
+        </video>
+        <img className={styles.reducedStill} src="/assets/motion/ravshann-snow-end.webp" alt="RavshanN раздвинул снег" />
         <div className={styles.artCaption}><span>01 / СКВОЗЬ ЗИМУ</span><span>ВИЗУАЛИЗАЦИЯ СЦЕНЫ</span></div>
+      </div>
+      <Firework className={styles.fireworkOne} />
+      <Firework className={styles.fireworkTwo} />
+      <div className={styles.snowfall} aria-hidden="true">
+        {snow.map((flake, index) => <span key={index} style={{ left: flake.left, animationDelay: flake.delay, animationDuration: flake.duration, width: flake.size, height: flake.size }} />)}
       </div>
       <div className={styles.progressTrack} aria-hidden="true"><span /></div>
       <div className={styles.nextCue}>ДАЛЬШЕ / НОВОГОДНИЙ СТРИМ <span>↓</span></div>

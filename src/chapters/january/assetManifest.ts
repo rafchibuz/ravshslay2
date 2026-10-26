@@ -18,14 +18,24 @@ export const assetManifest: Asset[] = [
     approved: false, alt: 'RavshanN в короне и королевской мантии',
   },
   {
-    assetId: 'january-snow-breakout', chapterId: '2026-01', eventId: null, role: 'scroll scene artwork',
-    src: '/assets/visuals/ravshann-snow.png', kind: 'supplied-artwork', rightsStatus: 'provided-by-user',
-    approved: false, alt: 'Постановочная иллюстрация: RavshanN пробирается через сугроб',
+    assetId: 'january-snow-breakout', chapterId: '2026-01', eventId: null, role: 'scroll-driven snow scene video',
+    src: '/assets/motion/ravshann-snow-breakout.mp4', kind: 'supplied-artwork', rightsStatus: 'provided-by-user',
+    approved: false, alt: 'RavshanN раздвигает снег',
   },
   {
-    assetId: 'january-winter-night', chapterId: '2026-01', eventId: null, role: 'decorative chapter background',
-    src: '/assets/generated/january-winter-night.webp', kind: 'generated', rightsStatus: 'generated-in-project',
-    approved: false, alt: 'Декоративный заснеженный ночной лес с огнями',
+    assetId: 'january-winter-abstract', chapterId: '2026-01', eventId: null, role: 'continuous vector background',
+    src: '/assets/visuals/winter-abstract.svg', kind: 'edited', rightsStatus: 'generated-in-project',
+    approved: false, alt: 'Абстрактные ледяные линии и снежная пыль',
+  },
+  {
+    assetId: 'january-snow-start', chapterId: '2026-01', eventId: null, role: 'motion poster',
+    src: '/assets/motion/ravshann-snow-start.webp', kind: 'supplied-artwork', rightsStatus: 'provided-by-user',
+    approved: false, alt: 'Начальный кадр выхода из снега',
+  },
+  {
+    assetId: 'january-snow-end', chapterId: '2026-01', eventId: null, role: 'reduced-motion still',
+    src: '/assets/motion/ravshann-snow-end.webp', kind: 'supplied-artwork', rightsStatus: 'provided-by-user',
+    approved: false, alt: 'Конечный кадр выхода из снега',
   },
   {
     assetId: 'january-snow-rolls', chapterId: '2026-01', eventId: '2026-01-01', role: 'supplied companion image beside stream poster',

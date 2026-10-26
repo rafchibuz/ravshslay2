@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 5000" preserveAspectRatio="none" aria-hidden="true">
+  <defs>
+    <linearGradient id="ice" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#b8e6ff" stop-opacity=".03"/><stop offset=".5" stop-color="#91cfff" stop-opacity=".24"/><stop offset="1" stop-color="#b8e6ff" stop-opacity=".02"/></linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2=".2"><stop stop-color="#ecbd70" stop-opacity="0"/><stop offset=".47" stop-color="#ecbd70" stop-opacity=".57"/><stop offset="1" stop-color="#ecbd70" stop-opacity="0"/></linearGradient>
+    <radialGradient id="bloom"><stop stop-color="#8bcfff" stop-opacity=".2"/><stop offset="1" stop-color="#8bcfff" stop-opacity="0"/></radialGradient>
+    <pattern id="grid" width="110" height="110" patternUnits="userSpaceOnUse"><path d="M110 0H0V110" fill="none" stroke="#99cbed" stroke-opacity=".055" stroke-width="1"/></pattern>
+    <pattern id="snow" width="210" height="248" patternUnits="userSpaceOnUse"><circle cx="31" cy="42" r="1.3" fill="#cceeff" opacity=".35"/><circle cx="154" cy="174" r="1" fill="#f4fbff" opacity=".3"/><circle cx="88" cy="216" r=".7" fill="#f4fbff" opacity=".34"/></pattern>
+  </defs>
+  <rect width="1600" height="5000" fill="url(#grid)"/>
+  <rect width="1600" height="5000" fill="url(#snow)"/>
+  <ellipse cx="1170" cy="630" rx="660" ry="470" fill="url(#bloom)"/>
+  <ellipse cx="150" cy="2170" rx="560" ry="690" fill="url(#bloom)"/>
+  <ellipse cx="1300" cy="3730" rx="690" ry="650" fill="url(#bloom)"/>
+  <g fill="none" stroke-linecap="round">
+    <path d="M-200 1050C310 680 510 1220 1060 940S1460 710 1830 980" stroke="url(#ice)" stroke-width="150" opacity=".21"/>
+    <path d="M-250 1115C370 710 580 1250 1090 980S1500 735 1840 1030" stroke="#a8dcff" stroke-width="2" opacity=".3"/>
+    <path d="M-300 1750C200 1390 530 1850 900 1540S1450 1600 1880 1270" stroke="url(#ice)" stroke-width="125" opacity=".14"/>
+    <path d="M-240 1685C240 1430 540 1810 930 1550S1450 1510 1820 1300" stroke="url(#gold)" stroke-width="2"/>
+    <path d="M-230 2780C430 2500 630 2990 1190 2630S1540 2600 1800 2450" stroke="url(#ice)" stroke-width="180" opacity=".13"/>
+    <path d="M-240 2745C400 2510 700 2950 1160 2640S1550 2560 1810 2490" stroke="#acdfff" stroke-width="2" opacity=".28"/>
+    <path d="M-270 3890C300 3550 530 3940 950 3630S1500 3820 1830 3480" stroke="url(#ice)" stroke-width="190" opacity=".13"/>
+    <path d="M-280 3850C310 3600 620 3900 960 3650S1460 3750 1830 3540" stroke="url(#gold)" stroke-width="2"/>
+    <path d="M-100 4730C480 4400 840 4800 1660 4470" stroke="url(#ice)" stroke-width="210" opacity=".12"/>
+  </g>
+  <g fill="url(#ice)" stroke="#a6dcfb" stroke-opacity=".19" stroke-width="2">
+    <path d="M0 0L390 0 195 330 0 440Z" opacity=".45"/><path d="M1260 0H1600V460L1460 380Z" opacity=".45"/>
+    <path d="M0 1190L230 1350 70 1680 0 1740Z" opacity=".28"/><path d="M1600 1610L1300 1840 1600 2050Z" opacity=".22"/>
+    <path d="M0 2750L285 2890 0 3190Z" opacity=".22"/><path d="M1600 3000L1300 3320 1600 3500Z" opacity=".2"/>
+    <path d="M0 4330L320 4530 0 4920Z" opacity=".25"/><path d="M1600 4450L1380 4640 1600 4840Z" opacity=".28"/>
+  </g>
+  <g fill="none" stroke="#b5e5ff" stroke-width="2" stroke-opacity=".33">
+    <path d="M116 630v62m-31-31h62m-53-22 44 44m0-44-44 44"/><path d="M1500 1110v78m-39-39h78m-67-28 55 55m0-55-55 55"/>
+    <path d="M139 2450v92m-46-46h92m-78-32 64 64m0-64-64 64"/><path d="M1450 3220v68m-34-34h68m-58-24 48 48m0-48-48 48"/>
+    <path d="M310 4160v84m-42-42h84m-72-30 60 60m0-60-60 60"/>
+  </g>
+  <g fill="#efd19b"><circle cx="340" cy="850" r="3" opacity=".7"/><circle cx="1300" cy="1780" r="2" opacity=".6"/><circle cx="225" cy="2850" r="2" opacity=".7"/><circle cx="1300" cy="3830" r="3" opacity=".65"/></g>
+</svg>
