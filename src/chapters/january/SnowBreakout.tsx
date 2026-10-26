@@ -1,5 +1,4 @@
 import { useEffect, useRef } from 'react';
-import { designBrief } from './designBrief';
 import styles from './snowBreakout.module.css';
 
 const snow = Array.from({ length: 24 }, (_, index) => ({
@@ -62,7 +61,7 @@ export function SnowBreakout() {
         <span className={styles.eyebrow}>ГЛАВА ПЕРВАЯ <i /> ЗИМНИЙ ПРОЛОГ</span>
         <h2 id="january-title">ЯНВАРЬ<span>’26</span></h2>
         <p>Год начинается со снега. Пройди сквозь сугроб вместе с RavshanN — дальше ждёт новогодний стрим.</p>
-        <span className={styles.concept}>ЗИМНЯЯ АРТ-СЦЕНА · {designBrief.accent}</span>
+        <span className={styles.concept}>СНЕГ · НОЧЬ · НОВЫЙ ГОД</span>
         <div className={styles.scrollCue}><span className={styles.scrollCueLine} />ЛИСТАЙ, ЧТОБЫ РАЗДВИНУТЬ СНЕГ <span aria-hidden="true">↓</span></div>
       </div>
       <div className={styles.art}>

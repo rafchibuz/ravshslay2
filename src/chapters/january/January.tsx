@@ -17,12 +17,14 @@ export function January() {
           <MediaFrame scene={opening} label={opening.title} />
           <div className={styles.streamPosterBottom}>ЗИМА / ЯНВАРЬ 2026 <span>16:9</span></div>
         </div>
+        <figure className={styles.rollsPanel}>
+          <span className={styles.rollsTop}>ЗИМНИЙ КАДР <span>02 / 02</span></span>
+          <img src="/assets/visuals/snow-rolls.webp" alt="Заснеженный Rolls-Royce — изображение, предоставленное заказчиком" loading="lazy" decoding="async" />
+          <figcaption>ИЗОБРАЖЕНИЕ ПРЕДОСТАВЛЕНО ЗАКАЗЧИКОМ</figcaption>
+        </figure>
         <div className={styles.sceneCopy}>
-          <span className={styles.tag}>СЛЕДОМ ЗА СНЕГОМ / ВИДЕО</span>
-          <h3 id={`${opening.id}-title`}>{opening.title}</h3>
-          <p>{opening.description}</p>
-          <div className={styles.source}>ИЗ ИСХОДНОГО ПЛАНА: «{opening.sourceTitle}»</div>
-          <a href={`#${tradition.id}`} className={styles.sceneNext}>СЛЕДУЮЩАЯ ИСТОРИЯ <span>↘</span></a>
+          <div><span className={styles.tag}>СЛЕДОМ ЗА СНЕГОМ / ВИДЕО</span><h3 id={`${opening.id}-title`}>{opening.title}</h3></div>
+          <div className={styles.sceneSummary}><p>{opening.description}</p><div className={styles.source}>ИЗ ИСХОДНОГО ПЛАНА: «{opening.sourceTitle}»</div><a href={`#${tradition.id}`} className={styles.sceneNext}>СЛЕДУЮЩАЯ ИСТОРИЯ <span>↘</span></a></div>
         </div>
       </div>
     </article>
