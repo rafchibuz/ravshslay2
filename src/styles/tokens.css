@@ -1,0 +1,12 @@
+:root {
+  --bg: #0b0c0f;
+  --panel: #191b21;
+  --gold: #edbb62;
+  --orange: #ff7828;
+  --text: #f3f0ea;
+  --muted: #a9a9ab;
+  --ice: #9cd4ed;
+  --line: rgba(237, 187, 98, .25);
+  --font-display: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  --font-body: 'Segoe UI', Arial, sans-serif;
+}
