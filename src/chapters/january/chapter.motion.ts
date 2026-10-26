@@ -1,7 +1,6 @@
 export const januaryMotion = {
-  entry: 'scroll-driven-snow-breakout',
-  reveal: 'soft-rise',
+  entry: 'static-snow-cutout',
+  reveal: 'right-to-left-face-wipe-on-second-scene',
   snow: 'continuous-light-fall',
-  fireworks: 'restrained-icy-bursts',
-  reduceMotion: 'fully-revealed-static-scene',
+  reduceMotion: 'show-final-face-without-wipe',
 } as const;

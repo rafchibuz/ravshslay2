@@ -1,8 +1,7 @@
 # Источники визуалов января
 
-- `ravshann-snow-start-original.png` и `ravshann-snow-end-original.png` — предоставленные заказчиком кадры постановочной сцены. Оптимизированные версии находятся в `public/assets/motion/`.
-- `public/assets/motion/ravshann-snow-breakout.mp4` — предоставленный заказчиком ролик для анимации по прокрутке.
-- `snow-rolls-original.png` — изображение заснеженного Rolls-Royce, предоставленное заказчиком. Оптимизированная версия: `public/assets/visuals/snow-rolls.webp`.
-- `public/assets/visuals/winter-abstract.svg` — нарисованный в коде абстрактный фон для всего января.
+- `ravshann-snow-cutout-original.png` — предоставленная вырезанная фотография для вступления. Оптимизированная версия: `public/assets/visuals/ravshann-snow-cutout.webp`.
+- `ravshann-face-beard-original.png` и `ravshann-face-clean-original.png` — предоставленные портреты для смены лица по прокрутке. Оптимизированные версии находятся в `public/assets/visuals/`.
+- `public/assets/visuals/winter-abstract.svg` — нарисованный в коде единый абстрактный фон января.
 
-Ролик и автомобиль — постановочные визуалы, не архивные кадры новогоднего стрима.
+Постановочные изображения не являются архивными кадрами новогоднего стрима.

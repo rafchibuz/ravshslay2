@@ -1,3 +1,4 @@
+import { useEffect, useRef } from 'react';
 import { MediaFrame } from '../../components/MediaFrame';
 import { scenes } from '../../lib/contentValidation';
 import { SnowBreakout } from './SnowBreakout';
@@ -5,26 +6,59 @@ import styles from './chapter.module.css';
 
 export function January() {
   const [opening, tradition, game] = scenes;
+  const cinemaRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const scene = cinemaRef.current;
+    if (!scene) return;
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    let frame = 0;
+    const update = () => {
+      frame = 0;
+      const rect = scene.getBoundingClientRect();
+      const travel = Math.max(1, rect.height - window.innerHeight);
+      const progress = reducedMotion.matches ? 1 : Math.max(0, Math.min(1, -rect.top / travel));
+      scene.style.setProperty('--face-reveal', `${Math.round(progress * 100)}%`);
+      scene.style.setProperty('--wipe-opacity', String(Math.sin(progress * Math.PI)));
+    };
+    const schedule = () => { if (!frame) frame = requestAnimationFrame(update); };
+    update();
+    window.addEventListener('scroll', schedule, { passive: true });
+    window.addEventListener('resize', schedule);
+    reducedMotion.addEventListener('change', schedule);
+    return () => {
+      window.removeEventListener('scroll', schedule);
+      window.removeEventListener('resize', schedule);
+      reducedMotion.removeEventListener('change', schedule);
+      if (frame) cancelAnimationFrame(frame);
+    };
+  }, []);
+
   return <section id="january" className={styles.chapter} aria-labelledby="january-title">
     <div className={styles.winterLight} aria-hidden="true" />
     <SnowBreakout />
 
-    <article className={`${styles.scene} ${styles.cinema}`} id={opening.id} aria-labelledby={`${opening.id}-title`}>
-      <div className={styles.sceneTop}><span>{opening.eyebrow}</span><span>01 — 03</span></div>
-      <div className={styles.cinemaLayout}>
-        <div className={styles.cinemaFrame}>
-          <div className={styles.streamPosterTop}>НОВОГОДНИЙ СТРИМ <span>ЗАПИСЬ ОЖИДАЕТСЯ</span></div>
-          <MediaFrame scene={opening} label={opening.title} />
-          <div className={styles.streamPosterBottom}>ЗИМА / ЯНВАРЬ 2026 <span>16:9</span></div>
-        </div>
-        <figure className={styles.rollsPanel}>
-          <span className={styles.rollsTop}>ЗИМНИЙ КАДР <span>02 / 02</span></span>
-          <img src="/assets/visuals/snow-rolls.webp" alt="Заснеженный Rolls-Royce — изображение, предоставленное заказчиком" loading="lazy" decoding="async" />
-          <figcaption>ИЗОБРАЖЕНИЕ ПРЕДОСТАВЛЕНО ЗАКАЗЧИКОМ</figcaption>
-        </figure>
-        <div className={styles.sceneCopy}>
-          <div><span className={styles.tag}>СЛЕДОМ ЗА СНЕГОМ / ВИДЕО</span><h3 id={`${opening.id}-title`}>{opening.title}</h3></div>
-          <div className={styles.sceneSummary}><p>{opening.description}</p><div className={styles.source}>ИЗ ИСХОДНОГО ПЛАНА: «{opening.sourceTitle}»</div><a href={`#${tradition.id}`} className={styles.sceneNext}>СЛЕДУЮЩАЯ ИСТОРИЯ <span>↘</span></a></div>
+    <article ref={cinemaRef} className={`${styles.scene} ${styles.cinema}`} id={opening.id} aria-labelledby={`${opening.id}-title`}>
+      <div className={styles.cinemaSticky}>
+        <div className={styles.sceneTop}><span>{opening.eyebrow}</span><span>01 — 03</span></div>
+        <div className={styles.cinemaLayout}>
+          <div className={styles.cinemaFrame}>
+            <div className={styles.streamPosterTop}>НОВОГОДНИЙ СТРИМ <span>ЗАПИСЬ ОЖИДАЕТСЯ</span></div>
+            <MediaFrame scene={opening} label={opening.title} />
+            <div className={styles.streamPosterBottom}>ЗИМА / ЯНВАРЬ 2026 <span>16:9</span></div>
+          </div>
+          <figure className={styles.faceStage} aria-label="Образ RavshanN меняется при прокрутке: с бородой на лицо без бороды">
+            <div className={styles.faceCanvas}>
+              <img src="/assets/visuals/ravshann-face-beard.webp" alt="" decoding="async" />
+              <img className={styles.faceReveal} src="/assets/visuals/ravshann-face-clean.webp" alt="" decoding="async" />
+              <span className={styles.faceWipe} aria-hidden="true" />
+            </div>
+            <figcaption>ОБРАЗ МЕНЯЕТСЯ ПРИ ПРОКРУТКЕ <span>01 → 02</span></figcaption>
+          </figure>
+          <div className={styles.sceneCopy}>
+            <div><span className={styles.tag}>СЛЕДОМ ЗА СНЕГОМ / ВИДЕО</span><h3 id={`${opening.id}-title`}>{opening.title}</h3></div>
+            <div className={styles.sceneSummary}><p>{opening.description}</p><div className={styles.source}>ИЗ ИСХОДНОГО ПЛАНА: «{opening.sourceTitle}»</div><a href={`#${tradition.id}`} className={styles.sceneNext}>СЛЕДУЮЩАЯ ИСТОРИЯ <span>↘</span></a></div>
+          </div>
         </div>
       </div>
     </article>

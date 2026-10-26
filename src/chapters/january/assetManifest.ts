@@ -18,9 +18,9 @@ export const assetManifest: Asset[] = [
     approved: false, alt: 'RavshanN в короне и королевской мантии',
   },
   {
-    assetId: 'january-snow-breakout', chapterId: '2026-01', eventId: null, role: 'scroll-driven snow scene video',
-    src: '/assets/motion/ravshann-snow-breakout.mp4', kind: 'supplied-artwork', rightsStatus: 'provided-by-user',
-    approved: false, alt: 'RavshanN раздвигает снег',
+    assetId: 'january-snow-cutout', chapterId: '2026-01', eventId: null, role: 'static winter opening cutout',
+    src: '/assets/visuals/ravshann-snow-cutout.webp', kind: 'supplied-artwork', rightsStatus: 'provided-by-user',
+    approved: false, alt: 'RavshanN пробирается сквозь глубокий снег',
   },
   {
     assetId: 'january-winter-abstract', chapterId: '2026-01', eventId: null, role: 'continuous vector background',
@@ -28,19 +28,14 @@ export const assetManifest: Asset[] = [
     approved: false, alt: 'Абстрактные ледяные линии и снежная пыль',
   },
   {
-    assetId: 'january-snow-start', chapterId: '2026-01', eventId: null, role: 'motion poster',
-    src: '/assets/motion/ravshann-snow-start.webp', kind: 'supplied-artwork', rightsStatus: 'provided-by-user',
-    approved: false, alt: 'Начальный кадр выхода из снега',
+    assetId: 'january-face-beard', chapterId: '2026-01', eventId: '2026-01-01', role: 'face wipe initial portrait',
+    src: '/assets/visuals/ravshann-face-beard.webp', kind: 'supplied-artwork', rightsStatus: 'provided-by-user',
+    approved: false, alt: 'RavshanN с бородой',
   },
   {
-    assetId: 'january-snow-end', chapterId: '2026-01', eventId: null, role: 'reduced-motion still',
-    src: '/assets/motion/ravshann-snow-end.webp', kind: 'supplied-artwork', rightsStatus: 'provided-by-user',
-    approved: false, alt: 'Конечный кадр выхода из снега',
-  },
-  {
-    assetId: 'january-snow-rolls', chapterId: '2026-01', eventId: '2026-01-01', role: 'supplied companion image beside stream poster',
-    src: '/assets/visuals/snow-rolls.webp', kind: 'supplied-artwork', rightsStatus: 'provided-by-user',
-    approved: false, alt: 'Заснеженный Rolls-Royce',
+    assetId: 'january-face-clean', chapterId: '2026-01', eventId: '2026-01-01', role: 'face wipe final portrait',
+    src: '/assets/visuals/ravshann-face-clean.webp', kind: 'supplied-artwork', rightsStatus: 'provided-by-user',
+    approved: false, alt: 'RavshanN без бороды',
   },
   ...['2026-01-01', '2026-01-02', '2026-01-03'].map((eventId) => ({
     assetId: `${eventId}-media`, chapterId: '2026-01', eventId, role: 'documentary event media',
