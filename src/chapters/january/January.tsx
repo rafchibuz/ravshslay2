@@ -3,6 +3,7 @@ import { MediaFrame } from '../../components/MediaFrame';
 import { scenes } from '../../lib/contentValidation';
 import { BrotherPhone } from './BrotherPhone';
 import { SnowBreakout } from './SnowBreakout';
+import { TelegramArchiveLink } from './TelegramArchiveLink';
 import styles from './chapter.module.css';
 
 export function January() {
@@ -63,7 +64,7 @@ export function January() {
           </figure>
           <div className={styles.sceneCopy}>
             <div><span className={styles.tag}>СЛЕДОМ ЗА СНЕГОМ / ВИДЕО</span><h3 id={`${opening.id}-title`}>{opening.title}</h3></div>
-            <div className={styles.sceneSummary}><p>{opening.description}</p><div className={styles.source}>ИЗ ИСХОДНОГО ПЛАНА: «{opening.sourceTitle}»</div><a href={`#${tradition.id}`} className={styles.sceneNext}>СЛЕДУЮЩАЯ ИСТОРИЯ <span>↘</span></a></div>
+            <div className={styles.sceneSummary}><p>{opening.description}</p>{opening.archiveUrl && <TelegramArchiveLink href={opening.archiveUrl} ariaLabel="Архив записи новогоднего стрима в Telegram" className={styles.streamArchive} />}<a href={`#${tradition.id}`} className={styles.sceneNext}>СЛЕДУЮЩАЯ ИСТОРИЯ <span>↘</span></a></div>
           </div>
         </div>
       </div>

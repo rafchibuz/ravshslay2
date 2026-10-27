@@ -9,6 +9,7 @@ export type Scene = {
   title: string;
   sourceTitle: string;
   description: string;
+  archiveUrl?: string;
   format: 'cinema' | 'social' | 'split';
   media: { provider: 'youtube'; url: string; poster?: string } | { provider: 'local-gallery'; items: [LocalVideo, LocalVideo] } | null;
   verified: boolean;
@@ -24,6 +25,7 @@ export function validateScenes(input: unknown): Scene[] {
     ids.add(value.id);
     if (!['cinema', 'social', 'split'].includes(String(value.format))) throw new Error('Invalid format');
     if (typeof value.title !== 'string' || typeof value.sourceTitle !== 'string') throw new Error('Missing title');
+    if (value.archiveUrl !== undefined && (typeof value.archiveUrl !== 'string' || !/^https:\/\/t\.me\/[\w]+\/\d+\/\d+$/.test(value.archiveUrl))) throw new Error('Invalid archive URL');
     if (value.verified !== false && value.verified !== true) throw new Error('Invalid verification status');
     if (value.media !== null) {
       const media = value.media as Record<string, unknown>;

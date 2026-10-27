@@ -53,10 +53,11 @@
 .phoneScreenMeta { display: flex; flex: 1; flex-direction: column; justify-content: center; padding: 15px 20px; }
 .phoneScreenMeta span { color: var(--gold); font-size: 8px; font-weight: 900; letter-spacing: .2em; }
 .phoneScreenMeta strong { margin-top: 8px; color: #f0f8ff; font: 400 48px/.9 var(--font-display); }
-.phoneArchive { display: inline-flex; align-items: center; gap: 9px; width: fit-content; margin-top: 19px; padding: 9px 0; color: #b8e6ff; text-decoration: none; font-size: 10px; font-weight: 900; letter-spacing: .12em; }
-.phoneArchive svg { width: 19px; height: 19px; fill: currentColor; }
-.phoneArchive span { color: #b8e6ff; font-size: 16px; }
-.phoneArchive:hover { color: #fff; }
+.archiveLink { display: inline-flex; align-items: center; gap: 9px; width: fit-content; margin-top: 19px; padding: 9px 0; color: #b8e6ff; text-decoration: none; text-transform: uppercase; font-size: 10px; font-weight: 900; letter-spacing: .12em; }
+.archiveLink svg { width: 19px; height: 19px; fill: currentColor; }
+.archiveLink span { color: #b8e6ff; font-size: 16px; }
+.archiveLink:hover { color: #fff; }
+.streamArchive { width: 100%; margin-top: 30px; padding-top: 16px; border-top: 1px solid rgba(182,222,242,.34); }
 .phoneControls { display: flex; align-items: center; justify-content: space-between; padding: 12px 6px 2px; }
 .phoneControls button { width: 48px; height: 36px; border: 1px solid rgba(198,228,246,.35); border-radius: 10px; background: rgba(173,222,248,.08); color: #e8f7ff; cursor: pointer; font-size: 23px; }
 .phoneControls button:disabled { opacity: .32; cursor: default; }
@@ -90,3 +91,4 @@
 @media (max-width: 700px) { .scene { padding: 35px 7% 80px; min-height: auto; } .cinema { height: 185svh; padding: 0; } .cinemaSticky { justify-content: center; height: 100svh; min-height: 670px; padding: 24px 7% 32px; } .scene::after { width: 25px; } .sceneTop { font-size: 9px; } .cinemaLayout { grid-template-columns: 1fr; margin-top: 20px; gap: 13px; } .faceStage { min-height: 205px; } .faceCanvas { inset: -7px 0 0; } .faceStage figcaption { left: 0; right: 0; bottom: -8px; font-size: 6px; } .sceneCopy { grid-column: auto; grid-template-columns: 1fr; gap: 0; padding-top: 0; } .sceneSummary { padding-top: 0; } .scene h3 { margin: 10px 0; font-size: clamp(48px,12vw,70px); } .scene p { font-size: 13px; line-height: 1.45; } .source { margin-top: 14px; font-size: 8px; } .sceneNext { margin-top: 12px; } .socialLayout { display: flex; flex-direction: column; align-items: stretch; gap: 35px; min-height: 0; } .socialCopy { padding: 100px 0 0; } .socialCopy h3 { font-size: clamp(70px,18vw,110px); } .quoteMark { top: -25px; } .phoneShell { width: min(75%,320px); margin: 0 auto 40px; } .splitLayout { grid-template-columns: 1fr; padding-top: 45px; gap: 30px; } .splitNumber { font-size: 160px; } .splitFrame { grid-column: auto; width: 100%; margin: 0; } .end { padding: 90px 20px; } :global(.media-empty-label), :global(.media-empty-foot) { font-size: 7px; } .streamPosterTop,.streamPosterBottom { left: 14px; right: 14px; font-size: 6px; letter-spacing: .1em; } .streamPosterTop { top: 12px; } .streamPosterBottom { bottom: 12px; } }
 @media (max-width: 1100px) { .socialLayout { grid-template-columns: minmax(0,1fr) minmax(330px,400px); gap: 3%; } }
 @media (max-width: 700px) { .socialLayout { gap: 10px; } .socialArt { width: 100%; height: auto; padding: 0; } .socialSide { width: 100%; } .phoneShell { width: min(96%,410px); margin: 0 auto; transform: rotate(1deg); } }
+@media (max-width: 700px) { .cinema { height: max(185svh,1100px); } .cinemaSticky { height: auto; min-height: 100svh; justify-content: flex-start; } }
