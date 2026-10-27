@@ -8,7 +8,7 @@
 .cinemaSticky { position: sticky; top: 0; display: flex; flex-direction: column; justify-content: center; height: 100svh; min-height: 700px; padding: 45px 10% 70px 14%; }
 .sceneTop { display: flex; justify-content: space-between; color: var(--ice); font-size: 10px; font-weight: 900; letter-spacing: .25em; }
 .cinemaLayout { display: grid; grid-template-columns: minmax(0,1.2fr) minmax(300px,.8fr); gap: clamp(22px,3vw,50px); align-items: stretch; margin-top: 42px; }
-.cinemaFrame, .splitFrame { position: relative; aspect-ratio: 16/9; }
+.cinemaFrame { position: relative; aspect-ratio: 16/9; }
 .cinemaFrame { overflow: hidden; -webkit-mask-image: radial-gradient(ellipse 78% 78% at center,#000 42%,transparent 100%); mask-image: radial-gradient(ellipse 78% 78% at center,#000 42%,transparent 100%); }
 .cinemaFrame :global(.media-empty) { background: radial-gradient(ellipse at 56% 29%,rgba(178,218,240,.28),transparent 42%),radial-gradient(ellipse at 50% 110%,rgba(242,250,255,.14),transparent 55%),repeating-linear-gradient(105deg,transparent 0 45px,rgba(206,235,249,.04) 46px 47px),rgba(13,36,55,.68); }
 .cinemaFrame :global(.media-empty)::before { display: none; }
@@ -64,12 +64,35 @@
 .phoneControls button:not(:disabled):hover { background: rgba(173,222,248,.2); }
 .phoneControls span { display: flex; align-items: center; gap: 9px; color: var(--gold); font-size: 10px; font-weight: 900; letter-spacing: .14em; }
 .phoneControls i { display: block; width: 34px; height: 1px; background: rgba(237,187,98,.7); }
-.split { min-height: 850px; }
-.splitLayout { display: grid; grid-template-columns: .75fr 1fr; gap: 45px 7%; align-items: center; padding-top: 60px; }
-.splitNumber { color: transparent; -webkit-text-stroke: 2px rgba(190,230,249,.65); font: 400 clamp(165px,21vw,370px)/.75 var(--font-display); letter-spacing: -.09em; text-shadow: 0 0 80px rgba(151,209,238,.18); }
-.splitNumber span { color: #ccecff; -webkit-text-stroke: 0; font-size: .5em; vertical-align: 20%; }
-.splitText { max-width: 560px; }
-.splitFrame { grid-column: 1 / -1; width: min(73%,900px); margin-left: auto; margin-top: -55px; -webkit-mask-image: radial-gradient(ellipse 78% 78% at center,#000 42%,transparent 100%); mask-image: radial-gradient(ellipse 78% 78% at center,#000 42%,transparent 100%); }
+.mafiaScene { padding-top: 76px; padding-bottom: 150px; }
+.mafiaLayout { display: grid; grid-template-columns: minmax(0,1.1fr) minmax(350px,.9fr); align-items: center; gap: clamp(25px,4vw,75px); margin-top: 28px; }
+.mafiaArt { position: relative; min-width: 0; min-height: 900px; }
+.mafiaArt::before { content: ''; position: absolute; inset: 24% -12% 2% 0; pointer-events: none; background: radial-gradient(ellipse at 45% 65%,rgba(197,116,55,.16),transparent 56%); filter: blur(35px); }
+.mafiaArt img { position: absolute; bottom: 0; left: -5%; display: block; width: 112%; height: 100%; object-fit: contain; object-position: center bottom; filter: drop-shadow(0 30px 35px rgba(0,0,0,.26)); -webkit-mask-image: linear-gradient(90deg,transparent,#000 7%,#000 100%),linear-gradient(180deg,#000 0%,#000 89%,transparent 100%); mask-image: linear-gradient(90deg,transparent,#000 7%,#000 100%),linear-gradient(180deg,#000 0%,#000 89%,transparent 100%); -webkit-mask-composite: source-in; mask-composite: intersect; }
+.mafiaContent { position: relative; z-index: 1; min-width: 0; padding: 45px 0; }
+.mafiaTitle { display: flex; flex-direction: column; gap: 4px; margin: 16px 0 22px !important; font-size: clamp(70px,8.2vw,130px) !important; line-height: .8 !important; letter-spacing: -.055em !important; }
+.mafiaTitle span { color: transparent; -webkit-text-stroke: 2px rgba(225,238,247,.85); font-size: .67em; letter-spacing: -.03em; }
+.mafiaContent p { max-width: 480px; }
+.mafiaArchives { margin-top: 40px; }
+.mafiaArchiveGroup { padding: 18px 0 25px; border-top: 1px solid rgba(205,227,238,.28); }
+.mafiaGroupHead { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; margin-bottom: 14px; }
+.mafiaGroupHead strong { color: #e7f4fb; font: 400 31px/.95 var(--font-display); text-transform: uppercase; }
+.mafiaGroupHead span { color: var(--gold); font-size: 9px; font-weight: 900; letter-spacing: .18em; white-space: nowrap; }
+.mafiaLinks { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 8px; }
+.mafiaLinks a { display: flex; align-items: center; justify-content: space-between; gap: 5px; min-height: 47px; padding: 10px 9px; border: 1px solid rgba(169,211,233,.3); border-radius: 4px; background: linear-gradient(145deg,rgba(206,230,244,.1),rgba(206,230,244,.025)); color: #e7f4fb; text-decoration: none; font-size: 9px; font-weight: 900; letter-spacing: .08em; white-space: nowrap; transition: border-color .2s ease,background .2s ease,transform .2s ease; }
+.mafiaLinks a:hover { border-color: var(--gold); background: rgba(230,184,112,.15); transform: translateY(-2px); }
+.mafiaLinks a:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+.mafiaLinks svg { width: 16px; height: 16px; flex: 0 0 auto; fill: currentColor; color: #a9d9f0; }
+.mafiaLinks b { color: var(--gold); font-size: 14px; font-weight: 400; }
+.mafiaVideoSection { position: relative; margin: 65px auto 0; max-width: 1060px; }
+.mafiaVideoHead,.mafiaVideoFoot { display: flex; justify-content: space-between; gap: 12px; color: #a9d4e8; font-size: 9px; font-weight: 900; letter-spacing: .2em; }
+.mafiaVideoHead { margin-bottom: 12px; }
+.mafiaVideoFoot { margin-top: 12px; color: #cbab7b; }
+.mafiaVideoFrame { position: relative; overflow: hidden; width: 100%; aspect-ratio: 16/9; border: 1px solid rgba(186,220,238,.35); background: #081725; box-shadow: 0 35px 90px rgba(1,7,14,.35); }
+.mafiaVideoFrame :global(.media-empty) { background: radial-gradient(ellipse at 50% 40%,rgba(89,142,171,.2),transparent 56%),linear-gradient(130deg,rgba(206,153,88,.08),transparent 42%),#091725; }
+.mafiaVideoFrame :global(.media-empty)::before { border-color: rgba(215,181,129,.4); }
+.mafiaVideoFrame :global(.media-empty-label),.mafiaVideoFrame :global(.media-empty-foot) { color: #c7ac81; }
+.mafiaVideoFrame :global(.media-empty-title) { color: rgba(231,244,251,.55); }
 .end { display: flex; flex-direction: column; align-items: center; gap: 20px; padding: 120px 20px 150px; text-align: center; background: radial-gradient(ellipse at 50% 95%,rgba(159,215,247,.08),transparent 60%); }
 .end span { color: var(--gold); font-size: 10px; font-weight: 800; letter-spacing: .25em; }
 .end strong { font: 400 clamp(38px,6vw,88px)/.95 var(--font-display); }
@@ -87,8 +110,10 @@
 :global(.media-play span) { font-size: 48px; } :global(.media-play strong) { font-size: 12px; letter-spacing: .2em; }
 :global(.media-stop), :global(.media-original) { position: absolute; z-index: 2; bottom: 10px; padding: 8px 10px; border: 1px solid var(--gold); background: #111; color: var(--gold); font-size: 10px; text-decoration: none; }
 :global(.media-stop) { left: 10px; } :global(.media-original) { right: 10px; }
-@media (max-width: 1100px) { .scene { padding-left: 12%; } .cinema { padding: 0; } .cinemaSticky { padding-left: 12%; } .cinemaLayout { grid-template-columns: minmax(0,1.1fr) minmax(260px,.9fr); gap: 22px; } .sceneCopy { grid-template-columns: minmax(0,1.1fr) minmax(260px,.9fr); } .socialLayout { gap: 4%; grid-template-columns: 1fr 310px; } .splitFrame { width: 85%; } }
-@media (max-width: 700px) { .scene { padding: 35px 7% 80px; min-height: auto; } .cinema { height: 185svh; padding: 0; } .cinemaSticky { justify-content: center; height: 100svh; min-height: 670px; padding: 24px 7% 32px; } .scene::after { width: 25px; } .sceneTop { font-size: 9px; } .cinemaLayout { grid-template-columns: 1fr; margin-top: 20px; gap: 13px; } .faceStage { min-height: 205px; } .faceCanvas { inset: -7px 0 0; } .faceStage figcaption { left: 0; right: 0; bottom: -8px; font-size: 6px; } .sceneCopy { grid-column: auto; grid-template-columns: 1fr; gap: 0; padding-top: 0; } .sceneSummary { padding-top: 0; } .scene h3 { margin: 10px 0; font-size: clamp(48px,12vw,70px); } .scene p { font-size: 13px; line-height: 1.45; } .source { margin-top: 14px; font-size: 8px; } .sceneNext { margin-top: 12px; } .socialLayout { display: flex; flex-direction: column; align-items: stretch; gap: 35px; min-height: 0; } .socialCopy { padding: 100px 0 0; } .socialCopy h3 { font-size: clamp(70px,18vw,110px); } .quoteMark { top: -25px; } .phoneShell { width: min(75%,320px); margin: 0 auto 40px; } .splitLayout { grid-template-columns: 1fr; padding-top: 45px; gap: 30px; } .splitNumber { font-size: 160px; } .splitFrame { grid-column: auto; width: 100%; margin: 0; } .end { padding: 90px 20px; } :global(.media-empty-label), :global(.media-empty-foot) { font-size: 7px; } .streamPosterTop,.streamPosterBottom { left: 14px; right: 14px; font-size: 6px; letter-spacing: .1em; } .streamPosterTop { top: 12px; } .streamPosterBottom { bottom: 12px; } }
+@media (max-width: 1100px) { .scene { padding-left: 12%; } .cinema { padding: 0; } .cinemaSticky { padding-left: 12%; } .cinemaLayout { grid-template-columns: minmax(0,1.1fr) minmax(260px,.9fr); gap: 22px; } .sceneCopy { grid-template-columns: minmax(0,1.1fr) minmax(260px,.9fr); } .socialLayout { gap: 4%; grid-template-columns: 1fr 310px; } }
+@media (max-width: 700px) { .scene { padding: 35px 7% 80px; min-height: auto; } .cinema { height: 185svh; padding: 0; } .cinemaSticky { justify-content: center; height: 100svh; min-height: 670px; padding: 24px 7% 32px; } .scene::after { width: 25px; } .sceneTop { font-size: 9px; } .cinemaLayout { grid-template-columns: 1fr; margin-top: 20px; gap: 13px; } .faceStage { min-height: 205px; } .faceCanvas { inset: -7px 0 0; } .faceStage figcaption { left: 0; right: 0; bottom: -8px; font-size: 6px; } .sceneCopy { grid-column: auto; grid-template-columns: 1fr; gap: 0; padding-top: 0; } .sceneSummary { padding-top: 0; } .scene h3 { margin: 10px 0; font-size: clamp(48px,12vw,70px); } .scene p { font-size: 13px; line-height: 1.45; } .source { margin-top: 14px; font-size: 8px; } .sceneNext { margin-top: 12px; } .socialLayout { display: flex; flex-direction: column; align-items: stretch; gap: 35px; min-height: 0; } .socialCopy { padding: 100px 0 0; } .socialCopy h3 { font-size: clamp(70px,18vw,110px); } .quoteMark { top: -25px; } .phoneShell { width: min(75%,320px); margin: 0 auto 40px; } .end { padding: 90px 20px; } :global(.media-empty-label), :global(.media-empty-foot) { font-size: 7px; } .streamPosterTop,.streamPosterBottom { left: 14px; right: 14px; font-size: 6px; letter-spacing: .1em; } .streamPosterTop { top: 12px; } .streamPosterBottom { bottom: 12px; } }
 @media (max-width: 1100px) { .socialLayout { grid-template-columns: minmax(0,1fr) minmax(330px,400px); gap: 3%; } }
 @media (max-width: 700px) { .socialLayout { gap: 10px; } .socialArt { width: 100%; height: auto; padding: 0; } .socialSide { width: 100%; } .phoneShell { width: min(96%,410px); margin: 0 auto; transform: rotate(1deg); } }
 @media (max-width: 700px) { .cinema { height: max(185svh,1100px); } .cinemaSticky { height: auto; min-height: 100svh; justify-content: flex-start; } }
+@media (max-width: 980px) { .mafiaLayout { grid-template-columns: 1fr; gap: 0; } .mafiaArt { width: min(100%,520px); min-height: 0; aspect-ratio: 941/1672; margin: 0 auto; } .mafiaArt img { left: -3%; width: 106%; } .mafiaContent { max-width: 700px; padding: 0 0 30px; } .mafiaVideoSection { margin-top: 35px; } }
+@media (max-width: 700px) { .mafiaScene { padding-top: 40px; padding-bottom: 100px; } .mafiaLayout { margin-top: 10px; } .mafiaTitle { font-size: clamp(70px,22vw,110px) !important; } .mafiaArchives { margin-top: 28px; } .mafiaGroupHead strong { font-size: 27px; } .mafiaLinks { grid-template-columns: 1fr; } .mafiaLinks a { min-height: 45px; padding: 10px 14px; } .mafiaVideoHead,.mafiaVideoFoot { font-size: 7px; letter-spacing: .09em; } .mafiaVideoFrame :global(.media-empty-title) { font-size: clamp(24px,7vw,38px); } }

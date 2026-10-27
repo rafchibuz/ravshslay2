@@ -42,6 +42,11 @@ export const assetManifest: Asset[] = [
     src: '/assets/visuals/brothers-square.webp', kind: 'supplied-artwork', rightsStatus: 'provided-by-user',
     approved: false, alt: 'Брат и Брат 2 — двое друзей в кожаных куртках',
   },
+  {
+    assetId: 'january-mafia-duology', chapterId: '2026-01', eventId: '2026-01-03', role: 'transparent character and quote artwork beside game archives',
+    src: '/assets/visuals/mafia-duology.png', kind: 'supplied-artwork', rightsStatus: 'provided-by-user',
+    approved: false, alt: 'RavshanN в кожаной куртке и цитата о его истории',
+  },
   ...[1, 2].flatMap((part) => ([
     {
       assetId: `january-brothers-video-${part}`, chapterId: '2026-01', eventId: '2026-01-02', role: `phone video ${part}`,

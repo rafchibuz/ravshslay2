@@ -10,17 +10,17 @@ function youtubeId(url: string): string | null {
   return null;
 }
 
-export function MediaFrame({ scene, label }: { scene: Scene; label: string }) {
+export function MediaFrame({ scene, label, placeholderText }: { scene: Scene; label: string; placeholderText?: { eyebrow: string; foot: string } }) {
   const [playing, setPlaying] = useState(false);
   const youtube = scene.media?.provider === 'youtube' ? scene.media : null;
   const id = youtube && youtubeId(youtube.url);
 
   if (!youtube || !id) {
-    return <div className="media-empty" role="img" aria-label={`PLACEHOLDER: ${label}`}>
+    return <div className="media-empty" role="img" aria-label={`Видео «${label}» пока не добавлено`}>
       <span className="media-cross media-cross-a" /><span className="media-cross media-cross-b" />
-      <span className="media-empty-label">PLACEHOLDER / ОРИГИНАЛ ГОТОВИТСЯ</span>
+      <span className="media-empty-label">{placeholderText?.eyebrow ?? 'PLACEHOLDER / ОРИГИНАЛ ГОТОВИТСЯ'}</span>
       <span className="media-empty-title">{label}</span>
-      <span className="media-empty-foot">МЕДИА ОЖИДАЕТ ПОДТВЕРЖДЕНИЯ</span>
+      <span className="media-empty-foot">{placeholderText?.foot ?? 'МЕДИА ОЖИДАЕТ ПОДТВЕРЖДЕНИЯ'}</span>
     </div>;
   }
 

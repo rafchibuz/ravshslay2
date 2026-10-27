@@ -3,7 +3,7 @@ import { MediaFrame } from '../../components/MediaFrame';
 import { scenes } from '../../lib/contentValidation';
 import { BrotherPhone } from './BrotherPhone';
 import { SnowBreakout } from './SnowBreakout';
-import { TelegramArchiveLink } from './TelegramArchiveLink';
+import { TelegramArchiveLink, TelegramIcon } from './TelegramArchiveLink';
 import styles from './chapter.module.css';
 
 export function January() {
@@ -83,12 +83,32 @@ export function January() {
       </div>
     </article>
 
-    <article className={`${styles.scene} ${styles.split}`} id={game.id} aria-labelledby={`${game.id}-title`}>
+    <article className={`${styles.scene} ${styles.mafiaScene}`} id={game.id} aria-labelledby={`${game.id}-title`}>
       <div className={styles.sceneTop}><span>{game.eyebrow}</span><span>03 — 03</span></div>
-      <div className={styles.splitLayout}>
-        <div className={styles.splitNumber} aria-hidden="true">2<span>+</span>1</div>
-        <div className={styles.splitText}><span className={styles.tag}>ЗАКЛЮЧИТЕЛЬНЫЙ КАДР ПРОТОТИПА</span><h3 id={`${game.id}-title`}>{game.title}</h3><p>{game.description}</p><div className={styles.source}>ИЗ ИСХОДНОГО ПЛАНА: «{game.sourceTitle}»</div></div>
-        <div className={styles.splitFrame}><MediaFrame scene={game} label={game.title} /></div>
+      <div className={styles.mafiaLayout}>
+        <div className={styles.mafiaArt}>
+          <img src="/assets/visuals/mafia-duology.png" alt="RavshanN в кожаной куртке с цитатой о своей истории" loading="lazy" decoding="async" />
+        </div>
+        <div className={styles.mafiaContent}>
+          <span className={styles.tag}>ДВЕ ИСТОРИИ / ЯНВАРЬ 2026</span>
+          <h3 id={`${game.id}-title`} className={styles.mafiaTitle} aria-label={game.title}>MAFIA <span>1 / 2</span></h3>
+          <p>{game.description}</p>
+          <div className={styles.mafiaArchives}>
+            {game.playthroughs?.map((playthrough) => <section className={styles.mafiaArchiveGroup} key={playthrough.title} aria-label={`Прохождение ${playthrough.title}`}>
+              <div className={styles.mafiaGroupHead}><strong>{playthrough.title}</strong><span>{String(playthrough.links.length).padStart(2, '0')} ЗАПИСИ</span></div>
+              <div className={styles.mafiaLinks}>
+                {playthrough.links.map((url, index) => <a key={url} href={url} target="_blank" rel="noopener noreferrer" aria-label={`${playthrough.title}: часть ${index + 1} в Telegram`}>
+                  <TelegramIcon /><span>ЧАСТЬ {String(index + 1).padStart(2, '0')}</span><b aria-hidden="true">↗</b>
+                </a>)}
+              </div>
+            </section>)}
+          </div>
+        </div>
+      </div>
+      <div className={styles.mafiaVideoSection}>
+        <div className={styles.mafiaVideoHead}><span>ВИДЕО / 16:9</span><span>МАФИЯ 1 × МАФИЯ 2</span></div>
+        <div className={styles.mafiaVideoFrame}><MediaFrame scene={game} label="Mafia 1 × Mafia 2" placeholderText={{ eyebrow: 'ВИДЕО В ПОДГОТОВКЕ', foot: 'ЗДЕСЬ ПОЯВИТСЯ ЗАПИСЬ 16:9' }} /></div>
+        <div className={styles.mafiaVideoFoot}><span>ЗАПИСЬ ДЛЯ САЙТА ГОТОВИТСЯ</span><span>03 / ЯНВАРЬ</span></div>
       </div>
     </article>
 

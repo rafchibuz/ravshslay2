@@ -29,10 +29,28 @@
   {
     "id": "2026-01-03",
     "eyebrow": "03 / ИГРА",
-    "title": "Мафия 2+1",
+    "title": "Mafia 1 и Mafia 2",
     "sourceTitle": "Прохождение Мафии 2+1",
-    "description": "Финальный акцент первого прототипа. Ожидаются запись и согласованная подпись.",
+    "description": "Записи прохождений Mafia 1 и Mafia 2 собраны по частям. Видео для этой сцены появится здесь позже.",
     "format": "split",
+    "playthroughs": [
+      {
+        "title": "Mafia 1",
+        "links": [
+          "https://t.me/stayavods/3/28502",
+          "https://t.me/stayavods/3/28652",
+          "https://t.me/stayavods/3/28722"
+        ]
+      },
+      {
+        "title": "Mafia 2",
+        "links": [
+          "https://t.me/stayavods/3/27902",
+          "https://t.me/stayavods/3/27933",
+          "https://t.me/stayavods/3/28010"
+        ]
+      }
+    ],
     "media": null,
     "verified": false
   }

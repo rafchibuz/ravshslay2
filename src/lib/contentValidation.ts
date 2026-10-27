@@ -2,6 +2,7 @@ import sourceRegistry from '../content/events.2026.json';
 import rawScenes from '../content/january.scenes.json';
 
 export type LocalVideo = { src: string; poster: string; label: string; telegramUrl: string };
+export type Playthrough = { title: string; links: string[] };
 
 export type Scene = {
   id: string;
@@ -10,6 +11,7 @@ export type Scene = {
   sourceTitle: string;
   description: string;
   archiveUrl?: string;
+  playthroughs?: Playthrough[];
   format: 'cinema' | 'social' | 'split';
   media: { provider: 'youtube'; url: string; poster?: string } | { provider: 'local-gallery'; items: [LocalVideo, LocalVideo] } | null;
   verified: boolean;
@@ -26,6 +28,13 @@ export function validateScenes(input: unknown): Scene[] {
     if (!['cinema', 'social', 'split'].includes(String(value.format))) throw new Error('Invalid format');
     if (typeof value.title !== 'string' || typeof value.sourceTitle !== 'string') throw new Error('Missing title');
     if (value.archiveUrl !== undefined && (typeof value.archiveUrl !== 'string' || !/^https:\/\/t\.me\/[\w]+\/\d+\/\d+$/.test(value.archiveUrl))) throw new Error('Invalid archive URL');
+    if (value.playthroughs !== undefined && (!Array.isArray(value.playthroughs) || value.playthroughs.length === 0 || !value.playthroughs.every((entry: unknown) => {
+      if (!entry || typeof entry !== 'object') return false;
+      const group = entry as Record<string, unknown>;
+      return typeof group.title === 'string' && group.title.length > 0
+        && Array.isArray(group.links) && group.links.length > 0
+        && group.links.every((link: unknown) => typeof link === 'string' && /^https:\/\/t\.me\/[\w]+\/\d+\/\d+$/.test(link));
+    }))) throw new Error('Invalid playthrough links');
     if (value.verified !== false && value.verified !== true) throw new Error('Invalid verification status');
     if (value.media !== null) {
       const media = value.media as Record<string, unknown>;
