@@ -12,9 +12,10 @@ function youtubeId(url: string): string | null {
 
 export function MediaFrame({ scene, label }: { scene: Scene; label: string }) {
   const [playing, setPlaying] = useState(false);
-  const id = scene.media && youtubeId(scene.media.url);
+  const youtube = scene.media?.provider === 'youtube' ? scene.media : null;
+  const id = youtube && youtubeId(youtube.url);
 
-  if (!scene.media || !id) {
+  if (!youtube || !id) {
     return <div className="media-empty" role="img" aria-label={`PLACEHOLDER: ${label}`}>
       <span className="media-cross media-cross-a" /><span className="media-cross media-cross-b" />
       <span className="media-empty-label">PLACEHOLDER / ОРИГИНАЛ ГОТОВИТСЯ</span>
@@ -28,9 +29,9 @@ export function MediaFrame({ scene, label }: { scene: Scene; label: string }) {
       <iframe title={label} src={`https://www.youtube-nocookie.com/embed/${id}?autoplay=0`} allow="encrypted-media; picture-in-picture" allowFullScreen referrerPolicy="strict-origin-when-cross-origin" />
       <button className="media-stop" onClick={() => setPlaying(false)}>Закрыть видео</button>
     </> : <button className="media-play" onClick={() => setPlaying(true)} aria-label={`Открыть видео: ${label}`}>
-      {scene.media.poster ? <img src={scene.media.poster} alt="" /> : <span>▶</span>}
+      {youtube.poster ? <img src={youtube.poster} alt="" /> : <span>▶</span>}
       <strong>СМОТРЕТЬ</strong>
     </button>}
-    <a className="media-original" href={scene.media.url} target="_blank" rel="noopener noreferrer">Открыть оригинал ↗</a>
+    <a className="media-original" href={youtube.url} target="_blank" rel="noopener noreferrer">Открыть оригинал ↗</a>
   </div>;
 }

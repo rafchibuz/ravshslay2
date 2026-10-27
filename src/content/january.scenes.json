@@ -12,11 +12,17 @@
   {
     "id": "2026-01-02",
     "eyebrow": "02 / ТРАДИЦИЯ",
-    "title": "Брат. И Брат 2.",
+    "title": "Брат и Брат 2",
     "sourceTitle": "Традиционный просмотр Брат и Брат 2",
-    "description": "Пункт из редакционного списка. Фото или фрагмент просмотра пока не предоставлены.",
+    "description": "Два видео из коллекции: сначала «Брат», затем «Брат 2». Переключай их стрелками на телефоне.",
     "format": "social",
-    "media": null,
+    "media": {
+      "provider": "local-gallery",
+      "items": [
+        { "src": "/assets/video/brat-1.mp4", "poster": "/assets/video/brat-1-poster.webp", "label": "Брат" },
+        { "src": "/assets/video/brat-2.mp4", "poster": "/assets/video/brat-2-poster.webp", "label": "Брат 2" }
+      ]
+    },
     "verified": false
   },
   {

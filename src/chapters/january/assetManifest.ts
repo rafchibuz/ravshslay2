@@ -37,7 +37,24 @@ export const assetManifest: Asset[] = [
     src: '/assets/visuals/ravshann-face-clean.webp', kind: 'supplied-artwork', rightsStatus: 'provided-by-user',
     approved: false, alt: 'RavshanN без бороды',
   },
-  ...['2026-01-01', '2026-01-02', '2026-01-03'].map((eventId) => ({
+  {
+    assetId: 'january-brothers-cutout', chapterId: '2026-01', eventId: '2026-01-02', role: 'editorial cutout beside video phone',
+    src: '/assets/visuals/brothers-cutout.webp', kind: 'supplied-artwork', rightsStatus: 'provided-by-user',
+    approved: false, alt: 'Двое друзей в кожаных куртках',
+  },
+  ...[1, 2].flatMap((part) => ([
+    {
+      assetId: `january-brothers-video-${part}`, chapterId: '2026-01', eventId: '2026-01-02', role: `phone video ${part}`,
+      src: `/assets/video/brat-${part}.mp4`, kind: 'edited' as const, rightsStatus: 'provided-by-user' as const,
+      approved: false, alt: `Видео ${part} в телефоне`,
+    },
+    {
+      assetId: `january-brothers-poster-${part}`, chapterId: '2026-01', eventId: '2026-01-02', role: `phone poster ${part}`,
+      src: `/assets/video/brat-${part}-poster.webp`, kind: 'edited' as const, rightsStatus: 'provided-by-user' as const,
+      approved: false, alt: `Обложка видео ${part}`,
+    },
+  ])),
+  ...['2026-01-01', '2026-01-03'].map((eventId) => ({
     assetId: `${eventId}-media`, chapterId: '2026-01', eventId, role: 'documentary event media',
     src: null, kind: 'placeholder' as const, rightsStatus: 'missing' as const,
     approved: false, alt: 'Оригинальный материал события ожидается',

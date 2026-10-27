@@ -1,23 +1,29 @@
 import { useEffect, useRef } from 'react';
 import { MediaFrame } from '../../components/MediaFrame';
 import { scenes } from '../../lib/contentValidation';
+import { BrotherPhone } from './BrotherPhone';
 import { SnowBreakout } from './SnowBreakout';
 import styles from './chapter.module.css';
 
 export function January() {
   const [opening, tradition, game] = scenes;
+  const brotherVideos = tradition.media?.provider === 'local-gallery' ? tradition.media.items : [];
+  const chapterRef = useRef<HTMLElement>(null);
   const cinemaRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const scene = cinemaRef.current;
-    if (!scene) return;
+    const chapter = chapterRef.current;
+    if (!scene || !chapter) return;
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
     let frame = 0;
     const update = () => {
       frame = 0;
       const rect = scene.getBoundingClientRect();
       const travel = Math.max(1, rect.height - window.innerHeight);
-      const progress = reducedMotion.matches ? 1 : Math.max(0, Math.min(1, -rect.top / travel));
+      const frozenDistance = Math.max(0, Math.min(travel, -rect.top));
+      const progress = reducedMotion.matches ? 1 : frozenDistance / travel;
+      chapter.style.setProperty('--cinema-bg-shift', `${Math.round(frozenDistance)}px`);
       scene.style.setProperty('--face-reveal', `${Math.round(progress * 100)}%`);
       scene.style.setProperty('--wipe-opacity', String(Math.sin(progress * Math.PI)));
     };
@@ -34,7 +40,7 @@ export function January() {
     };
   }, []);
 
-  return <section id="january" className={styles.chapter} aria-labelledby="january-title">
+  return <section ref={chapterRef} id="january" className={styles.chapter} aria-labelledby="january-title">
     <div className={styles.winterLight} aria-hidden="true" />
     <SnowBreakout />
 
@@ -66,15 +72,19 @@ export function January() {
     <article className={`${styles.scene} ${styles.social}`} id={tradition.id} aria-labelledby={`${tradition.id}-title`}>
       <div className={styles.sceneTop}><span>{tradition.eyebrow}</span><span>02 — 03</span></div>
       <div className={styles.socialLayout}>
-        <div className={styles.socialCopy}>
-          <div className={styles.quoteMark}>“</div>
+        <div className={styles.socialArt}>
           <span className={styles.tag}>ПАУЗА МЕЖДУ СОБЫТИЯМИ</span>
-          <h3 id={`${tradition.id}-title`}>{tradition.title}</h3>
-          <p>{tradition.description}</p>
-          <div className={styles.source}>ИЗ ИСХОДНОГО ПЛАНА: «{tradition.sourceTitle}»</div>
-          <a href={`#${game.id}`} className={styles.sceneNext}>ДАЛЬШЕ ПО ЯНВАРЮ <span>↘</span></a>
+          <h3 id={`${tradition.id}-title`} aria-label={tradition.title}><span>Брат</span><span>и Брат 2</span></h3>
+          <img src="/assets/visuals/brothers-cutout.webp" alt="Двое друзей в кожаных куртках" loading="lazy" decoding="async" />
         </div>
-        <div className={styles.phoneShell}><span className={styles.phoneTop}>9:16 / SOCIAL</span><div className={styles.phoneScreen}><MediaFrame scene={tradition} label={tradition.title} /></div><span className={styles.phoneBottom}>ОРИГИНАЛ В ПОДГОТОВКЕ</span></div>
+        <div className={styles.socialSide}>
+          <BrotherPhone items={brotherVideos} />
+          <div className={styles.socialNotes}>
+            <p>{tradition.description}</p>
+            <div className={styles.source}>ИЗ ИСХОДНОГО ПЛАНА: «{tradition.sourceTitle}»</div>
+            <a href={`#${game.id}`} className={styles.sceneNext}>ДАЛЬШЕ ПО ЯНВАРЮ <span>↘</span></a>
+          </div>
+        </div>
       </div>
     </article>
 

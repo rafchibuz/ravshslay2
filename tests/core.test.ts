@@ -20,7 +20,10 @@ describe('chronicle navigation', () => {
 describe('January editorial data', () => {
   it('keeps the three supplied events in draft status', () => {
     expect(scenes).toHaveLength(3);
-    expect(scenes.every((scene) => scene.verified === false && scene.media === null)).toBe(true);
+    expect(scenes.every((scene) => scene.verified === false)).toBe(true);
+    expect(scenes[0].media).toBeNull();
+    expect(scenes[1].media?.provider).toBe('local-gallery');
+    expect(scenes[2].media).toBeNull();
   });
 
   it('rejects duplicate scene IDs', () => {
@@ -29,5 +32,9 @@ describe('January editorial data', () => {
 
   it('rejects unsupported media URLs', () => {
     expect(() => validateScenes([{ ...scenes[0], media: { provider: 'youtube', url: 'https://example.com/video' } }])).toThrow('Unsupported media URL');
+  });
+
+  it('rejects unsafe local video paths', () => {
+    expect(() => validateScenes([{ ...scenes[1], media: { provider: 'local-gallery', items: [{ src: 'https://example.com/clip.mp4', poster: '/assets/video/a.webp', label: 'Брат' }] } }])).toThrow('Invalid local video gallery');
   });
 });

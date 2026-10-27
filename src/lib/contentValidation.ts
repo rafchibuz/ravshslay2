@@ -1,6 +1,8 @@
 import sourceRegistry from '../content/events.2026.json';
 import rawScenes from '../content/january.scenes.json';
 
+export type LocalVideo = { src: string; poster: string; label: string };
+
 export type Scene = {
   id: string;
   eyebrow: string;
@@ -8,7 +10,7 @@ export type Scene = {
   sourceTitle: string;
   description: string;
   format: 'cinema' | 'social' | 'split';
-  media: { provider: 'youtube'; url: string; poster?: string } | null;
+  media: { provider: 'youtube'; url: string; poster?: string } | { provider: 'local-gallery'; items: [LocalVideo, LocalVideo] } | null;
   verified: boolean;
 };
 
@@ -25,7 +27,19 @@ export function validateScenes(input: unknown): Scene[] {
     if (value.verified !== false && value.verified !== true) throw new Error('Invalid verification status');
     if (value.media !== null) {
       const media = value.media as Record<string, unknown>;
-      if (media.provider !== 'youtube' || typeof media.url !== 'string' || !/^https:\/\/(www\.)?(youtube\.com|youtu\.be)\//.test(media.url)) throw new Error('Unsupported media URL');
+      if (media.provider === 'youtube') {
+        if (typeof media.url !== 'string' || !/^https:\/\/(www\.)?(youtube\.com|youtu\.be)\//.test(media.url)) throw new Error('Unsupported media URL');
+      } else if (media.provider === 'local-gallery') {
+        if (!Array.isArray(media.items) || media.items.length !== 2 || !media.items.every((item: unknown) => {
+          if (!item || typeof item !== 'object') return false;
+          const video = item as Record<string, unknown>;
+          return typeof video.src === 'string' && /^\/assets\/video\/[\w-]+\.mp4$/.test(video.src)
+            && typeof video.poster === 'string' && /^\/assets\/video\/[\w-]+\.webp$/.test(video.poster)
+            && typeof video.label === 'string' && video.label.length > 0;
+        })) throw new Error('Invalid local video gallery');
+      } else {
+        throw new Error('Unsupported media provider');
+      }
     }
   }
   return input as Scene[];
