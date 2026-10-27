@@ -10,7 +10,7 @@ export function February() {
     <header className={styles.chapterHeader}>
       <div className={styles.chapterOverline}><span>02 / 12</span><i /><span>ГЛАВА ВТОРАЯ</span></div>
       <h2 id="february-title">ФЕВРАЛЬ <span>’26</span></h2>
-      <p>Зима продолжается. Впереди — новые встречи и совместные видео.</p>
+      <p>Зима продолжается. Начало месяца было активным, но будем честны, месяц не особо удачный вышел.</p>
     </header>
     <article id={meeting.id} className={styles.meeting} aria-labelledby={`${meeting.id}-title`}>
       <div className={styles.sceneTop}><span>01 / ВСТРЕЧА</span><span>ФЕВРАЛЬ 2026</span></div>
