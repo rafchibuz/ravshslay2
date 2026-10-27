@@ -128,6 +128,6 @@ export function January() {
       </div>
     </article>
 
-    <div className={styles.end}><span>КОНЕЦ ПЕРВОЙ ГЛАВЫ</span><strong>ПРОДОЛЖЕНИЕ<br />ПОСЛЕ СОГЛАСОВАНИЯ</strong><a href="#hero">↑ ВЕРНУТЬСЯ К НАЧАЛУ</a></div>
+    <div className={styles.end}><span>01 / 12 — ЯНВАРЬ</span><a href="#february">СЛЕДУЮЩАЯ ГЛАВА / ФЕВРАЛЬ ↓</a></div>
   </section>;
 }

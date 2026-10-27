@@ -29,7 +29,8 @@ export function MediaFrame({ scene, label, placeholderText }: { scene: Scene; la
       <iframe title={label} src={`https://www.youtube-nocookie.com/embed/${id}?autoplay=0`} allow="encrypted-media; picture-in-picture" allowFullScreen referrerPolicy="strict-origin-when-cross-origin" />
       <button className="media-stop" onClick={() => setPlaying(false)}>Закрыть видео</button>
     </> : <button className="media-play" onClick={() => setPlaying(true)} aria-label={`Открыть видео: ${label}`}>
-      {youtube.poster ? <img src={youtube.poster} alt="" /> : <span>▶</span>}
+      {youtube.poster && <img src={youtube.poster} alt="" />}
+      <span className="media-play-icon" aria-hidden="true">▶</span>
       <strong>СМОТРЕТЬ</strong>
     </button>}
     <a className="media-original" href={youtube.url} target="_blank" rel="noopener noreferrer">Открыть оригинал ↗</a>
