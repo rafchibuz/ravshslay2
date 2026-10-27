@@ -7,7 +7,7 @@ import { TelegramArchiveLink, TelegramIcon } from './TelegramArchiveLink';
 import styles from './chapter.module.css';
 
 export function January() {
-  const [opening, tradition, game] = scenes;
+  const [opening, tradition, game, litvin] = scenes;
   const brotherVideos = tradition.media?.provider === 'local-gallery' ? tradition.media.items : [];
   const chapterRef = useRef<HTMLElement>(null);
   const cinemaRef = useRef<HTMLElement>(null);
@@ -47,7 +47,7 @@ export function January() {
 
     <article ref={cinemaRef} className={`${styles.scene} ${styles.cinema}`} id={opening.id} aria-labelledby={`${opening.id}-title`}>
       <div className={styles.cinemaSticky}>
-        <div className={styles.sceneTop}><span>{opening.eyebrow}</span><span>01 — 03</span></div>
+        <div className={styles.sceneTop}><span>{opening.eyebrow}</span><span>01 — 04</span></div>
         <div className={styles.cinemaLayout}>
           <div className={styles.cinemaFrame}>
             <div className={styles.streamPosterTop}>НОВОГОДНИЙ СТРИМ <span>ЗАПИСЬ ОЖИДАЕТСЯ</span></div>
@@ -71,7 +71,7 @@ export function January() {
     </article>
 
     <article className={`${styles.scene} ${styles.social}`} id={tradition.id} aria-labelledby={`${tradition.id}-title`}>
-      <div className={styles.sceneTop}><span>{tradition.eyebrow}</span><span>02 — 03</span></div>
+      <div className={styles.sceneTop}><span>{tradition.eyebrow}</span><span>02 — 04</span></div>
       <div className={styles.socialLayout}>
         <div className={styles.socialArt}>
           <h3 id={`${tradition.id}-title`} className={styles.visuallyHidden}>{tradition.title}</h3>
@@ -84,7 +84,7 @@ export function January() {
     </article>
 
     <article className={`${styles.scene} ${styles.mafiaScene}`} id={game.id} aria-labelledby={`${game.id}-title`}>
-      <div className={styles.sceneTop}><span>{game.eyebrow}</span><span>03 — 03</span></div>
+      <div className={styles.sceneTop}><span>{game.eyebrow}</span><span>03 — 04</span></div>
       <div className={styles.mafiaLayout}>
         <div className={styles.mafiaArt}>
           <img src="/assets/visuals/mafia-duology.png" alt="RavshanN в кожаной куртке с цитатой о своей истории" loading="lazy" decoding="async" />
@@ -109,6 +109,22 @@ export function January() {
         <div className={styles.mafiaVideoHead}><span>ВИДЕО / 16:9</span><span>МАФИЯ 1 × МАФИЯ 2</span></div>
         <div className={styles.mafiaVideoFrame}><MediaFrame scene={game} label="Mafia 1 × Mafia 2" placeholderText={{ eyebrow: 'ВИДЕО В ПОДГОТОВКЕ', foot: 'ЗДЕСЬ ПОЯВИТСЯ ЗАПИСЬ 16:9' }} /></div>
         <div className={styles.mafiaVideoFoot}><span>ЗАПИСЬ ДЛЯ САЙТА ГОТОВИТСЯ</span><span>03 / ЯНВАРЬ</span></div>
+      </div>
+    </article>
+
+    <article className={`${styles.scene} ${styles.litvinScene}`} id={litvin.id} aria-labelledby={`${litvin.id}-title`}>
+      <div className={styles.sceneTop}><span>{litvin.eyebrow}</span><span>04 — 04</span></div>
+      <div className={styles.litvinLayout}>
+        <div className={styles.litvinContent}>
+          <span className={styles.tag}>ЛИТВИН × RAVSHANN / ЯНВАРЬ 2026</span>
+          <h3 id={`${litvin.id}-title`}>{litvin.title}</h3>
+          <p>{litvin.description}</p>
+          <div className={styles.litvinVideoHead}><span>ВЫПУСК / YOUTUBE</span><span>16:9</span></div>
+          <div className={styles.litvinVideoFrame}><MediaFrame scene={litvin} label={litvin.title} /></div>
+        </div>
+        <div className={styles.litvinArt}>
+          <img src="/assets/visuals/litvin-sedation.png" alt="Равшан и участник выпуска Литвина о седации" loading="lazy" decoding="async" />
+        </div>
       </div>
     </article>
 

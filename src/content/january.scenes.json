@@ -53,5 +53,18 @@
     ],
     "media": null,
     "verified": false
+  },
+  {
+    "id": "2026-01-04",
+    "eyebrow": "04 / ВЫПУСК",
+    "title": "Кто последний уснёт?",
+    "sourceTitle": "Видос про седацию у Литвина (можно ещё доп материалы взять с видоса)",
+    "description": "Равшан в выпуске Литвина о седации. Смотри видео здесь.",
+    "format": "feature",
+    "media": {
+      "provider": "youtube",
+      "url": "https://youtu.be/RzZn5SlTQU8?si=EPwxj6HtWqYQHppc"
+    },
+    "verified": false
   }
 ]

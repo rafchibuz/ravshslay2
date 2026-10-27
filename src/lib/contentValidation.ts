@@ -12,20 +12,20 @@ export type Scene = {
   description: string;
   archiveUrl?: string;
   playthroughs?: Playthrough[];
-  format: 'cinema' | 'social' | 'split';
+  format: 'cinema' | 'social' | 'split' | 'feature';
   media: { provider: 'youtube'; url: string; poster?: string } | { provider: 'local-gallery'; items: [LocalVideo, LocalVideo] } | null;
   verified: boolean;
 };
 
 export function validateScenes(input: unknown): Scene[] {
-  if (!Array.isArray(input) || input.length > 3 || input.length === 0) throw new Error('January requires 1–3 scenes');
+  if (!Array.isArray(input) || input.length > 4 || input.length === 0) throw new Error('January requires 1–4 scenes');
   const ids = new Set<string>();
   for (const scene of input) {
     if (!scene || typeof scene !== 'object') throw new Error('Invalid scene');
     const value = scene as Record<string, unknown>;
     if (typeof value.id !== 'string' || !/^2026-01-\d\d$/.test(value.id) || ids.has(value.id)) throw new Error('Invalid scene ID');
     ids.add(value.id);
-    if (!['cinema', 'social', 'split'].includes(String(value.format))) throw new Error('Invalid format');
+    if (!['cinema', 'social', 'split', 'feature'].includes(String(value.format))) throw new Error('Invalid format');
     if (typeof value.title !== 'string' || typeof value.sourceTitle !== 'string') throw new Error('Missing title');
     if (value.archiveUrl !== undefined && (typeof value.archiveUrl !== 'string' || !/^https:\/\/t\.me\/[\w]+\/\d+\/\d+$/.test(value.archiveUrl))) throw new Error('Invalid archive URL');
     if (value.playthroughs !== undefined && (!Array.isArray(value.playthroughs) || value.playthroughs.length === 0 || !value.playthroughs.every((entry: unknown) => {

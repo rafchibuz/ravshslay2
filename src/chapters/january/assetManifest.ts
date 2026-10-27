@@ -47,6 +47,16 @@ export const assetManifest: Asset[] = [
     src: '/assets/visuals/mafia-duology.png', kind: 'supplied-artwork', rightsStatus: 'provided-by-user',
     approved: false, alt: 'RavshanN в кожаной куртке и цитата о его истории',
   },
+  {
+    assetId: 'january-litvin-sedation', chapterId: '2026-01', eventId: '2026-01-04', role: 'transparent cutout beside YouTube video',
+    src: '/assets/visuals/litvin-sedation.png', kind: 'supplied-artwork', rightsStatus: 'provided-by-user',
+    approved: false, alt: 'Равшан и участник выпуска Литвина о седации',
+  },
+  {
+    assetId: 'january-litvin-youtube', chapterId: '2026-01', eventId: '2026-01-04', role: 'embedded YouTube video',
+    src: 'https://youtu.be/RzZn5SlTQU8?si=EPwxj6HtWqYQHppc', kind: 'real', rightsStatus: 'provided-by-user',
+    approved: false, alt: 'Видео Литвина о седации с участием Равшана',
+  },
   ...[1, 2].flatMap((part) => ([
     {
       assetId: `january-brothers-video-${part}`, chapterId: '2026-01', eventId: '2026-01-02', role: `phone video ${part}`,

@@ -1,4 +1,4 @@
-export const points = ['hero', 'january', '2026-01-01', '2026-01-02', '2026-01-03'] as const;
+export const points = ['hero', 'january', '2026-01-01', '2026-01-02', '2026-01-03', '2026-01-04'] as const;
 export type Point = typeof points[number];
 
 export function nextPoint(current: string, direction: -1 | 1): Point {

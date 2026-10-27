@@ -7,23 +7,26 @@ describe('chronicle navigation', () => {
   it('moves through the hero and January points in both directions', () => {
     expect(nextPoint('hero', 1)).toBe('january');
     expect(nextPoint('2026-01-02', 1)).toBe('2026-01-03');
+    expect(nextPoint('2026-01-03', 1)).toBe('2026-01-04');
     expect(nextPoint('2026-01-02', -1)).toBe('2026-01-01');
     expect(nextPoint('hero', -1)).toBe('hero');
   });
 
   it('uses stable anchors and rejects unknown ones', () => {
     expect(pointFromHash('#2026-01-03')).toBe('2026-01-03');
+    expect(pointFromHash('#2026-01-04')).toBe('2026-01-04');
     expect(pointFromHash('#2026-02-01')).toBe('hero');
   });
 });
 
 describe('January editorial data', () => {
-  it('keeps the three supplied events in draft status', () => {
-    expect(scenes).toHaveLength(3);
+  it('keeps the four supplied events in draft status', () => {
+    expect(scenes).toHaveLength(4);
     expect(scenes.every((scene) => scene.verified === false)).toBe(true);
     expect(scenes[0].media).toBeNull();
     expect(scenes[1].media?.provider).toBe('local-gallery');
     expect(scenes[2].media).toBeNull();
+    expect(scenes[3].media).toEqual({ provider: 'youtube', url: 'https://youtu.be/RzZn5SlTQU8?si=EPwxj6HtWqYQHppc' });
   });
 
   it('rejects duplicate scene IDs', () => {
