@@ -14,17 +14,17 @@ export function February() {
     </header>
     <article id={meeting.id} className={styles.meeting} aria-labelledby={`${meeting.id}-title`}>
       <div className={styles.sceneTop}><span>01 / ВСТРЕЧА</span><span>ФЕВРАЛЬ 2026</span></div>
+      <div className={styles.meetingIntro}>
+        <span className={styles.tag}>ТРИ РИЛСА / ОДНА ВСТРЕЧА</span>
+        <h3 id={`${meeting.id}-title`}>ХАМЗАТ <em>×</em> RAVSHANN</h3>
+        <p>{meeting.description}</p>
+      </div>
       <div className={styles.meetingLayout}>
         <div className={styles.meetingArt}>
           <img src="/assets/visuals/chimaev-group.png" alt="Равшан с Хамзатом Чимаевым и участником совместных съёмок" loading="lazy" decoding="async" />
           <span className={styles.artCaption}>RAVSHANN × ХАМЗАТ</span>
         </div>
-        <div className={styles.meetingContent}>
-          <span className={styles.tag}>ТРИ РИЛСА / ОДНА ВСТРЕЧА</span>
-          <h3 id={`${meeting.id}-title`}>ХАМЗАТ<br /><em>×</em> RAVSHANN</h3>
-          <p>{meeting.description}</p>
-          <ReelGallery items={meeting.media} />
-        </div>
+        <ReelGallery items={meeting.media} />
       </div>
     </article>
   </section>;
