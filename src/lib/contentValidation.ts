@@ -1,7 +1,7 @@
 import sourceRegistry from '../content/events.2026.json';
 import rawScenes from '../content/january.scenes.json';
 
-export type LocalVideo = { src: string; poster: string; label: string };
+export type LocalVideo = { src: string; poster: string; label: string; telegramUrl: string };
 
 export type Scene = {
   id: string;
@@ -35,7 +35,8 @@ export function validateScenes(input: unknown): Scene[] {
           const video = item as Record<string, unknown>;
           return typeof video.src === 'string' && /^\/assets\/video\/[\w-]+\.mp4$/.test(video.src)
             && typeof video.poster === 'string' && /^\/assets\/video\/[\w-]+\.webp$/.test(video.poster)
-            && typeof video.label === 'string' && video.label.length > 0;
+            && typeof video.label === 'string' && video.label.length > 0
+            && typeof video.telegramUrl === 'string' && /^https:\/\/t\.me\/[\w]+\/\d+\/\d+$/.test(video.telegramUrl);
         })) throw new Error('Invalid local video gallery');
       } else {
         throw new Error('Unsupported media provider');

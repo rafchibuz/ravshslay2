@@ -73,17 +73,11 @@ export function January() {
       <div className={styles.sceneTop}><span>{tradition.eyebrow}</span><span>02 — 03</span></div>
       <div className={styles.socialLayout}>
         <div className={styles.socialArt}>
-          <span className={styles.tag}>ПАУЗА МЕЖДУ СОБЫТИЯМИ</span>
-          <h3 id={`${tradition.id}-title`} aria-label={tradition.title}><span>Брат</span><span>и Брат 2</span></h3>
-          <img src="/assets/visuals/brothers-cutout.webp" alt="Двое друзей в кожаных куртках" loading="lazy" decoding="async" />
+          <h3 id={`${tradition.id}-title`} className={styles.visuallyHidden}>{tradition.title}</h3>
+          <img src="/assets/visuals/brothers-square.webp" alt="Двое друзей в кожаных куртках" loading="lazy" decoding="async" />
         </div>
         <div className={styles.socialSide}>
           <BrotherPhone items={brotherVideos} />
-          <div className={styles.socialNotes}>
-            <p>{tradition.description}</p>
-            <div className={styles.source}>ИЗ ИСХОДНОГО ПЛАНА: «{tradition.sourceTitle}»</div>
-            <a href={`#${game.id}`} className={styles.sceneNext}>ДАЛЬШЕ ПО ЯНВАРЮ <span>↘</span></a>
-          </div>
         </div>
       </div>
     </article>

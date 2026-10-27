@@ -38,9 +38,9 @@ export const assetManifest: Asset[] = [
     approved: false, alt: 'RavshanN без бороды',
   },
   {
-    assetId: 'january-brothers-cutout', chapterId: '2026-01', eventId: '2026-01-02', role: 'editorial cutout beside video phone',
-    src: '/assets/visuals/brothers-cutout.webp', kind: 'supplied-artwork', rightsStatus: 'provided-by-user',
-    approved: false, alt: 'Двое друзей в кожаных куртках',
+    assetId: 'january-brothers-square', chapterId: '2026-01', eventId: '2026-01-02', role: 'square editorial artwork beside video phone',
+    src: '/assets/visuals/brothers-square.webp', kind: 'supplied-artwork', rightsStatus: 'provided-by-user',
+    approved: false, alt: 'Брат и Брат 2 — двое друзей в кожаных куртках',
   },
   ...[1, 2].flatMap((part) => ([
     {

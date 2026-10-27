@@ -37,4 +37,14 @@ describe('January editorial data', () => {
   it('rejects unsafe local video paths', () => {
     expect(() => validateScenes([{ ...scenes[1], media: { provider: 'local-gallery', items: [{ src: 'https://example.com/clip.mp4', poster: '/assets/video/a.webp', label: 'Брат' }] } }])).toThrow('Invalid local video gallery');
   });
+
+  it('keeps each film paired with its Telegram archive', () => {
+    const gallery = scenes[1].media;
+    expect(gallery?.provider).toBe('local-gallery');
+    if (gallery?.provider !== 'local-gallery') return;
+    expect(gallery.items.map(({ label, telegramUrl }) => [label, telegramUrl])).toEqual([
+      ['Брат', 'https://t.me/stayavods/3/27816'],
+      ['Брат 2', 'https://t.me/stayavods/3/27833'],
+    ]);
+  });
 });

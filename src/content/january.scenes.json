@@ -19,8 +19,8 @@
     "media": {
       "provider": "local-gallery",
       "items": [
-        { "src": "/assets/video/brat-1.mp4", "poster": "/assets/video/brat-1-poster.webp", "label": "Брат" },
-        { "src": "/assets/video/brat-2.mp4", "poster": "/assets/video/brat-2-poster.webp", "label": "Брат 2" }
+        { "src": "/assets/video/brat-1.mp4", "poster": "/assets/video/brat-1-poster.webp", "label": "Брат", "telegramUrl": "https://t.me/stayavods/3/27816" },
+        { "src": "/assets/video/brat-2.mp4", "poster": "/assets/video/brat-2-poster.webp", "label": "Брат 2", "telegramUrl": "https://t.me/stayavods/3/27833" }
       ]
     },
     "verified": false
