@@ -15,7 +15,6 @@ export function February() {
     <article id={meeting.id} className={styles.meeting} aria-labelledby={`${meeting.id}-title`}>
       <div className={styles.sceneTop}><span>01 / ВСТРЕЧА</span><span>ФЕВРАЛЬ 2026</span></div>
       <div className={styles.meetingIntro}>
-        <span className={styles.tag}>ТРИ РИЛСА / ОДНА ВСТРЕЧА</span>
         <h3 id={`${meeting.id}-title`}>ХАМЗАТ <em>×</em> RAVSHANN</h3>
         <p>{meeting.description}</p>
       </div>
