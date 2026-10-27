@@ -55,7 +55,7 @@ export function January() {
           </div>
           <figure className={styles.faceStage} aria-label="Образ RavshanN меняется при прокрутке: с бородой на лицо без бороды">
             <div className={styles.faceCanvas}>
-              <img src="/assets/visuals/ravshann-face-beard.webp" alt="" decoding="async" />
+              <img className={styles.faceBefore} src="/assets/visuals/ravshann-face-beard.webp" alt="" decoding="async" />
               <img className={styles.faceReveal} src="/assets/visuals/ravshann-face-clean.webp" alt="" decoding="async" />
               <span className={styles.faceWipe} aria-hidden="true" />
             </div>
