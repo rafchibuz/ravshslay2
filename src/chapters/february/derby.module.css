@@ -2,7 +2,7 @@
   position: relative;
   height: 340svh;
   scroll-margin-top: 0;
-  background: #071521;
+  background: transparent;
 }
 
 .stage {
@@ -13,7 +13,7 @@
   overflow: hidden;
   isolation: isolate;
   color: #f4f6f5;
-  background: linear-gradient(135deg, #071521, #0b1d2c 56%, #071521);
+  background: transparent;
 }
 
 .stage::before,
@@ -153,7 +153,12 @@
   position: absolute;
   z-index: 3;
   left: 14%;
-  top: 55%;
+  top: 48%;
+  width: min(72%, 690px);
+  padding: 22px 26px 22px 0;
+  border-top: 1px solid rgba(239, 65, 71, .56);
+  border-bottom: 1px solid rgba(239, 65, 71, .28);
+  background: linear-gradient(90deg, rgba(7, 19, 31, .96), rgba(18, 19, 31, .84) 76%, transparent);
   color: #ff6667;
   font: 400 clamp(32px, 4vw, 68px)/.92 var(--font-display);
   letter-spacing: .02em;
@@ -176,20 +181,14 @@
   white-space: nowrap;
   transform-origin: left center;
 }
-.finalDetails { max-width: 470px; }
-.disclaimer { display: block; max-width: 420px; margin-bottom: 15px; color: #c3d0d5; font-size: 11px; line-height: 1.45; }
-.videoSlot { display: flex; align-items: center; gap: 10px; width: fit-content; padding: 12px 17px; border: 1px solid rgba(255, 112, 113, .55); border-radius: 5px; color: #f3d7d7; background: rgba(111, 24, 28, .15); font-size: 10px; font-weight: 900; letter-spacing: .12em; }
-.videoSlot span:first-child { color: #ff696c; font-size: 15px; }
-
 .reduced { height: auto; }
 .reduced .stage { position: relative; height: auto; min-height: 0; overflow: visible; }
 .reduced .stageTop { top: 20px; }
 .reduced .poster,
 .reduced .reality { position: relative; min-height: 100svh; opacity: 1 !important; transform: none !important; }
 .reduced .reality { background: radial-gradient(ellipse at 70% 50%, rgba(148, 28, 38, .15), transparent 65%); }
-.reduced .stamp,
-.reduced .finalDetails { opacity: 1 !important; transform: rotate(-4deg) !important; }
-.reduced .finalDetails { transform: none !important; }
+.reduced .stamp { opacity: 1 !important; transform: rotate(-4deg) !important; }
+.reduced .interruption { display: none; }
 .reduced .struck::after { width: 0; }
 
 @media (max-width: 1050px) {
@@ -222,12 +221,8 @@
   .reality h3 { margin-top: 12px; font-size: clamp(38px, 10vw, 52px); }
   .reality p { max-width: 280px; font-size: 11px; }
   .reality img { left: 21%; right: 4%; bottom: 8%; width: 75%; height: 48svh; }
-  .finalDetails { position: absolute; z-index: 3; left: 7%; right: 7%; bottom: 9%; max-width: 320px; padding: 9px; border-radius: 5px; background: rgba(5, 12, 18, .8); }
-  .disclaimer { margin-bottom: 8px; font-size: 9px; }
-  .videoSlot { padding: 8px 10px; font-size: 8px; }
-  .interruption { left: 7%; top: 47%; font-size: clamp(28px, 8vw, 43px); }
+  .interruption { left: 7%; top: 42%; width: 86%; padding: 16px 0; font-size: clamp(28px, 8vw, 43px); }
   .reduced .poster, .reduced .reality { min-height: 730px; }
-  .reduced .finalDetails { bottom: 7%; }
 }
 
 @media (max-width: 767px) and (max-height: 700px) {
@@ -235,5 +230,4 @@
   .poster img { height: 45svh; bottom: 8%; }
   .reality img { height: 43svh; bottom: 7%; }
   .reality h3 { font-size: 36px; }
-  .finalDetails { bottom: 7%; }
 }

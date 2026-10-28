@@ -36,14 +36,13 @@ export function DerbyStory() {
     };
   }, [reducedMotion]);
 
-  const strike = between(progress, .29, .46);
-  const interruption = between(progress, .29, .35) * (1 - between(progress, .46, .55));
-  const posterOpacity = 1 - between(progress, .43, .62);
-  const realityOpacity = between(progress, .48, .67);
-  const stamp = between(progress, .53, .68);
-  const finish = between(progress, .78, .94);
+  const strike = between(progress, .23, .32);
+  const posterOpacity = 1 - between(progress, .29, .39);
+  const interruption = between(progress, .39, .42) * (1 - between(progress, .49, .56));
+  const realityOpacity = between(progress, .54, .7);
+  const stamp = between(progress, .58, .72);
   const shake = interruption * Math.sin(progress * 110) * 2;
-  const phase = progress < .3 ? 'ОЖИДАНИЕ' : progress < .52 ? 'ПОВОРОТ' : 'РЕАЛЬНОСТЬ';
+  const phase = progress < .33 ? 'ОЖИДАНИЕ' : progress < .58 ? 'ПОВОРОТ' : 'РЕАЛЬНОСТЬ';
 
   const skip = () => {
     const section = sectionRef.current;
@@ -66,7 +65,7 @@ export function DerbyStory() {
         <div className={styles.copy}>
           <span className={styles.eyebrow}>ГРАНДИОЗНЫЕ ПЛАНЫ / 01</span>
           <h3 id="derby-title"><span className={styles.struck} style={{ '--strike': `${strike * 100}%` } as CSSProperties}>ДЕРБИ</span> В<br /><strong>КАЗАХСТАНЕ</strong></h3>
-          <p>Четверо участников. Автомобильное шоу. Грандиозные планы.</p>
+          <p>Две команды. STAYA vs ANAR TEAM. Грандиозные планы.</p>
           <span className={styles.badge}>ОЖИДАНИЕ: БОЛЬШОЕ ДЕРБИ</span>
         </div>
         <img src={derbyStory.posterImage} alt="Четверо участников на фоне автомобилей и символов Казахстана — постановочный арт" loading="lazy" decoding="async" />
@@ -79,11 +78,7 @@ export function DerbyStory() {
           <span className={styles.eyebrow}>НЕОЖИДАННЫЙ ПОВОРОТ / 02</span>
           <div className={styles.stamp} style={reducedMotion ? undefined : { opacity: stamp, transform: `rotate(${-6 + 2 * stamp}deg) scale(${1.12 - .12 * stamp})` }}>15 СУТОК</div>
           <h3>ШОУ ПОШЛО<br />НЕ ПО СЦЕНАРИЮ</h3>
-          <p>RENATKO и ANAR. Вместо запланированного дерби — неожиданное продолжение истории.</p>
-          <div className={styles.finalDetails} style={reducedMotion ? undefined : { opacity: finish, transform: `translateY(${18 * (1 - finish)}px)` }}>
-            <span className={styles.disclaimer}>Юмористическая реконструкция. Изображение за решёткой создано для оформления истории.</span>
-            <div className={styles.videoSlot} aria-label="Видео об этом событии пока не добавлено"><span aria-hidden="true">▶</span><span>ВИДЕО ПОКА НЕ ДОБАВЛЕНО</span></div>
-          </div>
+          <p>RENATKO и ANAR чуть дали шуму.</p>
         </div>
         <img src={derbyStory.realityImage} alt="RENATKO и ANAR за решёткой в художественной юмористической реконструкции" loading="lazy" decoding="async" />
       </div>

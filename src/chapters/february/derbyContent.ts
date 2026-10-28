@@ -5,7 +5,6 @@ export const derbyStory = {
   sourceTitle: 'Дерби в казахстане + 15 суток',
   posterImage: '/assets/february/derby/derby_kazakhstan_four_participants.png',
   realityImage: '/assets/february/derby/derby_15_days_renatko_anar.png',
-  videoUrl: null,
   verified: false,
 } as const;
 

@@ -4,6 +4,7 @@ import { validateScenes } from '../src/lib/contentValidation';
 import { scenes } from '../src/lib/contentValidation';
 import { februaryScenes, validateFebruaryScenes } from '../src/lib/februaryContent';
 import { derbyStory } from '../src/chapters/february/derbyContent';
+import { marchMatch } from '../src/chapters/march/marchContent';
 
 describe('chronicle navigation', () => {
   it('moves through the hero and January points in both directions', () => {
@@ -12,6 +13,8 @@ describe('chronicle navigation', () => {
     expect(nextPoint('2026-01-03', 1)).toBe('2026-01-04');
     expect(nextPoint('2026-01-04', 1)).toBe('february');
     expect(nextPoint('february', 1)).toBe('2026-02-01');
+    expect(nextPoint('2026-02-02', 1)).toBe('march');
+    expect(nextPoint('march', 1)).toBe('2026-03-01');
     expect(nextPoint('2026-01-02', -1)).toBe('2026-01-01');
     expect(nextPoint('hero', -1)).toBe('hero');
   });
@@ -21,6 +24,7 @@ describe('chronicle navigation', () => {
     expect(pointFromHash('#2026-01-04')).toBe('2026-01-04');
     expect(pointFromHash('#2026-02-01')).toBe('2026-02-01');
     expect(pointFromHash('#2026-02-02')).toBe('2026-02-02');
+    expect(pointFromHash('#2026-03-01')).toBe('2026-03-01');
   });
 });
 
@@ -69,10 +73,17 @@ describe('February editorial data', () => {
     expect(() => validateFebruaryScenes([{ ...scene, media: [scene.media[0], scene.media[0], scene.media[2]] }])).toThrow('Duplicate February reels');
   });
 
-  it('keeps the derby episode in February with both supplied visuals and no invented video URL', () => {
+  it('keeps the derby episode in February with both supplied visuals', () => {
     expect(derbyStory.id).toBe('2026-02-02');
     expect(derbyStory.posterImage).toContain('derby_kazakhstan_four_participants.png');
     expect(derbyStory.realityImage).toContain('derby_15_days_renatko_anar.png');
-    expect(derbyStory.videoUrl).toBeNull();
+  });
+});
+
+describe('March editorial data', () => {
+  it('connects the supplied football art and YouTube stream to the first March point', () => {
+    expect(marchMatch.id).toBe('2026-03-01');
+    expect(marchMatch.image).toBe('/assets/march/2drots-lit-energy.png');
+    expect(marchMatch.videoUrl).toBe('https://www.youtube.com/watch?v=E36Qw2QIqnw');
   });
 });
