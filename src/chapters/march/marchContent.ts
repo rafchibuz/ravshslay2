@@ -10,7 +10,16 @@ export const marchMatch = {
   verified: false,
 } as const;
 
+export const marchEnduro = {
+  id: '2026-03-02',
+  sourceTitle: 'Покупка и падение с эндуро',
+  title: 'Первый день на эндуро',
+  image: '/assets/march/enduro-fall.png',
+  videoSrc: '/assets/march/enduro-fall.mp4',
+  verified: false,
+} as const;
+
 const march = sourceRegistry.months.find((month) => month.id === '2026-03');
-if (!march?.events.some((event) => event.id === marchMatch.id && event.sourceTitle === marchMatch.sourceTitle)) {
+if (![marchMatch, marchEnduro].every((scene) => march?.events.some((event) => event.id === scene.id && event.sourceTitle === scene.sourceTitle))) {
   throw new Error('March scene must match the editorial registry');
 }

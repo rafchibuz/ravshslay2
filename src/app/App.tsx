@@ -63,7 +63,7 @@ export function App() {
           <span className="hero-overline"><span className="small-diamond">✦</span> ИСТОРИЯ ОДНОГО ГОДА <span className="overline-rule" /></span>
           <h1 id="hero-title">{site.heroTitle}<span className="hero-title-shadow" aria-hidden="true">RAVSHANN</span></h1>
           <div className="hero-subrow"><span className="hero-index">01—26</span><strong>{site.heroSubtitle}</strong></div>
-          <p className="hero-description">Первый кадр большой истории. Пройди январь, февраль и март вместе с RavshanN — от новогоднего старта до футбольного матча.</p>
+          <p className="hero-description">Первый кадр большой истории. Пройди январь, февраль и март вместе с RavshanN — от новогоднего старта до футбола и первого выезда на эндуро.</p>
           <a className="primary-cta" href="#january"><span>ПРОЙТИ ГОД</span><span className="cta-arrow">↗</span></a>
           <span className="hero-status">ПРОТОТИП / ГЛАВНАЯ + ЯНВАРЬ — МАРТ</span>
         </div>

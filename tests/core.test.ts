@@ -4,7 +4,7 @@ import { validateScenes } from '../src/lib/contentValidation';
 import { scenes } from '../src/lib/contentValidation';
 import { februaryScenes, validateFebruaryScenes } from '../src/lib/februaryContent';
 import { derbyStory } from '../src/chapters/february/derbyContent';
-import { marchMatch } from '../src/chapters/march/marchContent';
+import { marchEnduro, marchMatch } from '../src/chapters/march/marchContent';
 
 describe('chronicle navigation', () => {
   it('moves through the hero and January points in both directions', () => {
@@ -15,6 +15,7 @@ describe('chronicle navigation', () => {
     expect(nextPoint('february', 1)).toBe('2026-02-01');
     expect(nextPoint('2026-02-02', 1)).toBe('march');
     expect(nextPoint('march', 1)).toBe('2026-03-01');
+    expect(nextPoint('2026-03-01', 1)).toBe('2026-03-02');
     expect(nextPoint('2026-01-02', -1)).toBe('2026-01-01');
     expect(nextPoint('hero', -1)).toBe('hero');
   });
@@ -25,6 +26,7 @@ describe('chronicle navigation', () => {
     expect(pointFromHash('#2026-02-01')).toBe('2026-02-01');
     expect(pointFromHash('#2026-02-02')).toBe('2026-02-02');
     expect(pointFromHash('#2026-03-01')).toBe('2026-03-01');
+    expect(pointFromHash('#2026-03-02')).toBe('2026-03-02');
   });
 });
 
@@ -85,5 +87,11 @@ describe('March editorial data', () => {
     expect(marchMatch.id).toBe('2026-03-01');
     expect(marchMatch.image).toBe('/assets/march/2drots-lit-energy.png');
     expect(marchMatch.videoUrl).toBe('https://www.youtube.com/watch?v=E36Qw2QIqnw');
+  });
+
+  it('keeps the supplied enduro clip paired with the second March point', () => {
+    expect(marchEnduro.id).toBe('2026-03-02');
+    expect(marchEnduro.image).toBe('/assets/march/enduro-fall.png');
+    expect(marchEnduro.videoSrc).toBe('/assets/march/enduro-fall.mp4');
   });
 });
