@@ -13,4 +13,16 @@ export const februaryAssets: Asset[] = [
     kind: 'real' as const, rightsStatus: 'provided-by-user' as const, approved: false,
     alt: `Рилс ${number} о встрече с Хамзатом Чимаевым`,
   })),
+  {
+    assetId: 'february-derby-expectation', chapterId: '2026-02', eventId: '2026-02-02',
+    role: 'scroll scene expectation artwork', src: '/assets/february/derby/derby_kazakhstan_four_participants.png',
+    kind: 'supplied-artwork', rightsStatus: 'provided-by-user', approved: false,
+    alt: 'Четверо участников и автомобили на фоне символов Казахстана',
+  },
+  {
+    assetId: 'february-derby-reality', chapterId: '2026-02', eventId: '2026-02-02',
+    role: 'satirical reconstruction artwork', src: '/assets/february/derby/derby_15_days_renatko_anar.png',
+    kind: 'supplied-artwork', rightsStatus: 'provided-by-user', approved: false,
+    alt: 'RENATKO и ANAR за решёткой, художественная реконструкция',
+  },
 ];

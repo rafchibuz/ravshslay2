@@ -1,5 +1,6 @@
 import { februaryScenes } from '../../lib/februaryContent';
 import { ReelGallery } from './ReelGallery';
+import { DerbyStory } from './DerbyStory';
 import styles from './chapter.module.css';
 
 export function February() {
@@ -26,5 +27,6 @@ export function February() {
         <ReelGallery items={meeting.media} />
       </div>
     </article>
+    <DerbyStory />
   </section>;
 }

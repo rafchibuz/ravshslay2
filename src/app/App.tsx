@@ -35,14 +35,14 @@ export function App() {
       if (event.key === 'ArrowRight' || event.key === 'ArrowLeft') {
         event.preventDefault(); goToPoint(nextPoint(active, event.key === 'ArrowRight' ? 1 : -1));
       } else if (event.key === 'PageDown') { event.preventDefault(); goToPoint(active === 'hero' ? 'january' : 'february'); }
-      else if (event.key === 'PageUp') { event.preventDefault(); goToPoint(active === 'february' || active === '2026-02-01' ? 'january' : 'hero'); }
+      else if (event.key === 'PageUp') { event.preventDefault(); goToPoint(active === 'february' || active.startsWith('2026-02-') ? 'january' : 'hero'); }
       else if (event.key === 'Escape') setStreamMode(false);
     };
     addEventListener('keydown', keyHandler);
     return () => removeEventListener('keydown', keyHandler);
   }, [streamMode, active]);
 
-  const activeMonth = active === 'hero' ? 'hero' : active === 'february' || active === '2026-02-01' ? 'february' : 'january';
+  const activeMonth = active === 'hero' ? 'hero' : active === 'february' || active.startsWith('2026-02-') ? 'february' : 'january';
 
   return <div className={`app ${streamMode ? 'stream-mode' : ''}`}>
     <a href="#january" className="skip-link">Перейти к январю</a>
