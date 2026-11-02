@@ -19,7 +19,16 @@ export const marchEnduro = {
   verified: false,
 } as const;
 
+export const marchAlfReality = {
+  id: '2026-03-03',
+  sourceTitle: 'Альф реалити',
+  title: 'ALF REALITY',
+  playlistUrl: 'https://www.youtube.com/watch?v=YC0GOkg5iT8&list=PL31jFbT42JN0SiXwCorubG__EDK8aPrOg',
+  image: '/assets/march/alf-reality.png',
+  verified: false,
+} as const;
+
 const march = sourceRegistry.months.find((month) => month.id === '2026-03');
-if (![marchMatch, marchEnduro].every((scene) => march?.events.some((event) => event.id === scene.id && event.sourceTitle === scene.sourceTitle))) {
+if (![marchMatch, marchEnduro, marchAlfReality].every((scene) => march?.events.some((event) => event.id === scene.id && event.sourceTitle === scene.sourceTitle))) {
   throw new Error('March scene must match the editorial registry');
 }

@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { marchEnduro, marchMatch } from './marchContent';
+import { marchAlfReality, marchEnduro, marchMatch } from './marchContent';
 import styles from './chapter.module.css';
 
 function BuddingBranch({ side }: { side: 'left' | 'right' | 'late' }) {
@@ -105,6 +105,28 @@ export function March() {
         <EnduroVideo />
       </div>
       <div className={styles.enduroTrail} aria-hidden="true"><span>КУПИЛ</span><i /><span>ПОЕХАЛ</span><i /><span>ПОЗНАКОМИЛСЯ С ГРЯЗЬЮ</span></div>
+    </article>
+
+    <article id={marchAlfReality.id} className={styles.reality} aria-labelledby="reality-title">
+      <div className={styles.eventTop}><span>03 / ALF REALITY</span><span>МАРТ 2026</span></div>
+      <div className={styles.realityLayout}>
+        <div className={styles.realityStory}>
+          <span className={styles.realityKicker}>БОЙЦОВСКОЕ РЕАЛИТИ / СМОТРИМ ВМЕСТЕ</span>
+          <h3 id="reality-title">ALF <span>REALITY</span></h3>
+          <p>Март добавляет громкости: бойцы, характеры и испытания в одном шоу. Смотрим выпуски ALF REALITY подряд.</p>
+          <a className={styles.realityLink} href={marchAlfReality.playlistUrl} target="_blank" rel="noopener noreferrer">
+            <span className={styles.realityPlay} aria-hidden="true">▶</span>
+            <span><strong>СМОТРЕТЬ ПЛЕЙЛИСТ</strong><small>Открыть на YouTube ↗</small></span>
+          </a>
+          <div className={styles.realityTags}><span>БОЙЦОВСКОЕ ШОУ</span><i /><span>ALF REALITY</span></div>
+        </div>
+        <div className={styles.realityArt}>
+          <span className={styles.realityRing} aria-hidden="true" />
+          <span className={styles.realityGlow} aria-hidden="true" />
+          <img src={marchAlfReality.image} alt="Два бойца ALF REALITY в стойке перед поединком" loading="lazy" decoding="async" />
+          <span className={styles.realityCaption}>ХАРАКТЕР РЕШАЕТ / ALF REALITY</span>
+        </div>
+      </div>
     </article>
   </section>;
 }

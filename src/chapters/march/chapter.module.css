@@ -118,6 +118,32 @@
 .enduroTrail { display: flex; align-items: center; gap: 17px; margin-top: 28px; color: #d9b992; font-size: 9px; font-weight: 900; letter-spacing: .2em; }
 .enduroTrail i { flex: 1; height: 1px; background: linear-gradient(90deg, rgba(220, 184, 134, .5), rgba(180, 218, 171, .35)); }
 
+.reality { position: relative; padding: 58px 10% 46px 14%; scroll-margin-top: 20px; }
+.reality::before { content: ''; position: absolute; z-index: -1; inset: 5% -2% 0; pointer-events: none; background: radial-gradient(ellipse 42% 55% at 75% 54%, rgba(48, 103, 143, .18), transparent 82%), radial-gradient(ellipse 40% 48% at 22% 68%, rgba(178, 125, 76, .1), transparent 83%); }
+.reality .eventTop { color: #c9d9d4; }
+.realityLayout { display: grid; grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr); align-items: center; gap: clamp(24px, 5vw, 78px); min-height: 490px; }
+.realityStory { position: relative; z-index: 1; max-width: 550px; padding: 34px 0; }
+.realityKicker { color: #d2b37f; font-size: 10px; font-weight: 900; letter-spacing: .2em; }
+.realityStory h3 { margin: 20px 0 18px; font: 400 clamp(66px, 8.7vw, 132px)/.78 var(--font-display); letter-spacing: -.055em; }
+.realityStory h3 span { display: block; margin-top: .12em; color: #a9c7d6; }
+.realityStory p { max-width: 450px; margin: 0; color: #cad7d6; font-size: 16px; line-height: 1.65; }
+.realityLink { display: inline-flex; align-items: center; gap: 16px; margin-top: 32px; padding: 14px 20px 14px 14px; border: 1px solid rgba(214, 183, 133, .55); color: #fff2dc; background: linear-gradient(115deg, rgba(114, 60, 45, .52), rgba(21, 45, 56, .76)); box-shadow: 0 14px 40px rgba(1, 8, 13, .28); text-decoration: none; transition: border-color .2s, transform .2s, background .2s; }
+.realityLink:hover { transform: translateY(-2px); border-color: #f0c77e; background: linear-gradient(115deg, rgba(135, 67, 46, .65), rgba(24, 56, 69, .86)); }
+.realityPlay { display: grid; place-items: center; width: 42px; height: 42px; padding-left: 3px; border: 1px solid rgba(241, 210, 160, .75); border-radius: 50%; color: #f3cf8f; font-size: 14px; }
+.realityLink strong, .realityLink small { display: block; }
+.realityLink strong { font-size: 10px; letter-spacing: .17em; }
+.realityLink small { margin-top: 5px; color: #bdd0d0; font-size: 11px; }
+.realityTags { display: flex; align-items: center; gap: 14px; margin-top: 38px; color: #a9cbb9; font-size: 9px; font-weight: 900; letter-spacing: .2em; }
+.realityTags i { width: 56px; height: 1px; background: linear-gradient(90deg, rgba(210, 179, 127, .7), transparent); }
+.realityArt { position: relative; min-width: 0; height: min(62vw, 600px); min-height: 400px; display: grid; align-items: end; isolation: isolate; }
+.realityRing { position: absolute; z-index: -1; left: 5%; right: 4%; top: 10%; bottom: 8%; border: 1px solid rgba(200, 213, 211, .17); border-radius: 50%; transform: rotate(-12deg); box-shadow: 0 0 0 20px rgba(167, 195, 199, .018), 0 0 0 58px rgba(167, 195, 199, .012); }
+.realityRing::before, .realityRing::after { content: ''; position: absolute; left: -7%; right: -7%; height: 1px; background: linear-gradient(90deg, transparent, rgba(203, 169, 117, .45), rgba(160, 199, 208, .32), transparent); transform: rotate(19deg); }
+.realityRing::before { top: 38%; }
+.realityRing::after { top: 63%; }
+.realityGlow { position: absolute; z-index: -1; inset: 8% 4% 4%; border-radius: 50%; background: radial-gradient(ellipse at 54% 58%, rgba(198, 146, 101, .2), transparent 66%); filter: blur(13px); }
+.realityArt img { position: absolute; inset: 0; display: block; width: 112%; max-width: none; height: 100%; margin-left: -6%; object-fit: contain; object-position: center bottom; filter: drop-shadow(0 28px 45px rgba(0, 5, 10, .48)); -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 5%, #000 95%, transparent 100%), linear-gradient(180deg, #000 0%, #000 92%, transparent 100%); mask-image: linear-gradient(90deg, transparent 0%, #000 5%, #000 95%, transparent 100%), linear-gradient(180deg, #000 0%, #000 92%, transparent 100%); -webkit-mask-composite: source-in; mask-composite: intersect; }
+.realityCaption { position: absolute; right: 0; bottom: 2%; color: #d1bd9b; font-size: 9px; font-weight: 900; letter-spacing: .18em; }
+
 @media (max-width: 1050px) {
   .chapterHeader { padding-left: 11%; }
   .match { padding-left: 11%; }
@@ -125,6 +151,9 @@
   .matchArt { min-height: 350px; }
   .enduro { padding-left: 11%; }
   .enduroArt { height: 300px; }
+  .reality { padding-left: 11%; }
+  .realityLayout { min-height: 420px; gap: 24px; }
+  .realityArt { min-height: 340px; }
 }
 @media (max-width: 760px) {
   .chapter { padding-bottom: 64px; }
@@ -160,4 +189,15 @@
   .enduroPlayIcon { width: 61px; height: 61px; font-size: 20px; }
   .enduroPlay strong { font-size: 8px; }
   .enduroTrail { margin-top: 38px; gap: 9px; font-size: 7px; letter-spacing: .08em; }
+  .reality { padding: 54px 7% 24px; }
+  .realityLayout { grid-template-columns: 1fr; gap: 2px; }
+  .realityStory { padding: 28px 0 12px; }
+  .realityKicker { font-size: 8px; }
+  .realityStory h3 { margin: 17px 0; font-size: clamp(66px, 17vw, 112px); }
+  .realityStory p { font-size: 13px; }
+  .realityLink { margin-top: 24px; }
+  .realityTags { margin-top: 24px; font-size: 7px; }
+  .realityArt { width: 100%; height: min(98vw, 470px); min-height: 310px; margin: -6px auto 0; }
+  .realityArt img { width: 106%; margin-left: -3%; }
+  .realityCaption { font-size: 7px; }
 }
