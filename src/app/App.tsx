@@ -36,8 +36,8 @@ export function App() {
       if (target.closest('input, textarea, select, iframe, [contenteditable="true"]') || event.altKey || event.ctrlKey || event.metaKey) return;
       if (event.key === 'ArrowRight' || event.key === 'ArrowLeft') {
         event.preventDefault(); goToPoint(nextPoint(active, event.key === 'ArrowRight' ? 1 : -1));
-      } else if (event.key === 'PageDown') { event.preventDefault(); goToPoint(active === 'hero' ? 'january' : active === 'january' || active.startsWith('2026-01-') ? 'february' : active === 'february' || active.startsWith('2026-02-') ? 'march' : active === 'april' ? '2026-04-01' : active === '2026-04-01' ? '2026-04-02' : 'april'); }
-      else if (event.key === 'PageUp') { event.preventDefault(); goToPoint(active === '2026-04-02' ? '2026-04-01' : active === '2026-04-01' ? 'april' : active === 'april' || active.startsWith('2026-04-') ? 'march' : active === 'march' || active.startsWith('2026-03-') ? 'february' : active === 'february' || active.startsWith('2026-02-') ? 'january' : 'hero'); }
+      } else if (event.key === 'PageDown') { event.preventDefault(); goToPoint(active === 'hero' ? 'january' : active === 'january' || active.startsWith('2026-01-') ? 'february' : active === 'february' || active.startsWith('2026-02-') ? 'march' : active === 'april' ? '2026-04-01' : active === '2026-04-01' ? '2026-04-02' : active === '2026-04-02' ? '2026-04-03' : '2026-04-03'); }
+      else if (event.key === 'PageUp') { event.preventDefault(); goToPoint(active === '2026-04-03' ? '2026-04-02' : active === '2026-04-02' ? '2026-04-01' : active === '2026-04-01' ? 'april' : active === 'april' || active.startsWith('2026-04-') ? 'march' : active === 'march' || active.startsWith('2026-03-') ? 'february' : active === 'february' || active.startsWith('2026-02-') ? 'january' : 'hero'); }
       else if (event.key === 'Escape') setStreamMode(false);
     };
     addEventListener('keydown', keyHandler);

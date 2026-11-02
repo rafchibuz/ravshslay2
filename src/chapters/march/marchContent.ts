@@ -24,6 +24,8 @@ export const marchAlfReality = {
   sourceTitle: 'Альф реалити',
   title: 'ALF REALITY',
   playlistUrl: 'https://www.youtube.com/watch?v=YC0GOkg5iT8&list=PL31jFbT42JN0SiXwCorubG__EDK8aPrOg',
+  videoId: 'YC0GOkg5iT8',
+  playlistId: 'PL31jFbT42JN0SiXwCorubG__EDK8aPrOg',
   image: '/assets/march/alf-reality.png',
   verified: false,
 } as const;

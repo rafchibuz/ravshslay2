@@ -5,6 +5,7 @@ export const aprilVesta = {
   sourceTitle: 'Не счастливый обладатель веста 2026',
   title: 'LADA VESTA SPORT за 2,7 млн ₽',
   videoUrl: 'https://youtu.be/oJowAubSukY?si=SzPD87RKw3tpeXKw',
+  videoId: 'oJowAubSukY',
   images: ['/assets/april/vesta-covered.png', '/assets/april/vesta-reveal.png', '/assets/april/vesta-sport.png'],
   verified: false,
 } as const;
@@ -16,9 +17,15 @@ export const aprilFundraiser = {
   image: '/assets/april/dagestan-fundraiser.png',
   amount: '1,5 млн ₽',
   sources: {
-    flood: 'https://05.mchs.gov.ru/deyatelnost/press-centr/novosti/5731854',
     fundraiser: 'https://www.sports.ru/mediafootball/1117132503-strimer-ravshan-sobral-poltora-milliona-rublej-postradavshim-ot-navodn.html',
   },
+} as const;
+
+export const aprilPoker = {
+  id: '2026-04-03',
+  sourceTitle: 'Бетбум покер',
+  title: 'BetBoom Media Poker',
+  image: '/assets/april/betboom-poker.png',
 } as const;
 
 const april = sourceRegistry.months.find((month) => month.id === '2026-04');
@@ -27,4 +34,7 @@ if (!april?.events.some((event) => event.id === aprilVesta.id && event.sourceTit
 }
 if (!april.events.some((event) => event.id === aprilFundraiser.id && event.sourceTitle === aprilFundraiser.sourceTitle)) {
   throw new Error('April fundraiser scene must match the editorial registry');
+}
+if (!april.events.some((event) => event.id === aprilPoker.id && event.sourceTitle === aprilPoker.sourceTitle)) {
+  throw new Error('April poker scene must match the editorial registry');
 }

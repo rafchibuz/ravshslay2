@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
-import { aprilFundraiser, aprilVesta } from './aprilContent';
+import { YouTubePlayer } from '../../components/YouTubePlayer';
+import { aprilFundraiser, aprilPoker, aprilVesta } from './aprilContent';
 import styles from './chapter.module.css';
 
 function VestaReveal() {
@@ -45,7 +46,6 @@ function VestaReveal() {
           </div>
           <p className={styles.revealText}>2,7 миллиона рублей — ожидания были космические. Чехол обещал суперкар, но апрель приготовил сюжетный поворот.</p>
           <div className={styles.priceTag}><span>ЦЕНА ВОПРОСА</span><strong>2,7 <small>МЛН ₽</small></strong></div>
-          <a className={styles.youtubeLink} href={aprilVesta.videoUrl} target="_blank" rel="noopener noreferrer"><span aria-hidden="true">▶</span><span><b>СМОТРЕТЬ ИСТОРИЮ</b><small>Открыть ролик на YouTube ↗</small></span></a>
           <span className={styles.scrollCue}><i /> ЛИСТАЙ, ЧТОБЫ СНЯТЬ ЧЕХОЛ</span>
         </div>
         <div className={styles.revealVisual} aria-label="При прокрутке суперкар под чехлом превращается в Lada Vesta Sport">
@@ -79,8 +79,25 @@ function FundraiserStory() {
     </div>
     <div className={styles.fundraiserSources} aria-label="Источники информации">
       <span>ИСТОЧНИКИ</span>
-      <a href={aprilFundraiser.sources.flood} target="_blank" rel="noopener noreferrer">МЧС Дагестана: паводковая обстановка ↗</a>
       <a href={aprilFundraiser.sources.fundraiser} target="_blank" rel="noopener noreferrer">Сообщение о сборе ↗</a>
+    </div>
+  </article>;
+}
+
+function PokerStory() {
+  return <article id={aprilPoker.id} className={styles.poker} aria-labelledby="poker-title">
+    <div className={styles.fundraiserTop}><span>03 / МЕДИАПОКЕР</span><span>АПРЕЛЬ 2026</span></div>
+    <div className={styles.pokerLayout}>
+      <div className={styles.pokerCopy}>
+        <span className={styles.pokerKicker}>BETBOOM / МЕДИАПОКЕР</span>
+        <h3 id="poker-title">СТАВКИ<br /><span>СДЕЛАНЫ.</span></h3>
+        <p>Апрель продолжился за покерным столом: Равшан принял участие в BetBoom Media Poker. Новый формат, знакомые лица и игра, в которой важно сохранять спокойствие.</p>
+        <div className={styles.pokerChips} aria-hidden="true"><span>BETBOOM</span><i /><span>MEDIA POKER</span></div>
+      </div>
+      <div className={styles.pokerArt}>
+        <span className={styles.pokerGlow} aria-hidden="true" />
+        <img src={aprilPoker.image} alt="Равшан и участница BetBoom Media Poker за покерным столом" loading="lazy" decoding="async" />
+      </div>
     </div>
   </article>;
 }
@@ -95,7 +112,8 @@ export function April() {
       <p>Весна набирает скорость, город выходит из зимы — и на сцену выезжает «суперкар» с апрельским ценником.</p>
     </header>
     <VestaReveal />
-    <div className={styles.aprilOutro} aria-hidden="true"><span>ЧЕХОЛ СНЯТ</span><i /><span>АПРЕЛЬ НАЧАЛСЯ</span></div>
+    <div className={styles.vestaVideo}><YouTubePlayer videoId={aprilVesta.videoId} title="Покупка Lada Vesta Sport" url={aprilVesta.videoUrl} posterFallback={aprilVesta.images[2]} label="СМОТРЕТЬ ИСТОРИЮ" /></div>
     <FundraiserStory />
+    <PokerStory />
   </section>;
 }
