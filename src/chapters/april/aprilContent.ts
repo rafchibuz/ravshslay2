@@ -9,7 +9,22 @@ export const aprilVesta = {
   verified: false,
 } as const;
 
+export const aprilFundraiser = {
+  id: '2026-04-02',
+  sourceTitle: 'Благострим в поддержку Дагестана',
+  title: 'Больше, чем стрим',
+  image: '/assets/april/dagestan-fundraiser.png',
+  amount: '1,5 млн ₽',
+  sources: {
+    flood: 'https://05.mchs.gov.ru/deyatelnost/press-centr/novosti/5731854',
+    fundraiser: 'https://www.sports.ru/mediafootball/1117132503-strimer-ravshan-sobral-poltora-milliona-rublej-postradavshim-ot-navodn.html',
+  },
+} as const;
+
 const april = sourceRegistry.months.find((month) => month.id === '2026-04');
 if (!april?.events.some((event) => event.id === aprilVesta.id && event.sourceTitle === aprilVesta.sourceTitle)) {
   throw new Error('April scene must match the editorial registry');
+}
+if (!april.events.some((event) => event.id === aprilFundraiser.id && event.sourceTitle === aprilFundraiser.sourceTitle)) {
+  throw new Error('April fundraiser scene must match the editorial registry');
 }

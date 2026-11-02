@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import { aprilVesta } from './aprilContent';
+import { aprilFundraiser, aprilVesta } from './aprilContent';
 import styles from './chapter.module.css';
 
 function VestaReveal() {
@@ -62,6 +62,29 @@ function VestaReveal() {
   </article>;
 }
 
+function FundraiserStory() {
+  return <article id={aprilFundraiser.id} className={styles.fundraiser} aria-labelledby="fundraiser-title">
+    <div className={styles.fundraiserTop}><span>02 / ДОБРОЕ ДЕЛО</span><span>АПРЕЛЬ 2026</span></div>
+    <div className={styles.fundraiserHeading}>
+      <span className={styles.fundraiserKicker}>БЛАГОТВОРИТЕЛЬНЫЙ ЭФИР / ПОМОЩЬ ПОСТРАДАВШИМ</span>
+      <h3 id="fundraiser-title">БОЛЬШЕ,<br /><span>ЧЕМ СТРИМ</span></h3>
+    </div>
+    <figure className={styles.fundraiserArtwork}>
+      <img src={aprilFundraiser.image} alt="Равшан в наушниках на фоне последствий наводнения в Дагестане; на изображении указана сумма сбора — 1 500 000 рублей" loading="lazy" decoding="async" />
+      <figcaption><span>ДАГЕСТАН / АПРЕЛЬ 2026</span><span>ЭФИР, КОТОРЫЙ ОБЪЕДИНИЛ</span></figcaption>
+    </figure>
+    <div className={styles.fundraiserBottom}>
+      <p>Сильные дожди в конце марта и начале апреля вызвали паводки: вода затапливала дома и дороги, а в ряде районов нарушила работу инфраструктуры. Равшан провёл благотворительный стрим, чтобы поддержать пострадавших. Вместе со зрителями за один эфир собрали <strong>1,5 млн рублей</strong>.</p>
+      <div className={styles.fundraiserTotal}><span>СОБРАНО ВМЕСТЕ</span><strong>{aprilFundraiser.amount}</strong><small>НА ПОМОЩЬ ЖИТЕЛЯМ ДАГЕСТАНА</small></div>
+    </div>
+    <div className={styles.fundraiserSources} aria-label="Источники информации">
+      <span>ИСТОЧНИКИ</span>
+      <a href={aprilFundraiser.sources.flood} target="_blank" rel="noopener noreferrer">МЧС Дагестана: паводковая обстановка ↗</a>
+      <a href={aprilFundraiser.sources.fundraiser} target="_blank" rel="noopener noreferrer">Сообщение о сборе ↗</a>
+    </div>
+  </article>;
+}
+
 export function April() {
   return <section id="april" className={styles.chapter} aria-labelledby="april-title">
     <div className={styles.cityGlow} aria-hidden="true" />
@@ -73,5 +96,6 @@ export function April() {
     </header>
     <VestaReveal />
     <div className={styles.aprilOutro} aria-hidden="true"><span>ЧЕХОЛ СНЯТ</span><i /><span>АПРЕЛЬ НАЧАЛСЯ</span></div>
+    <FundraiserStory />
   </section>;
 }
