@@ -10,7 +10,20 @@ export const juneNiva = {
   ],
 } as const;
 
+export const juneClassico = {
+  id: '2026-06-02',
+  sourceTitle: 'Медиа футбол блогеры vs стримеры',
+  title: 'BetBoom Медиа Классико',
+  portrait: '/assets/june/ravshan-mediaclassico-cutout.png',
+  car: '/assets/june/bmw-mediaclassico.png',
+  videoId: 'Dr2-b4tL_8Q',
+  videoUrl: 'https://www.youtube.com/live/Dr2-b4tL_8Q?si=fQ3V2L1XrQyJ4NW-',
+} as const;
+
 const june = sourceRegistry.months.find((month) => month.id === '2026-06');
 if (!june?.events.some((event) => event.id === juneNiva.id && event.sourceTitle === juneNiva.sourceTitle)) {
   throw new Error('June Niva scene must match the editorial registry');
+}
+if (!june.events.some((event) => event.id === juneClassico.id && event.sourceTitle === juneClassico.sourceTitle)) {
+  throw new Error('June Classico scene must match the editorial registry');
 }

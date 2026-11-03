@@ -1,5 +1,5 @@
 import { YouTubePlayer } from '../../components/YouTubePlayer';
-import { juneNiva } from './juneContent';
+import { juneClassico, juneNiva } from './juneContent';
 import styles from './chapter.module.css';
 
 function SummerBranch({ right = false }: { right?: boolean }) {
@@ -44,6 +44,25 @@ export function June() {
           <YouTubePlayer videoId={video.id} title={video.title} url={video.url} posterFallback={juneNiva.image} label={video.label} />
         </div>)}
       </div>
+    </article>
+    <article id={juneClassico.id} className={styles.classico} aria-labelledby="classico-title">
+      <div className={styles.eventIndex}><span>02 / МЕДИАФУТБОЛ</span><span>ИЮНЬ 2026</span></div>
+      <div className={styles.classicoHeader}>
+        <span className={styles.classicoKicker}>СТРИМЕРЫ × БЛОГЕРЫ / ВЫХОД НА ПОЛЕ</span>
+        <h3 id="classico-title">BETBOOM <span>МЕДИА</span><br />КЛАССИКО<span className={styles.titleStar}>✳</span></h3>
+        <p>Равшан — среди участников большого медиафутбольного матча. А выход на поле устроили с особым размахом: футболиста подвезли на BMW, как пассажира такси.</p>
+      </div>
+      <div className={styles.classicoStage}>
+        <span className={styles.pitchArc} aria-hidden="true" />
+        <span className={styles.pitchMark} aria-hidden="true">НА ПОЛЕ / № 30</span>
+        <div className={styles.classicoVideo}>
+          <YouTubePlayer videoId={juneClassico.videoId} title={juneClassico.title} url={juneClassico.videoUrl} posterFallback={juneClassico.car} label="СМОТРЕТЬ МАТЧ" />
+        </div>
+        <img className={styles.classicoCar} src={juneClassico.car} alt="Чёрный BMW, стилизующий выход футболиста на поле" loading="lazy" decoding="async" />
+        <img className={styles.classicoPortrait} src={juneClassico.portrait} alt="Равшан в фиолетовой футбольной форме с номером 30" loading="lazy" decoding="async" />
+        <div className={styles.taxiNote}><span className={styles.taxiIcon}>↗</span><span>ВЫХОД НА ПОЛЕ<br /><strong>С ДОСТАВКОЙ</strong></span></div>
+      </div>
+      <div className={styles.classicoFoot}><span>BMW → ГАЗОН</span><i /><span>СМОТРЕТЬ ЗАПИСЬ МАТЧА ↑</span></div>
     </article>
     <div className={styles.monthEnd}><span>06 / 12 — ИЮНЬ</span><i /><span>ЛЕТО ТОЛЬКО НАЧАЛОСЬ</span></div>
   </section>;
