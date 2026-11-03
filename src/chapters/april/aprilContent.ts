@@ -28,6 +28,15 @@ export const aprilPoker = {
   image: '/assets/april/betboom-poker.png',
 } as const;
 
+export const aprilCs2 = {
+  id: '2026-04-04',
+  sourceTitle: 'Турнир по кс от лит энержи',
+  title: 'LIT ENERGY × МЕДИЙКА CUP',
+  image: '/assets/april/lit-energy-mediika-cup.png',
+  videoId: 'RmDiME2RJ5w',
+  videoUrl: 'https://youtu.be/RmDiME2RJ5w?si=ziyYYPEk4SLz13yk',
+} as const;
+
 const april = sourceRegistry.months.find((month) => month.id === '2026-04');
 if (!april?.events.some((event) => event.id === aprilVesta.id && event.sourceTitle === aprilVesta.sourceTitle)) {
   throw new Error('April scene must match the editorial registry');
@@ -37,4 +46,7 @@ if (!april.events.some((event) => event.id === aprilFundraiser.id && event.sourc
 }
 if (!april.events.some((event) => event.id === aprilPoker.id && event.sourceTitle === aprilPoker.sourceTitle)) {
   throw new Error('April poker scene must match the editorial registry');
+}
+if (!april.events.some((event) => event.id === aprilCs2.id && event.sourceTitle === aprilCs2.sourceTitle)) {
+  throw new Error('April CS2 scene must match the editorial registry');
 }

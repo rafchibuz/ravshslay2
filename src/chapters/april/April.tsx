@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { YouTubePlayer } from '../../components/YouTubePlayer';
-import { aprilFundraiser, aprilPoker, aprilVesta } from './aprilContent';
+import { aprilCs2, aprilFundraiser, aprilPoker, aprilVesta } from './aprilContent';
 import styles from './chapter.module.css';
 
 function VestaReveal() {
@@ -102,6 +102,21 @@ function PokerStory() {
   </article>;
 }
 
+function Cs2Story() {
+  return <article id={aprilCs2.id} className={styles.cs2} aria-labelledby="cs2-title">
+    <div className={styles.fundraiserTop}><span>04 / ТУРНИР ПО CS2</span><span>АПРЕЛЬ 2026</span></div>
+    <div className={styles.cs2Heading}>
+      <span className={styles.cs2Kicker}>LIT ENERGY × МЕДИЙКА CUP</span>
+      <h3 id="cs2-title">ИГРА НАЧАЛАСЬ<span>.</span></h3>
+      <p>Апрель — время «Медийка Cup». LIT ENERGY выходит на турнир по CS2: смотри выпуск и держи команду в поле зрения.</p>
+    </div>
+    <div className={styles.cs2Layout}>
+      <div className={styles.cs2Video}><YouTubePlayer videoId={aprilCs2.videoId} title={aprilCs2.title} url={aprilCs2.videoUrl} posterFallback={aprilCs2.image} label="СМОТРЕТЬ ТУРНИР" /></div>
+      <div className={styles.cs2Art}><span className={styles.cs2Halo} aria-hidden="true" /><img src={aprilCs2.image} alt="Команда LIT ENERGY и участники Медийка Cup на афише турнира по CS2" loading="lazy" decoding="async" /></div>
+    </div>
+  </article>;
+}
+
 export function April() {
   return <section id="april" className={styles.chapter} aria-labelledby="april-title">
     <div className={styles.cityGlow} aria-hidden="true" />
@@ -115,5 +130,6 @@ export function April() {
     <div className={styles.vestaVideo}><YouTubePlayer videoId={aprilVesta.videoId} title="Покупка Lada Vesta Sport" url={aprilVesta.videoUrl} posterFallback={aprilVesta.images[2]} label="СМОТРЕТЬ ИСТОРИЮ" /></div>
     <FundraiserStory />
     <PokerStory />
+    <Cs2Story />
   </section>;
 }
