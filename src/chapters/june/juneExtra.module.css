@@ -1,0 +1,370 @@
+.index {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1210px;
+  margin: 0 auto;
+  color: #dfe6ba;
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: .25em;
+}
+
+.kicker {
+  color: #ffda8d;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: .23em;
+}
+
+.playerLabel {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 14px;
+  color: #f4dfae;
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: .2em;
+}
+
+.vaz, .matiz, .potato {
+  position: relative;
+  isolation: isolate;
+  padding: 95px 10% 110px 14%;
+  scroll-margin-top: 0;
+}
+
+.vaz::before, .matiz::before, .potato::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  pointer-events: none;
+}
+
+.vaz::before {
+  background: radial-gradient(ellipse 53% 40% at 68% 52%, rgba(147, 196, 190, .16), transparent 79%),
+    radial-gradient(ellipse 35% 29% at 19% 84%, rgba(255, 215, 137, .1), transparent 77%);
+}
+
+.vazStage {
+  position: relative;
+  isolation: isolate;
+  max-width: 1210px;
+  height: 780px;
+  margin: 28px auto 0;
+}
+
+.vazOutline {
+  position: absolute;
+  z-index: -1;
+  top: 40px;
+  right: -2%;
+  color: rgba(235, 246, 220, .045);
+  font: 400 clamp(220px, 27vw, 390px)/1 var(--font-display);
+  letter-spacing: -.07em;
+  white-space: nowrap;
+}
+
+.vazCopy {
+  position: absolute;
+  z-index: 4;
+  top: 16px;
+  left: 0;
+  width: 60%;
+}
+
+.vazCopy h3 {
+  margin: 18px 0 18px;
+  color: #fff9ec;
+  font: 400 clamp(80px, 9vw, 130px)/.78 var(--font-display);
+  letter-spacing: -.045em;
+  text-shadow: 0 13px 37px rgba(6, 27, 26, .4);
+}
+
+.vazCopy h3 em {
+  color: #c3edf0;
+  font-style: normal;
+}
+
+.vazCopy p {
+  max-width: 240px;
+  margin: 0;
+  color: #e5eee5;
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+.vazRule {
+  position: absolute;
+  z-index: -1;
+  top: 30%;
+  right: 11%;
+  width: 44%;
+  aspect-ratio: 1;
+  border: 1px solid rgba(194, 239, 237, .18);
+  border-radius: 50%;
+  box-shadow: 0 0 0 65px rgba(218, 244, 238, .018), 0 0 0 132px rgba(218, 244, 238, .009);
+}
+
+.vazArt {
+  position: absolute;
+  z-index: 2;
+  top: 155px;
+  right: -6%;
+  width: 83%;
+  height: auto;
+  filter: drop-shadow(0 32px 32px rgba(5, 25, 26, .45));
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 5%, #000 97%, transparent), linear-gradient(180deg, #000 0%, #000 95%, transparent);
+  -webkit-mask-composite: source-in;
+  mask-image: linear-gradient(90deg, transparent, #000 5%, #000 97%, transparent), linear-gradient(180deg, #000 0%, #000 95%, transparent);
+  mask-composite: intersect;
+}
+
+.vazPlayer {
+  position: absolute;
+  z-index: 5;
+  bottom: 6px;
+  left: 0;
+  width: 49%;
+  max-width: 560px;
+  padding: 17px;
+  background: linear-gradient(145deg, rgba(18, 48, 48, .97), rgba(18, 54, 49, .94));
+  border: 1px solid rgba(194, 238, 233, .38);
+  box-shadow: 0 28px 62px rgba(5, 25, 26, .34);
+}
+
+.vazPlayer::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -1px;
+  width: 46%;
+  height: 2px;
+  background: linear-gradient(90deg, #c0f0ee, #f5d590, transparent);
+}
+
+.vazDetails {
+  position: absolute;
+  z-index: 4;
+  right: 3%;
+  bottom: 7px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: #d8eee7;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: .23em;
+}
+
+.vazDetails i {
+  width: 60px;
+  height: 1px;
+  background: rgba(220, 245, 233, .6);
+}
+
+.matiz::before {
+  background: radial-gradient(ellipse 45% 38% at 22% 56%, rgba(226, 210, 162, .19), transparent 79%),
+    radial-gradient(ellipse 41% 31% at 78% 72%, rgba(166, 200, 149, .13), transparent 83%);
+}
+
+.matizHeader, .potatoHeader {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 45px;
+  max-width: 1210px;
+  margin: 37px auto 0;
+}
+
+.matizHeader h3, .potatoHeader h3 {
+  margin: 17px 0 0;
+  color: #fff8e8;
+  font: 400 clamp(85px, 9.8vw, 145px)/.77 var(--font-display);
+  letter-spacing: -.045em;
+  text-shadow: 0 13px 39px rgba(9, 31, 24, .34);
+}
+
+.matizHeader h3 em {
+  color: #f4dba8;
+  font-style: normal;
+}
+
+.matizHeader p, .potatoHeader p {
+  max-width: 335px;
+  margin: 0 0 7px;
+  color: #e8eddd;
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+.matizStage {
+  position: relative;
+  isolation: isolate;
+  max-width: 1210px;
+  height: 665px;
+  margin: 30px auto 0;
+}
+
+.matizHalo {
+  position: absolute;
+  z-index: -2;
+  top: 5%;
+  left: 2%;
+  width: 58%;
+  aspect-ratio: 1;
+  border: 1px solid rgba(241, 218, 172, .18);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(236, 210, 153, .12), transparent 68%);
+}
+
+.matizRoute {
+  position: absolute;
+  z-index: -1;
+  right: 4%;
+  bottom: 10%;
+  width: 73%;
+  height: 34%;
+  border-bottom: 1px dashed rgba(238, 217, 167, .3);
+  border-radius: 0 0 50% 50%;
+  transform: rotate(-9deg);
+}
+
+.matizArt {
+  position: absolute;
+  z-index: 3;
+  bottom: 0;
+  left: -5%;
+  width: 66%;
+  height: auto;
+  max-height: 610px;
+  object-fit: contain;
+  object-position: left bottom;
+  filter: drop-shadow(0 31px 30px rgba(10, 34, 29, .38));
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 4%, #000 98%), linear-gradient(180deg, #000 0%, #000 90%, transparent);
+  -webkit-mask-composite: source-in;
+  mask-image: linear-gradient(90deg, transparent, #000 4%, #000 98%), linear-gradient(180deg, #000 0%, #000 90%, transparent);
+  mask-composite: intersect;
+}
+
+.matizVideo {
+  position: absolute;
+  z-index: 4;
+  top: 155px;
+  right: 0;
+  width: 49%;
+  max-width: 590px;
+  padding: 17px;
+  background: linear-gradient(145deg, rgba(25, 59, 48, .97), rgba(25, 62, 54, .95));
+  border: 1px solid rgba(247, 221, 174, .37);
+  box-shadow: 0 28px 60px rgba(6, 27, 26, .32);
+}
+
+.matizVideo::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  right: -1px;
+  width: 45%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #ffe1ad);
+}
+
+.matizNote {
+  position: absolute;
+  right: 0;
+  bottom: 17px;
+  color: #e6e6bd;
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: .24em;
+}
+
+.potato::before {
+  background: radial-gradient(ellipse 49% 30% at 72% 45%, rgba(246, 157, 83, .19), transparent 81%),
+    radial-gradient(ellipse 46% 33% at 20% 73%, rgba(180, 189, 94, .14), transparent 80%);
+}
+
+.potatoHeader h3 em {
+  color: #ffc187;
+  font-style: normal;
+}
+
+.potatoStage {
+  position: relative;
+  isolation: isolate;
+  max-width: 1210px;
+  height: 810px;
+  margin: 16px auto 0;
+}
+
+.potatoGlow {
+  position: absolute;
+  z-index: -2;
+  top: 5%;
+  left: 46%;
+  width: 45%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(248, 171, 82, .2), rgba(244, 162, 72, .06) 49%, transparent 71%);
+}
+
+.potatoTrajectory {
+  position: absolute;
+  z-index: -1;
+  top: 15%;
+  right: 1%;
+  width: 50%;
+  height: 27%;
+  border-top: 1px dashed rgba(255, 217, 137, .55);
+  border-radius: 50%;
+  transform: rotate(-8deg);
+}
+
+.potatoArt {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: -5%;
+  width: 110%;
+  height: auto;
+  filter: drop-shadow(0 23px 35px rgba(20, 33, 25, .3));
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 4%, #000 95%, transparent), linear-gradient(180deg, #000 0%, #000 84%, transparent);
+  -webkit-mask-composite: source-in;
+  mask-image: linear-gradient(90deg, transparent, #000 4%, #000 95%, transparent), linear-gradient(180deg, #000 0%, #000 84%, transparent);
+  mask-composite: intersect;
+}
+
+.potatoVideo {
+  position: absolute;
+  z-index: 3;
+  right: 1%;
+  bottom: 7px;
+  width: 51%;
+  max-width: 610px;
+  padding: 17px;
+  background: linear-gradient(145deg, rgba(26, 56, 48, .97), rgba(24, 57, 52, .95));
+  border: 1px solid rgba(255, 207, 152, .44);
+  box-shadow: 0 26px 62px rgba(8, 28, 26, .32);
+}
+
+.potatoVideo::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  right: -1px;
+  width: 50%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #ffbc78);
+}
+
+.potatoFoot {
+  position: absolute;
+  left: 1%;
+  bottom: 14px;
+  color: #f9d49f;
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: .2em;
+}

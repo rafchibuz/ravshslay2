@@ -1,5 +1,6 @@
 import { YouTubePlayer } from '../../components/YouTubePlayer';
 import { juneClassico, juneDriving, juneNiva } from './juneContent';
+import { JuneExtra } from './JuneExtra';
 import styles from './chapter.module.css';
 
 function SummerBranch({ right = false }: { right?: boolean }) {
@@ -21,7 +22,7 @@ export function June() {
     <header className={styles.monthHeader}>
       <div className={styles.monthIndex}><span>06 / 12</span><i /><span>ГЛАВА ШЕСТАЯ</span></div>
       <h2 id="june-title">ИЮНЬ <span>’26</span></h2>
-      <p>Ветки уже в цвету, лето набирает ход. А новая Нива — кажется, не очень.</p>
+      <p>Ветки уже в цвету, лето набирает ход. ИРЛ, футбол, автомобильные проекты и неожиданные эксперименты — июнь только разгоняется.</p>
     </header>
     <article id={juneNiva.id} className={styles.event} aria-labelledby="niva-title">
       <div className={styles.eventIndex}><span>01 / ЛЕТНИЙ ИРЛ</span><span>ИЮНЬ 2026</span></div>
@@ -99,6 +100,7 @@ export function June() {
         <YouTubePlayer videoId={juneDriving.videoId} title={juneDriving.title} url={juneDriving.videoUrl} posterFallback={juneDriving.driving} label="СМОТРЕТЬ СТРИМ" />
       </div>
     </article>
+    <JuneExtra />
     <div className={styles.monthEnd}><span>06 / 12 — ИЮНЬ</span><i /><span>ЛЕТО ТОЛЬКО НАЧАЛОСЬ</span></div>
   </section>;
 }

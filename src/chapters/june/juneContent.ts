@@ -31,6 +31,33 @@ export const juneDriving = {
   title: 'Обучение Ростика вождению — запись стрима',
 } as const;
 
+// This project was added directly by the user after the initial editorial list.
+export const juneVaz = {
+  id: '2026-06-vaz',
+  image: '/assets/june/vaz-2114-lambo.png',
+  videoId: 'RD_f9twr6B4',
+  videoUrl: 'https://www.youtube.com/watch?v=RD_f9twr6B4',
+  title: 'ВАЗ 2114 с ламбо-дверями и пневмоподвеской',
+} as const;
+
+export const juneMatiz = {
+  id: '2026-06-04',
+  sourceTitle: 'Автоподбор для подписчицы',
+  image: '/assets/june/matiz-subscriber.png',
+  videoId: 'c_wlEkq4GrQ',
+  videoUrl: 'https://www.youtube.com/watch?v=c_wlEkq4GrQ',
+  title: 'Автоподбор Matiz для подписчицы',
+} as const;
+
+export const junePotato = {
+  id: '2026-06-05',
+  sourceTitle: 'Тесты картошкомёта',
+  image: '/assets/june/potato-launcher.png',
+  videoId: 'LcS6MTNPZ4s',
+  videoUrl: 'https://www.youtube.com/watch?v=LcS6MTNPZ4s',
+  title: 'Тесты картошкомёта',
+} as const;
+
 const june = sourceRegistry.months.find((month) => month.id === '2026-06');
 if (!june?.events.some((event) => event.id === juneNiva.id && event.sourceTitle === juneNiva.sourceTitle)) {
   throw new Error('June Niva scene must match the editorial registry');
@@ -40,4 +67,10 @@ if (!june.events.some((event) => event.id === juneClassico.id && event.sourceTit
 }
 if (!june.events.some((event) => event.id === juneDriving.id && event.sourceTitle === juneDriving.sourceTitle)) {
   throw new Error('June driving scene must match the editorial registry');
+}
+if (!june.events.some((event) => event.id === juneMatiz.id && event.sourceTitle === juneMatiz.sourceTitle)) {
+  throw new Error('June Matiz scene must match the editorial registry');
+}
+if (!june.events.some((event) => event.id === junePotato.id && event.sourceTitle === junePotato.sourceTitle)) {
+  throw new Error('June potato scene must match the editorial registry');
 }
