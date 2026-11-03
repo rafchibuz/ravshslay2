@@ -1,0 +1,42 @@
+.chapter{position:relative;isolation:isolate;overflow:clip;color:#f7f8eb;background:linear-gradient(180deg,#173d39 0%,#1c4938 24%,#254b31 63%,#294b2e 100%)}
+.chapter::before{content:'';position:absolute;z-index:-2;inset:0;pointer-events:none;background:radial-gradient(ellipse 45% 28% at 79% 31%,rgba(169,239,59,.2),transparent 82%),radial-gradient(ellipse 45% 24% at 18% 69%,rgba(220,206,99,.12),transparent 84%),repeating-linear-gradient(108deg,transparent 0 205px,rgba(210,250,157,.018) 206px 207px)}
+.chapter::after{content:'';position:absolute;z-index:-1;inset:0;pointer-events:none;opacity:.32;background-image:radial-gradient(circle,#d7efaa 1px,transparent 1.6px);background-size:143px 174px;background-position:18px 44px;mask-image:linear-gradient(180deg,transparent,#000 12%,#000 88%,transparent)}
+.leaves{position:absolute;z-index:-1;top:50px;left:-80px;width:clamp(230px,25vw,370px);height:auto;color:rgba(166,213,124,.47);pointer-events:none}
+.leavesRight{top:43%;left:auto;right:-85px;transform:scaleX(-1) rotate(-7deg);color:rgba(189,228,136,.5)}
+.monthHeader{position:relative;max-width:1450px;margin:auto;padding:102px 10% 72px 14%}
+.monthIndex,.eventIndex,.kicker,.rounds,.episodesLead,.episodeKicker,.monthEnd{font-size:10px;font-weight:900;letter-spacing:.2em}
+.monthIndex{display:flex;align-items:center;gap:16px;color:#d8f5a0}
+.monthIndex i{width:65px;height:1px;background:currentColor;opacity:.7}
+.monthLine{display:flex;align-items:end;gap:60px}
+.monthLine h2{flex:none;margin:17px 0 0;font:400 clamp(108px,15vw,210px)/.8 var(--font-display);letter-spacing:-.055em;color:#f5f7e7}
+.monthLine h2 span{font-size:.32em;vertical-align:top;color:#d1fa6c;letter-spacing:-.02em}
+.monthLine p{max-width:340px;margin:0 0 14px;color:#d6e5cf;font-size:16px;line-height:1.65}
+.story{position:relative;padding:16px 10% 110px 14%}
+.eventIndex{display:flex;justify-content:space-between;max-width:1240px;margin:0 auto;padding-bottom:15px;border-bottom:1px solid rgba(210,241,173,.27);color:#d4edb2}
+.feature{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);align-items:center;max-width:1240px;min-height:650px;margin:0 auto;position:relative}
+.feature::before{content:'07';position:absolute;z-index:-1;top:6%;right:2%;color:rgba(190,238,126,.045);font:400 clamp(280px,34vw,540px)/1 var(--font-display);pointer-events:none}
+.copy{position:relative;z-index:2;padding:30px 0 60px}
+.kicker{color:#d7fd80}
+.copy h3{margin:22px 0 21px;color:#fbf9e8;font:400 clamp(72px,8.2vw,120px)/.91 var(--font-display);letter-spacing:-.025em;text-shadow:0 14px 50px rgba(9,40,21,.28)}
+.copy h3 span{color:#d4f669}
+.copy h3 em{font-style:normal;color:#f8cc7c}
+.copy p{max-width:420px;color:#e4ebdc;font-size:17px;line-height:1.72}
+.rounds{display:flex;align-items:center;gap:16px;max-width:420px;margin-top:34px;color:#c8e6a2;white-space:nowrap}
+.rounds i{flex:1;height:1px;background:linear-gradient(90deg,#d8fc86,transparent)}
+.art{position:relative;align-self:stretch;display:grid;place-items:center;min-width:0;isolation:isolate}
+.artGlow{position:absolute;z-index:-2;inset:12% 1% 11%;border-radius:50%;background:radial-gradient(ellipse,rgba(197,253,71,.29),rgba(95,146,53,.12) 55%,transparent 76%);filter:blur(16px)}
+.artRing{position:absolute;z-index:-1;width:72%;aspect-ratio:1;border:1px solid rgba(205,250,131,.23);border-radius:50%;box-shadow:0 0 0 58px rgba(199,246,121,.025),0 0 0 120px rgba(199,246,121,.017)}
+.artMark{position:absolute;z-index:1;right:0;top:13%;writing-mode:vertical-rl;color:#ddf3b2;font-size:9px;font-weight:900;letter-spacing:.3em}
+.art img{display:block;width:min(100%,580px);max-height:660px;object-fit:contain;object-position:center bottom;filter:drop-shadow(0 35px 48px rgba(4,30,21,.4));-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent),linear-gradient(180deg,#000 0%,#000 91%,transparent);-webkit-mask-composite:source-in;mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent),linear-gradient(180deg,#000 0%,#000 91%,transparent);mask-composite:intersect}
+.episodesLead{display:flex;align-items:center;gap:18px;max-width:1240px;margin:4px auto 24px;color:#dbf6ae}
+.episodesLead i{flex:1;height:1px;background:linear-gradient(90deg,rgba(213,248,143,.7),rgba(213,248,143,.15))}
+.episodes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:26px;max-width:1240px;margin:0 auto}
+.episode{min-width:0;padding:20px;border:1px solid rgba(208,240,160,.24);background:linear-gradient(145deg,rgba(29,65,48,.8),rgba(19,46,39,.88));box-shadow:0 18px 50px rgba(6,33,26,.17)}
+.episodeHeading{display:flex;align-items:center;gap:18px;min-height:75px;margin-bottom:14px}
+.episodeNumber{color:#d4f669;font:400 62px/.8 var(--font-display)}
+.episodeKicker{color:#c5ddab;font-size:9px}
+.episodeHeading h4{margin:5px 0 0;color:#f6f5e8;font:400 clamp(28px,2.6vw,38px)/1 var(--font-display);letter-spacing:.01em;white-space:nowrap}
+.monthEnd{display:flex;align-items:center;gap:18px;max-width:1240px;margin:0 auto;padding:0 10% 48px 14%;color:#d4e7b0;white-space:nowrap}
+.monthEnd i{flex:1;height:1px;background:linear-gradient(90deg,rgba(213,248,143,.75),rgba(213,248,143,.2))}
+@media(max-width:1000px){.monthHeader{padding-left:11%}.story{padding-left:11%;padding-right:7%}.monthLine{display:block}.monthLine p{margin-top:25px}.feature{min-height:560px}.copy h3{font-size:clamp(67px,8vw,95px)}.art img{max-height:560px}.episodeHeading h4{font-size:clamp(30px,3.5vw,42px)}}
+@media(max-width:700px){.monthHeader{padding:86px 7% 43px}.monthLine h2{font-size:clamp(85px,18vw,125px)}.monthLine p{font-size:13px}.story{padding:25px 7% 72px}.eventIndex{font-size:8px}.feature{display:flex;flex-direction:column;min-height:0}.copy{padding:34px 0 10px}.copy h3{font-size:clamp(65px,14vw,96px)}.copy p{font-size:14px}.rounds{font-size:8px}.art{width:100%;height:460px}.art img{max-height:460px}.episodes{grid-template-columns:1fr}.episode{padding:12px}.episodeHeading h4{font-size:38px}.leaves{left:-115px;width:230px}.leavesRight{right:-120px}.monthEnd{padding:0 7% 40px;font-size:7px;letter-spacing:.12em}}
