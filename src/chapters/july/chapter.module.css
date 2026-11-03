@@ -132,3 +132,12 @@
 .stayaArt{place-items:center;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,#000 0%,#000 86%,transparent);mask-image:linear-gradient(90deg,#000 0%,#000 86%,transparent)}
 .stayaArt img{width:160%;max-height:none;transform:translateX(-9%)}
 @media(max-width:700px){.bmwImage{width:100%;margin:0}.stayaArt img{width:100%;transform:none}}
+.quizStage{display:block;max-width:1180px;min-height:500px;margin-top:34px;isolation:isolate}
+.quizMedia{width:76%;margin:0;position:relative;z-index:1}
+.quizImage{position:absolute;z-index:2;right:-2%;bottom:14%;width:53%;max-height:none;pointer-events:none;filter:drop-shadow(0 24px 35px rgba(13,13,29,.55))}
+.bmwStage{display:flex;flex-direction:column;align-items:center;gap:8px;max-width:1240px;margin-top:18px}
+.bmwImage{width:min(80%,880px);max-width:100%;max-height:450px;margin:0 auto;object-fit:contain;filter:drop-shadow(0 22px 32px rgba(7,23,17,.44));-webkit-mask-image:linear-gradient(180deg,#000 84%,transparent 100%);mask-image:linear-gradient(180deg,#000 84%,transparent 100%)}
+.bmwEpisodes{width:100%;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;margin-top:-28px;position:relative;z-index:1}
+.bmwEpisode{padding:15px}
+.worldReaction{-webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 14%,#000 80%,transparent 100%),linear-gradient(180deg,#000 0%,#000 86%,transparent 100%);-webkit-mask-composite:source-in;mask-image:linear-gradient(90deg,transparent 0%,#000 14%,#000 80%,transparent 100%),linear-gradient(180deg,#000 0%,#000 86%,transparent 100%);mask-composite:intersect}
+@media(max-width:700px){.quizStage{min-height:0;display:flex;flex-direction:column;gap:0}.quizMedia{width:100%}.quizImage{position:relative;right:auto;bottom:auto;width:100%;max-height:340px;margin-top:-35px;align-self:flex-end}.bmwStage{gap:0}.bmwImage{width:100%;max-height:310px}.bmwEpisodes{grid-template-columns:1fr;margin-top:0;gap:14px}}
