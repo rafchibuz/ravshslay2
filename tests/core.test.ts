@@ -6,6 +6,7 @@ import { februaryScenes, validateFebruaryScenes } from '../src/lib/februaryConte
 import { derbyStory } from '../src/chapters/february/derbyContent';
 import { marchEnduro, marchMatch } from '../src/chapters/march/marchContent';
 import { julyBmw, julyClay, julyQuiz, julyRocket, julyStaya, julyTasting, julyWorldCup } from '../src/chapters/july/julyContent';
+import { august } from '../src/chapters/august/augustContent';
 
 describe('chronicle navigation', () => {
   it('moves through the hero and January points in both directions', () => {
@@ -25,6 +26,9 @@ describe('chronicle navigation', () => {
     expect(nextPoint('2026-07-04', 1)).toBe('2026-07-05');
     expect(nextPoint('2026-07-05', 1)).toBe('2026-07-07');
     expect(nextPoint('2026-07-07', 1)).toBe('2026-07-06');
+    expect(nextPoint('2026-07-06', 1)).toBe('august');
+    expect(nextPoint('august', 1)).toBe('2026-08-01');
+    expect(nextPoint('2026-08-05', 1)).toBe('2026-08-06');
     expect(nextPoint('2026-01-02', -1)).toBe('2026-01-01');
     expect(nextPoint('hero', -1)).toBe('hero');
   });
@@ -36,6 +40,18 @@ describe('chronicle navigation', () => {
     expect(pointFromHash('#2026-02-02')).toBe('2026-02-02');
     expect(pointFromHash('#2026-03-01')).toBe('2026-03-01');
     expect(pointFromHash('#2026-03-02')).toBe('2026-03-02');
+  });
+});
+
+describe('August editorial data', () => {
+  it('keeps the purchase clip, the stunt episode and the remaining events in order', () => {
+    expect(august.surron.clip).toBe('/assets/august/surron-purchase.mp4');
+    expect(august.surron.purchase.id).toBe('2xVxaZmbkAE');
+    expect(august.surron.stunt.id).toBe('xSXBhqaun_M');
+    expect([august.karting, august.track, august.judo, august.collab].map((scene) => scene.videoId)).toEqual([
+      'C4Lyl1fb1ps', 'rtyJH86RJTE', '6nbyoSp2GQ4', 'PMbMCPnodgs',
+    ]);
+    expect(august.meme.id).toBe('2026-08-06');
   });
 });
 

@@ -1,0 +1,74 @@
+.chapter{position:relative;isolation:isolate;overflow:clip;color:#f9f4e9;background:linear-gradient(180deg,#294b2e 0%,#284833 9%,#263e37 30%,#252f35 55%,#2c3435 74%,#263c38 100%)}
+.chapter::before{content:'';position:absolute;z-index:-2;inset:0;pointer-events:none;background:radial-gradient(ellipse 40% 11% at 18% 5%,rgba(209,241,115,.12),transparent 82%),radial-gradient(ellipse 35% 13% at 89% 35%,rgba(255,168,80,.12),transparent 82%),radial-gradient(ellipse 53% 13% at 6% 71%,rgba(217,165,106,.1),transparent 80%),repeating-linear-gradient(104deg,transparent 0 245px,rgba(242,212,138,.013) 246px 247px)}
+.speedLines{position:absolute;z-index:-1;top:0;left:0;right:0;height:1800px;opacity:.21;pointer-events:none;background:linear-gradient(145deg,transparent 37%,rgba(213,248,144,.2) 37.05%,transparent 37.15%),linear-gradient(156deg,transparent 45%,rgba(213,248,144,.2) 45.05%,transparent 45.15%);mask-image:linear-gradient(#000,transparent)}
+.monthHeader,.scene{max-width:1440px;margin:auto;padding-inline:14% 9%}
+.monthHeader{padding-top:110px;padding-bottom:85px}
+.monthEyebrow,.sceneIndex,.eyebrow,.mediaOverline,.textLink,.monthEnd,.memeTag,.chartTop,.chartBottom{font-size:10px;font-weight:900;letter-spacing:.18em}
+.monthEyebrow{display:flex;align-items:center;gap:18px;color:#dbefac}.monthEyebrow i{width:64px;height:1px;background:currentColor}
+.monthHeader h2{margin:20px 0 15px;font:400 clamp(100px,14vw,190px)/.8 var(--font-display);letter-spacing:-.04em}.monthHeader h2 em{font:inherit;font-size:.31em;color:#d8ee7a;vertical-align:top}
+.monthHeader p{max-width:625px;margin:25px 0 0;color:#dce6d5;font-size:17px;line-height:1.65}
+.scene{position:relative;padding-top:34px;padding-bottom:110px}
+.sceneIndex{display:flex;align-items:center;justify-content:space-between;max-width:1200px;margin:0 auto 42px;padding-bottom:15px;border-bottom:1px solid rgba(226,237,207,.24);color:#dceab3}
+.eyebrow{display:block;color:#e3f18f}
+.scene h3,.scene h4{font-family:var(--font-display);font-weight:400;letter-spacing:-.026em}
+.scene h3 em,.scene h4 em{font-style:normal;color:#d9ef82}
+.scene p{color:#dfe6d8;font-size:16px;line-height:1.65}
+.purchaseGrid{display:grid;grid-template-columns:minmax(0,.83fr) minmax(0,1.17fr);align-items:center;gap:42px;max-width:1200px;margin:auto;min-height:590px}
+.purchaseCopy{position:relative;align-self:stretch;display:flex;flex-direction:column;justify-content:center}
+.purchaseCopy h3{position:relative;z-index:1;margin:19px 0 12px;font-size:clamp(51px,5.1vw,76px);line-height:.95;white-space:nowrap}
+.purchaseCopy h3 em{color:#f4bc75}
+.purchaseCopy p{position:relative;z-index:1;max-width:430px;margin:17px 0 30px}
+.textLink{position:relative;z-index:1;display:flex;justify-content:space-between;max-width:360px;padding:17px 0;border-block:1px solid rgba(251,197,123,.48);color:#ffd39b;text-decoration:none}.textLink:hover{color:#fff}
+.wheelMark{position:absolute;left:-10%;bottom:4%;width:280px;height:280px;display:grid;place-items:center;border:1px solid rgba(249,188,102,.12);border-radius:50%;color:rgba(245,203,127,.08);font:400 74px var(--font-display);box-shadow:0 0 0 55px rgba(249,188,102,.015)}
+.purchaseMedia{min-width:0;padding:14px;border:1px solid rgba(241,210,158,.3);border-top:2px solid #efb575;background:linear-gradient(155deg,rgba(34,54,46,.88),rgba(22,40,40,.91));box-shadow:0 30px 70px rgba(8,22,25,.25)}
+.mediaOverline{display:flex;justify-content:space-between;gap:12px;margin-bottom:14px;color:#ead5af}
+.stuntGrid{display:grid;grid-template-columns:minmax(0,1.02fr) minmax(0,.98fr);align-items:center;gap:30px;max-width:1200px;margin:20px auto 0;border-top:1px solid rgba(227,243,187,.2)}
+.stuntArt{position:relative;height:650px;display:grid;place-items:center;isolation:isolate}
+.stuntArc{position:absolute;z-index:-1;width:460px;height:460px;border:1px dashed rgba(222,244,145,.23);border-radius:50%;transform:rotate(-25deg) scaleX(1.12);box-shadow:0 0 0 55px rgba(210,239,116,.025),0 0 0 110px rgba(210,239,116,.012)}
+.stuntArt img{display:block;max-width:100%;width:550px;height:620px;object-fit:contain;filter:drop-shadow(0 30px 38px rgba(9,22,19,.48))}
+.stuntBadge{position:absolute;bottom:26px;left:0;color:#dbe996;font-size:10px;font-weight:900;letter-spacing:.17em}
+.stuntContent h4{margin:14px 0 5px;font-size:clamp(60px,6vw,90px);line-height:.91}
+.stuntContent p{max-width:460px;margin:20px 0 27px}
+.karting{background:radial-gradient(ellipse 45% 60% at 45% 52%,rgba(242,179,91,.1),transparent 85%)}
+.kartingHeader,.trackHeading,.judoHeading,.collabHeading{max-width:1200px;margin:auto}
+.kartingHeader h3,.trackHeading h3,.judoHeading h3,.collabHeading h3{margin:13px 0 6px;font-size:clamp(76px,8vw,120px);line-height:.91}
+.kartingHeader h3 em{color:#f1b67f}.kartingHeader p,.trackHeading p,.judoHeading p,.collabHeading p{max-width:685px;margin:16px 0 0}
+.kartingStage{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);align-items:center;gap:25px;max-width:1200px;min-height:580px;margin:10px auto 0}
+.kartingArt{position:relative;height:580px;display:grid;place-items:end center;isolation:isolate}
+.trackLoop{position:absolute;z-index:-1;inset:20% 4% 9%;border:18px solid rgba(240,178,111,.1);border-radius:45% 55% 45% 55%;transform:rotate(-24deg);box-shadow:inset 0 0 0 2px rgba(255,230,178,.12),0 0 0 2px rgba(255,230,178,.09)}
+.kartingArt img{display:block;max-width:100%;max-height:580px;object-fit:contain;object-position:bottom;filter:drop-shadow(0 25px 33px rgba(15,18,27,.45))}
+.kartingMedia{min-width:0;padding:16px;border:1px solid rgba(243,192,124,.25);background:rgba(23,41,42,.68);box-shadow:0 25px 50px rgba(12,20,29,.22)}
+.track{background:radial-gradient(ellipse 50% 40% at 77% 63%,rgba(109,165,171,.12),transparent 84%)}
+.trackHeading h3 em{color:#a5dce4}
+.trackStage{position:relative;max-width:1200px;min-height:630px;margin:30px auto 0;isolation:isolate}
+.trackStage::before{content:'';position:absolute;z-index:-2;inset:5% 2% 15%;border:1px solid rgba(182,225,221,.18);border-radius:50%;transform:rotate(-14deg)}
+.trackMedia{position:relative;z-index:1;width:63%;padding:15px;border:1px solid rgba(174,225,230,.28);border-top:2px solid #9bd5d8;background:rgba(21,42,44,.88);box-shadow:0 25px 70px rgba(7,25,28,.35)}
+.trackStage>img{position:absolute;z-index:2;right:-3%;bottom:4%;width:55%;max-height:580px;object-fit:contain;filter:drop-shadow(0 26px 36px rgba(7,20,27,.5));pointer-events:none}
+.trackNumber{position:absolute;z-index:-1;right:0;top:-20px;color:rgba(171,213,210,.08);font:400 300px/.8 var(--font-display)}
+.judo{background:radial-gradient(ellipse 49% 40% at 28% 61%,rgba(123,174,209,.14),transparent 84%)}
+.judoHeading h3 em{color:#a7cfea}
+.judoStage{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);align-items:center;gap:34px;max-width:1200px;min-height:555px;margin:32px auto 0}
+.judoArt{position:relative;isolation:isolate;display:grid;place-items:center;min-height:520px}
+.matCircle{position:absolute;z-index:-1;inset:11% 6%;border-radius:50%;background:radial-gradient(ellipse,rgba(69,120,170,.23),transparent 70%);border:1px solid rgba(153,200,235,.17)}
+.judoArt img{width:118%;max-width:none;max-height:560px;object-fit:contain;filter:drop-shadow(0 23px 35px rgba(8,21,33,.4))}
+.judoMedia{min-width:0;padding:15px;border:1px solid rgba(167,211,229,.26);background:rgba(24,42,48,.72)}
+.collab{background:radial-gradient(ellipse 47% 37% at 69% 67%,rgba(237,174,101,.13),transparent 85%)}
+.collabHeading h3{font-size:clamp(68px,7vw,105px)}.collabHeading h3 span{color:#f3b981}.collabHeading p{max-width:750px}
+.collabStage{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);align-items:center;max-width:1200px;min-height:560px;margin:20px auto 0;isolation:isolate}
+.collabMedia{position:relative;z-index:1;min-width:0;padding:15px;border-top:2px solid #e5ac79;background:rgba(31,43,42,.79);box-shadow:0 25px 55px rgba(9,19,24,.27)}
+.collabStage>img{display:block;width:125%;max-width:none;max-height:550px;object-fit:contain;filter:drop-shadow(0 22px 36px rgba(10,20,24,.5));transform:translateX(-10%)}
+.collabNote{display:flex;align-items:center;gap:18px;margin-top:16px;color:#f3bd82;font:400 37px/1 var(--font-display)}.collabNote small{max-width:180px;color:#e5d2b8;font:900 9px/1.4 sans-serif;letter-spacing:.14em}
+.meme{padding-bottom:140px;background:radial-gradient(ellipse 47% 54% at 80% 58%,rgba(66,194,199,.14),transparent 84%)}
+.memeGrid{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);align-items:center;gap:55px;max-width:1200px;margin:25px auto 0;min-height:660px}
+.memeCopy h3{font-size:clamp(68px,6vw,91px);line-height:.92;margin:20px 0;white-space:nowrap}.memeCopy h3 em{color:#71cbd1}.memeCopy p{max-width:450px}.memeTag{display:inline-block;margin-top:20px;padding:12px 15px;border:1px solid rgba(111,209,210,.35);color:#9bdee0;transform:rotate(-2deg)}
+.memeChart{position:relative;min-height:575px;padding:28px 33px 24px;border:1px solid rgba(137,212,216,.36);background:linear-gradient(146deg,rgba(11,47,54,.93),rgba(16,55,61,.72) 65%,rgba(28,48,48,.88));box-shadow:18px 20px 0 rgba(121,204,208,.07),0 35px 65px rgba(8,23,27,.28);overflow:hidden}
+.memeChart::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent 0 80px,rgba(177,232,231,.045) 81px 82px),repeating-linear-gradient(0deg,transparent 0 80px,rgba(177,232,231,.045) 81px 82px);pointer-events:none}
+.chartTop,.chartBottom{position:relative;display:flex;justify-content:space-between;gap:10px;color:#a9d9d7}.chartTitle{position:relative;margin:28px 0 5px;font:400 clamp(55px,6.4vw,85px)/.85 var(--font-display);letter-spacing:-.025em}.chartTitle em{font-style:normal;color:#7dd8d5}
+.chartBars{position:relative;height:290px;display:flex;align-items:end;justify-content:space-around;gap:16px;margin:13px 0 15px;border-bottom:2px solid rgba(178,230,225,.5)}
+.chartBars>div{position:relative;display:flex;align-items:center;flex-direction:column;justify-content:end;height:100%;flex:1;color:#d7ebe3;font:400 30px var(--font-display)}
+.chartBars i{display:block;width:65%;margin-top:4px;background:linear-gradient(0deg,#315d67,#75c4c4);border-radius:5px 5px 0 0;box-shadow:0 0 24px rgba(109,204,202,.18)}
+.barTall i{height:205px}.barTallSecond i{height:194px}.barMid i{height:185px}.barSmall i{height:116px!important;background:linear-gradient(0deg,#ad6e49,#ffba80)!important;box-shadow:0 0 30px rgba(255,176,115,.38)!important}.barSmall{color:#ffc293!important}.barSmall b{position:absolute;bottom:9px;left:50%;transform:translateX(-50%);color:#fff;font:400 57px/.8 var(--font-display)}
+.chartBottom{font-size:8px}.chartBottom strong{color:#ffd09b;font-weight:900}
+.monthEnd{display:flex;align-items:center;gap:20px;max-width:1200px;margin:auto;padding:0 9% 48px 14%;color:#bed5c6;font-size:10px;font-weight:900;letter-spacing:.18em}.monthEnd i{flex:1;height:1px;background:linear-gradient(90deg,rgba(170,215,206,.65),rgba(170,215,206,.1))}
+@media(max-width:1100px){.monthHeader,.scene{padding-inline:11% 7%}.purchaseGrid{gap:22px}.purchaseCopy h3{font-size:clamp(56px,6vw,82px)}.stuntArt{height:550px}.stuntArt img{height:520px}.kartingHeader h3,.trackHeading h3,.judoHeading h3,.collabHeading h3{font-size:clamp(63px,7vw,95px)}.trackStage{min-height:530px}.judoArt img{width:110%}}
+@media(max-width:700px){.monthHeader{padding:90px 7% 55px}.monthHeader h2{font-size:clamp(80px,17vw,130px)}.monthHeader p{font-size:14px}.scene{padding:28px 7% 75px}.sceneIndex{font-size:8px}.scene p{font-size:14px}.purchaseGrid,.stuntGrid,.kartingStage,.judoStage,.collabStage,.memeGrid{display:flex;flex-direction:column;gap:22px;min-height:0}.purchaseCopy h3,.stuntContent h4{font-size:clamp(62px,12vw,90px)}.purchaseMedia,.kartingMedia,.judoMedia,.collabMedia{width:100%}.stuntArt,.kartingArt{height:460px;width:100%}.stuntArt img,.kartingArt img{height:450px;max-height:450px}.kartingHeader h3,.trackHeading h3,.judoHeading h3,.collabHeading h3{font-size:clamp(55px,11vw,78px)}.trackStage{min-height:0;display:flex;flex-direction:column}.trackMedia{width:100%}.trackStage>img{position:relative;right:auto;bottom:auto;width:100%;max-height:350px;margin-top:-25px}.judoArt{min-height:300px}.judoArt img{width:100%;max-height:350px}.collabStage>img{width:100%;max-height:350px;transform:none}.memeChart{width:100%;min-height:500px;padding:20px}.chartTitle{font-size:62px}.chartBars{height:250px}.monthEnd{padding:0 7% 40px;font-size:8px}}
