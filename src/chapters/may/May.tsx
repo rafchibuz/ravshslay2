@@ -1,5 +1,5 @@
 import { YouTubePlayer } from '../../components/YouTubePlayer';
-import { mayDamas } from './mayContent';
+import { mayDamas, mayKaha } from './mayContent';
 import styles from './chapter.module.css';
 
 function FloweringBranch({ right = false }: { right?: boolean }) {
@@ -35,6 +35,21 @@ export function May() {
           <img className={styles.wavePose} src={mayDamas.imageWave} alt="" loading="lazy" decoding="async" />
           <span className={styles.startMark} aria-hidden="true">НА СТАРТ · ВНИМАНИЕ · МАРШ!</span>
         </div>
+      </div>
+    </article>
+    <article id={mayKaha.id} className={styles.irl} aria-labelledby="kaha-title">
+      <div className={styles.eventIndex}><span>02 / ИРЛ</span><span>МАЙ 2026</span></div>
+      <div className={styles.irlHeading}>
+        <span className={styles.irlKicker}>ВСТРЕЧА В КАДРЕ / ЛЕГЕНДА КАХА</span>
+        <h3 id="kaha-title">ИРЛ <span>С КАХОЙ</span></h3>
+        <p>Равшан и Каха в одном кадре. Включай выпуск — эту встречу лучше увидеть самому.</p>
+      </div>
+      <div className={styles.irlStage}>
+        <span className={styles.irlHalo} aria-hidden="true" />
+        <span className={styles.irlOrbit} aria-hidden="true" />
+        <img className={styles.irlPortrait} src={mayKaha.image} alt="Каха и Равшан вместе в кадре" loading="lazy" decoding="async" />
+        <span className={styles.irlStamp} aria-hidden="true"><b>IRL</b><span>МАЙ ’26</span></span>
+        <div className={styles.irlVideo}><YouTubePlayer videoId={mayKaha.videoId} title={mayKaha.title} url={mayKaha.videoUrl} posterFallback={mayKaha.image} label="СМОТРЕТЬ ИРЛ" /></div>
       </div>
     </article>
   </section>;
