@@ -1,5 +1,5 @@
 import { YouTubePlayer } from '../../components/YouTubePlayer';
-import { mayDamas, mayKaha } from './mayContent';
+import { mayBuggy, mayDamas, mayKaha } from './mayContent';
 import styles from './chapter.module.css';
 
 function FloweringBranch({ right = false }: { right?: boolean }) {
@@ -51,6 +51,21 @@ export function May() {
         <span className={styles.irlStamp} aria-hidden="true"><b>IRL</b><span>МАЙ ’26</span></span>
         <div className={styles.irlVideo}><YouTubePlayer videoId={mayKaha.videoId} title={mayKaha.title} url={mayKaha.videoUrl} posterFallback={mayKaha.image} label="СМОТРЕТЬ ИРЛ" /></div>
       </div>
+    </article>
+    <article id={mayBuggy.id} className={styles.buggy} aria-labelledby="buggy-title">
+      <div className={styles.eventIndex}><span>03 / МАЙСКИЙ ФИНАЛ</span><span>МАЙ 2026</span></div>
+      <div className={styles.buggyStage}>
+        <span className={styles.buggyGlow} aria-hidden="true" />
+        <div className={styles.buggyCopy}>
+          <span className={styles.buggyKicker}>НОВАЯ ПОКУПКА / НОВАЯ ТРАССА</span>
+          <h3 id="buggy-title">БАГГИ<br /><span>ЗА 3 МЛН ₽</span></h3>
+          <p>Финальный поворот мая — багги за три миллиона рублей. Дальше только газ, грязь и большой выпуск.</p>
+        </div>
+        <img className={styles.buggyArt} src={mayBuggy.image} alt="Равшан за рулём синего багги RS в грязевом заносе" loading="lazy" decoding="async" />
+        <div className={styles.buggyVideo}><YouTubePlayer videoId={mayBuggy.videoId} title="Покупка багги за 3 млн рублей" url={mayBuggy.videoUrl} posterFallback={mayBuggy.image} label="СМОТРЕТЬ ВЫПУСК" /></div>
+        <span className={styles.buggyMark} aria-hidden="true">RS / 05.26</span>
+      </div>
+      <div className={styles.monthEnd}><span>05 / 12 — МАЙ</span><i /><span>ПРОДОЛЖЕНИЕ СЛЕДУЕТ</span></div>
     </article>
   </section>;
 }

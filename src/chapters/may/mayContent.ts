@@ -19,10 +19,22 @@ export const mayKaha = {
   videoUrl: 'https://www.youtube.com/watch?v=g9kJIgYj-Io',
 } as const;
 
+export const mayBuggy = {
+  id: '2026-05-04',
+  sourceTitle: 'Купил багги',
+  title: 'Багги за 3 млн ₽',
+  image: '/assets/may/buggy-rs.png',
+  videoId: 'JFUNhRhUS-M',
+  videoUrl: 'https://www.youtube.com/watch?v=JFUNhRhUS-M',
+} as const;
+
 const may = sourceRegistry.months.find((month) => month.id === '2026-05');
 if (!may?.events.some((event) => event.id === mayDamas.id && event.sourceTitle === mayDamas.sourceTitle)) {
   throw new Error('May Damas scene must match the editorial registry');
 }
 if (!may.events.some((event) => event.id === mayKaha.id && event.sourceTitle === mayKaha.sourceTitle)) {
   throw new Error('May Kaha scene must match the editorial registry');
+}
+if (!may.events.some((event) => event.id === mayBuggy.id && event.sourceTitle === mayBuggy.sourceTitle)) {
+  throw new Error('May buggy scene must match the editorial registry');
 }
