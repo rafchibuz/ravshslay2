@@ -1,8 +1,10 @@
-.chapter{position:relative;isolation:isolate;overflow:clip;color:#f8f7eb;background:linear-gradient(180deg,#263a2e 0%,#294838 23%,#204439 58%,#173d39 100%)}
+.chapter{position:relative;isolation:isolate;overflow:clip;color:#f8f7eb;background:linear-gradient(180deg,#294438 0%,#294838 23%,#204439 58%,#173d39 100%)}
 .chapter::before{content:'';position:absolute;z-index:-2;inset:0;pointer-events:none;background:radial-gradient(ellipse 42% 22% at 78% 17%,rgba(255,197,102,.21),transparent 85%),radial-gradient(ellipse 54% 26% at 19% 56%,rgba(123,175,112,.16),transparent 78%),repeating-linear-gradient(106deg,transparent 0 13%,rgba(232,214,166,.017) 13.05%,transparent 13.12%)}
 .chapter::after{content:'';position:absolute;z-index:-1;inset:0;pointer-events:none;opacity:.38;background-image:radial-gradient(circle,#e5e4ac 1px,transparent 1.5px);background-size:142px 177px;background-position:28px 44px;mask-image:linear-gradient(180deg,transparent,#000 12%,#000 88%,transparent)}
 .branch{position:absolute;z-index:-1;top:60px;left:-47px;width:310px;height:auto;color:#9fbe7b;opacity:.52;filter:drop-shadow(0 0 22px rgba(232,189,126,.17));pointer-events:none}
 .branchRight{top:120px;left:auto;right:-53px;transform:scaleX(-1) rotate(-6deg);width:330px;opacity:.6}
+.branchMid{top:43%;right:-66px;width:365px;opacity:.68}
+.branchLate{top:78%;left:-58px;width:385px;opacity:.75}
 .monthHeader{position:relative;padding:100px 10% 65px 14%;max-width:1450px;margin:auto}
 .monthIndex{display:flex;align-items:center;gap:16px;color:#f1d497;font-size:10px;font-weight:900;letter-spacing:.26em}
 .monthIndex i{width:70px;height:1px;background:currentColor;opacity:.65}

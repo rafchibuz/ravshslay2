@@ -2,8 +2,8 @@ import { YouTubePlayer } from '../../components/YouTubePlayer';
 import { mayBuggy, mayDamas, mayKaha } from './mayContent';
 import styles from './chapter.module.css';
 
-function FloweringBranch({ right = false }: { right?: boolean }) {
-  return <svg className={`${styles.branch} ${right ? styles.branchRight : ''}`} viewBox="0 0 310 580" fill="none" aria-hidden="true">
+function FloweringBranch({ right = false, placement = 'start' }: { right?: boolean; placement?: 'start' | 'mid' | 'late' }) {
+  return <svg className={`${styles.branch} ${right ? styles.branchRight : ''} ${placement === 'mid' ? styles.branchMid : placement === 'late' ? styles.branchLate : ''}`} viewBox="0 0 310 580" fill="none" aria-hidden="true">
     <path d="M-22 575C59 493 69 408 127 338c54-67 63-167 163-321M70 425c63-33 96-75 105-139M128 337C81 297 65 260 54 201M204 209c-2-42 12-73 45-105" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
     <path d="M29 482c-25-5-42 0-56 20m104-91c-11-25-25-37-50-40m136-87c18 3 33-1 50-19M56 205c-22-11-38-7-56 3m236-101c15-20 32-28 56-28" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" />
     <g className={styles.blossoms} fill="currentColor"><circle cx="27" cy="371" r="11"/><circle cx="-2" cy="208" r="9"/><circle cx="210" cy="265" r="12"/><circle cx="291" cy="79" r="10"/><circle cx="-22" cy="501" r="10"/></g>
@@ -14,6 +14,8 @@ export function May() {
   return <section id="may" className={styles.chapter} aria-labelledby="may-title">
     <FloweringBranch />
     <FloweringBranch right />
+    <FloweringBranch right placement="mid" />
+    <FloweringBranch placement="late" />
     <header className={styles.monthHeader}>
       <div className={styles.monthIndex}><span>05 / 12</span><i /><span>ГЛАВА ПЯТАЯ</span></div>
       <h2 id="may-title">МАЙ <span>’26</span></h2>

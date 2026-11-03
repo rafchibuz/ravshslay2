@@ -51,7 +51,7 @@
   position: relative;
   isolation: isolate;
   max-width: 1210px;
-  height: 780px;
+  height: 890px;
   margin: 28px auto 0;
 }
 
@@ -77,8 +77,8 @@
 .vazCopy h3 {
   margin: 18px 0 18px;
   color: #fff9ec;
-  font: 400 clamp(80px, 9vw, 130px)/.78 var(--font-display);
-  letter-spacing: -.045em;
+  font: 400 clamp(72px, 8vw, 112px)/.94 var(--font-display);
+  letter-spacing: -.018em;
   text-shadow: 0 13px 37px rgba(6, 27, 26, .4);
 }
 
@@ -124,7 +124,7 @@
 .vazPlayer {
   position: absolute;
   z-index: 5;
-  bottom: 6px;
+  top: 470px;
   left: 0;
   width: 49%;
   max-width: 560px;
@@ -181,8 +181,8 @@
 .matizHeader h3, .potatoHeader h3 {
   margin: 17px 0 0;
   color: #fff8e8;
-  font: 400 clamp(85px, 9.8vw, 145px)/.77 var(--font-display);
-  letter-spacing: -.045em;
+  font: 400 clamp(74px, 8.5vw, 120px)/.94 var(--font-display);
+  letter-spacing: -.018em;
   text-shadow: 0 13px 39px rgba(9, 31, 24, .34);
 }
 
