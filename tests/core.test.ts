@@ -5,7 +5,7 @@ import { scenes } from '../src/lib/contentValidation';
 import { februaryScenes, validateFebruaryScenes } from '../src/lib/februaryContent';
 import { derbyStory } from '../src/chapters/february/derbyContent';
 import { marchEnduro, marchMatch } from '../src/chapters/march/marchContent';
-import { julyTasting } from '../src/chapters/july/julyContent';
+import { julyClay, julyTasting } from '../src/chapters/july/julyContent';
 
 describe('chronicle navigation', () => {
   it('moves through the hero and January points in both directions', () => {
@@ -19,6 +19,7 @@ describe('chronicle navigation', () => {
     expect(nextPoint('2026-03-01', 1)).toBe('2026-03-02');
     expect(nextPoint('2026-06-05', 1)).toBe('july');
     expect(nextPoint('july', 1)).toBe('2026-07-01');
+    expect(nextPoint('2026-07-01', 1)).toBe('2026-07-02');
     expect(nextPoint('2026-01-02', -1)).toBe('2026-01-01');
     expect(nextPoint('hero', -1)).toBe('hero');
   });
@@ -39,6 +40,14 @@ describe('July tasting', () => {
       'https://www.youtube.com/watch?v=7O2DFqLDRRs',
       'https://www.youtube.com/watch?v=S6BO_i1ch_Y',
     ]);
+  });
+});
+
+describe('July clay', () => {
+  it('connects the supplied art and video to the second July scene', () => {
+    expect(julyClay.id).toBe('2026-07-02');
+    expect(julyClay.image).toBe('/assets/july/clay-with-lunak.png');
+    expect(julyClay.videoUrl).toBe('https://www.youtube.com/watch?v=-U-F_dWjiJQ');
   });
 });
 

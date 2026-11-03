@@ -1,5 +1,5 @@
 import { YouTubePlayer } from '../../components/YouTubePlayer';
-import { julyTasting } from './julyContent';
+import { julyClay, julyTasting } from './julyContent';
 import styles from './chapter.module.css';
 
 function SummerLeaves({ right = false }: { right?: boolean }) {
@@ -16,7 +16,7 @@ export function July() {
     <SummerLeaves right />
     <header className={styles.monthHeader}>
       <div className={styles.monthIndex}><span>07 / 12</span><i /><span>ГЛАВА СЕДЬМАЯ</span></div>
-      <div className={styles.monthLine}><h2 id="july-title">ИЮЛЬ <span>’26</span></h2><p>Лето набрало вкус. Июль открывается двумя дегустациями LIT ENERGY от Равшана.</p></div>
+      <div className={styles.monthLine}><h2 id="july-title">ИЮЛЬ <span>’26</span></h2><p>Лето набрало вкус. Июль начинается с LIT ENERGY и продолжается за гончарным кругом.</p></div>
     </header>
 
     <article id={julyTasting.id} className={styles.story} aria-labelledby="july-tasting-title">
@@ -41,6 +41,27 @@ export function July() {
           <div className={styles.episodeHeading}><span className={styles.episodeNumber}>0{index + 1}</span><div><span className={styles.episodeKicker}>{index === 0 ? 'ПЕРВАЯ ДЕГУСТАЦИЯ' : 'ВТОРАЯ ДЕГУСТАЦИЯ'}</span><h4>{index === 0 ? 'С БЛОГЕРАМИ' : 'С ПОДПИСЧИКАМИ'}</h4></div></div>
           <YouTubePlayer videoId={video.id} title={video.title} url={video.url} posterFallback={julyTasting.image} label={video.label} />
         </section>)}
+      </div>
+    </article>
+    <article id={julyClay.id} className={styles.clayStory} aria-labelledby="july-clay-title">
+      <div className={styles.eventIndex}><span>02 / ЛЕПКА ГЛИНЫ</span><span>ИЮЛЬ 2026</span></div>
+      <div className={styles.clayHeading}>
+        <span className={styles.clayKicker}>RAVSHANN × ЛУНАК / НОВЫЙ ОПЫТ</span>
+        <h3 id="july-clay-title">ГЛИНА <span>С ЛУНАКОМ</span></h3>
+        <p>На этот раз вместо скорости — гончарный круг. Равшан и Лунак пробуют лепить из глины и смотрят, что получится.</p>
+      </div>
+      <div className={styles.clayStage}>
+        <div className={styles.clayArt}>
+          <span className={styles.clayHalo} aria-hidden="true" />
+          <span className={styles.clayWheel} aria-hidden="true" />
+          <img src={julyClay.image} alt="Равшан и Лунак за гончарным кругом с глиной" loading="lazy" decoding="async" />
+          <span className={styles.clayArtNote}>ФОРМА РОЖДАЕТСЯ В РУКАХ</span>
+        </div>
+        <div className={styles.clayMedia}>
+          <div className={styles.clayMediaTop}><span>ИРЛ / ОДИН ВЫПУСК</span><span>07.26</span></div>
+          <YouTubePlayer videoId={julyClay.videoId} title={julyClay.title} url={julyClay.videoUrl} posterFallback={julyClay.image} label="СМОТРЕТЬ ЛЕПКУ" />
+          <span className={styles.clayMediaNote}>ГОНЧАРНЫЙ КРУГ ↗</span>
+        </div>
       </div>
     </article>
     <div className={styles.monthEnd}><span>07 / 12 — ИЮЛЬ</span><i /><span>ПРОДОЛЖЕНИЕ СЛЕДУЕТ</span></div>
