@@ -20,10 +20,24 @@ export const juneClassico = {
   videoUrl: 'https://www.youtube.com/live/Dr2-b4tL_8Q?si=fQ3V2L1XrQyJ4NW-',
 } as const;
 
+export const juneDriving = {
+  id: '2026-06-03',
+  sourceTitle: 'Обучения Ростика вождению',
+  reaction: '/assets/june/rostik-reaction.png',
+  driving: '/assets/june/rostik-driving.png',
+  meeting: '/assets/june/rostik-meeting.png',
+  videoId: 'PDYfVgNaBmE',
+  videoUrl: 'https://www.youtube.com/watch?v=PDYfVgNaBmE',
+  title: 'Обучение Ростика вождению — запись стрима',
+} as const;
+
 const june = sourceRegistry.months.find((month) => month.id === '2026-06');
 if (!june?.events.some((event) => event.id === juneNiva.id && event.sourceTitle === juneNiva.sourceTitle)) {
   throw new Error('June Niva scene must match the editorial registry');
 }
 if (!june.events.some((event) => event.id === juneClassico.id && event.sourceTitle === juneClassico.sourceTitle)) {
   throw new Error('June Classico scene must match the editorial registry');
+}
+if (!june.events.some((event) => event.id === juneDriving.id && event.sourceTitle === juneDriving.sourceTitle)) {
+  throw new Error('June driving scene must match the editorial registry');
 }

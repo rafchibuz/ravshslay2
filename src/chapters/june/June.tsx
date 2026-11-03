@@ -1,5 +1,5 @@
 import { YouTubePlayer } from '../../components/YouTubePlayer';
-import { juneClassico, juneNiva } from './juneContent';
+import { juneClassico, juneDriving, juneNiva } from './juneContent';
 import styles from './chapter.module.css';
 
 function SummerBranch({ right = false }: { right?: boolean }) {
@@ -63,6 +63,41 @@ export function June() {
         <div className={styles.taxiNote}><span className={styles.taxiIcon}>↗</span><span>ВЫХОД НА ПОЛЕ<br /><strong>С ДОСТАВКОЙ</strong></span></div>
       </div>
       <div className={styles.classicoFoot}><span>BMW → ГАЗОН</span><i /><span>СМОТРЕТЬ ЗАПИСЬ МАТЧА ↑</span></div>
+    </article>
+    <article id={juneDriving.id} className={styles.driving} aria-labelledby="driving-title">
+      <div className={styles.eventIndex}><span>03 / УРОК ВОЖДЕНИЯ</span><span>ИЮНЬ 2026</span></div>
+      <div className={styles.drivingHeader}>
+        <div>
+          <span className={styles.drivingKicker}>РОСТИК × RAVSHANN / ИРЛ</span>
+          <h3 id="driving-title">РОСТИК<br /><em>ЗА РУЛЁМ</em><span className={styles.drivingPeriod}>.</span></h3>
+        </div>
+        <p>Планировали урок вождения. Получился стрим, в котором спокойствие осталось где-то на старте. Пристегнитесь: дальше — полный беспредел.</p>
+      </div>
+      <div className={styles.drivingStage}>
+        <svg className={styles.drivingRoute} viewBox="0 0 1200 580" preserveAspectRatio="none" fill="none" aria-hidden="true">
+          <path d="M-35 428C150 493 284 242 455 291S717 525 906 368s249-117 339-67" stroke="currentColor" strokeWidth="2" strokeDasharray="8 13" />
+          <path d="M-35 449C150 514 284 263 455 312S717 546 906 389s249-117 339-67" stroke="currentColor" strokeWidth="1" opacity=".35" />
+          <circle cx="185" cy="396" r="7" /><circle cx="594" cy="387" r="7" /><circle cx="1050" cy="279" r="7" />
+        </svg>
+        <span className={styles.drivingSun} aria-hidden="true" />
+        <figure className={`${styles.drivingFigure} ${styles.drivingReaction}`}>
+          <img src={juneDriving.reaction} alt="Бурная реакция в машине во время стрима" loading="lazy" decoding="async" />
+          <figcaption><b>01</b><span>НАЧАЛОСЬ<br />ГРОМКО</span></figcaption>
+        </figure>
+        <figure className={`${styles.drivingFigure} ${styles.drivingWheel}`}>
+          <img src={juneDriving.driving} alt="Ростик за рулём автомобиля" loading="lazy" decoding="async" />
+          <figcaption><b>02</b><span>РОСТИК<br />ЗА РУЛЁМ</span></figcaption>
+        </figure>
+        <figure className={`${styles.drivingFigure} ${styles.drivingMeeting}`}>
+          <img src={juneDriving.meeting} alt="Ростик и Равшан встречаются на улице" loading="lazy" decoding="async" />
+          <figcaption><b>03</b><span>ВЫШЛИ<br />НА СВЕЖИЙ ВОЗДУХ</span></figcaption>
+        </figure>
+        <span className={styles.drivingEdgeNote} aria-hidden="true">ПРИСТЕГНИСЬ / 06.26</span>
+      </div>
+      <div className={styles.drivingWatch}>
+        <div className={styles.drivingWatchHeading}><span>ЗАПИСЬ СТРИМА</span><i /><span>СМОТРЕТЬ УРОК ЦЕЛИКОМ ↘</span></div>
+        <YouTubePlayer videoId={juneDriving.videoId} title={juneDriving.title} url={juneDriving.videoUrl} posterFallback={juneDriving.driving} label="СМОТРЕТЬ СТРИМ" />
+      </div>
     </article>
     <div className={styles.monthEnd}><span>06 / 12 — ИЮНЬ</span><i /><span>ЛЕТО ТОЛЬКО НАЧАЛОСЬ</span></div>
   </section>;
