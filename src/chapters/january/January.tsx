@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { MediaFrame } from '../../components/MediaFrame';
+import { LocalVideoPlayer } from '../../components/LocalVideoPlayer';
 import { scenes } from '../../lib/contentValidation';
 import { BrotherPhone } from './BrotherPhone';
 import { SnowBreakout } from './SnowBreakout';
@@ -50,8 +51,8 @@ export function January() {
         <div className={styles.sceneTop}><span>{opening.eyebrow}</span><span>01 — 04</span></div>
         <div className={styles.cinemaLayout}>
           <div className={styles.cinemaFrame}>
-            <div className={styles.streamPosterTop}>НОВОГОДНИЙ СТРИМ <span>ЗАПИСЬ ОЖИДАЕТСЯ</span></div>
-            <MediaFrame scene={opening} label={opening.title} />
+            <div className={styles.streamPosterTop}>НОВОГОДНИЙ СТРИМ <span>АПШЕРОНСК / 2026</span></div>
+            {opening.media?.provider === 'local-video' && <LocalVideoPlayer src={opening.media.src} title="Фрагмент новогоднего стрима" label="СМОТРЕТЬ ФРАГМЕНТ" />}
             <div className={styles.streamPosterBottom}>ЗИМА / ЯНВАРЬ 2026 <span>16:9</span></div>
           </div>
           <figure className={styles.faceStage} aria-label="Образ RavshanN меняется при прокрутке: с бородой на лицо без бороды">
@@ -64,7 +65,7 @@ export function January() {
           </figure>
           <div className={styles.sceneCopy}>
             <div><span className={styles.tag}>СЛЕДОМ ЗА СНЕГОМ / ВИДЕО</span><h3 id={`${opening.id}-title`}>{opening.title}</h3></div>
-            <div className={styles.sceneSummary}><p>{opening.description}</p>{opening.archiveUrl && <TelegramArchiveLink href={opening.archiveUrl} ariaLabel="Архив записи новогоднего стрима в Telegram" className={styles.streamArchive} />}<a href={`#${tradition.id}`} className={styles.sceneNext}>СЛЕДУЮЩАЯ ИСТОРИЯ <span>↘</span></a></div>
+            <div className={styles.sceneSummary}><p>{opening.description}</p><div className={styles.streamLinks}>{opening.media?.provider === 'local-video' && <a href={opening.media.fullUrl} target="_blank" rel="noopener noreferrer">ПОЛНЫЙ ВЫПУСК НА YOUTUBE ↗</a>}{opening.archiveUrl && <TelegramArchiveLink href={opening.archiveUrl} ariaLabel="Архив записи новогоднего стрима в Telegram" className={styles.streamArchive} />}</div><a href={`#${tradition.id}`} className={styles.sceneNext}>СЛЕДУЮЩАЯ ИСТОРИЯ <span>↘</span></a></div>
           </div>
         </div>
       </div>
@@ -104,11 +105,6 @@ export function January() {
             </section>)}
           </div>
         </div>
-      </div>
-      <div className={styles.mafiaVideoSection}>
-        <div className={styles.mafiaVideoHead}><span>ВИДЕО / 16:9</span><span>МАФИЯ 1 × МАФИЯ 2</span></div>
-        <div className={styles.mafiaVideoFrame}><MediaFrame scene={game} label="Mafia 1 × Mafia 2" placeholderText={{ eyebrow: 'ВИДЕО В ПОДГОТОВКЕ', foot: 'ЗДЕСЬ ПОЯВИТСЯ ЗАПИСЬ 16:9' }} /></div>
-        <div className={styles.mafiaVideoFoot}><span>ЗАПИСЬ ДЛЯ САЙТА ГОТОВИТСЯ</span><span>03 / ЯНВАРЬ</span></div>
       </div>
     </article>
 

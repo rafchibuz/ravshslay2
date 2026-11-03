@@ -26,6 +26,11 @@
 .faceStage figcaption span { color: var(--gold); white-space: nowrap; }
 .sceneCopy { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0,1.2fr) minmax(300px,.8fr); align-items: start; gap: clamp(25px,3vw,55px); padding-top: 14px; }
 .sceneSummary { padding-top: 23px; }
+.streamLinks{display:flex;flex-direction:column;align-items:flex-start;gap:15px;margin-top:28px;padding-top:16px;border-top:1px solid rgba(182,222,242,.34)}
+.streamLinks>a{color:#e7ca93;font-size:10px;font-weight:900;letter-spacing:.14em;text-decoration:none}
+.streamLinks>a:hover{text-decoration:underline;text-underline-offset:5px}
+.streamLinks>a:focus-visible{outline:2px solid #e7ca93;outline-offset:5px}
+.streamLinks .streamArchive{width:auto;margin:0;padding:0;border:0}
 .tag { display: inline-block; color: var(--gold); font-size: 10px; font-weight: 800; letter-spacing: .22em; }
 .scene h3 { margin: 20px 0; color: #f0f9ff; font: 400 clamp(55px,5.8vw,96px)/.95 var(--font-display); letter-spacing: -.02em; text-shadow: 0 3px 20px rgba(143,211,249,.16); }
 .scene p { max-width: 440px; color: #c6dce9; font-size: 16px; line-height: 1.65; }
@@ -64,7 +69,7 @@
 .phoneControls button:not(:disabled):hover { background: rgba(173,222,248,.2); }
 .phoneControls span { display: flex; align-items: center; gap: 9px; color: var(--gold); font-size: 10px; font-weight: 900; letter-spacing: .14em; }
 .phoneControls i { display: block; width: 34px; height: 1px; background: rgba(237,187,98,.7); }
-.mafiaScene { padding-top: 76px; padding-bottom: 150px; }
+.mafiaScene { padding-top: 76px; padding-bottom: 100px; }
 .mafiaLayout { display: grid; grid-template-columns: minmax(0,1.1fr) minmax(350px,.9fr); align-items: center; gap: clamp(25px,4vw,75px); margin-top: 28px; }
 .mafiaArt { position: relative; min-width: 0; min-height: 900px; }
 .mafiaArt::before { content: ''; position: absolute; inset: 24% -12% 2% 0; pointer-events: none; background: radial-gradient(ellipse at 45% 65%,rgba(197,116,55,.16),transparent 56%); filter: blur(35px); }
@@ -84,15 +89,6 @@
 .mafiaLinks a:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
 .mafiaLinks svg { width: 16px; height: 16px; flex: 0 0 auto; fill: currentColor; color: #a9d9f0; }
 .mafiaLinks b { color: var(--gold); font-size: 14px; font-weight: 400; }
-.mafiaVideoSection { position: relative; margin: 65px auto 0; max-width: 1060px; }
-.mafiaVideoHead,.mafiaVideoFoot { display: flex; justify-content: space-between; gap: 12px; color: #a9d4e8; font-size: 9px; font-weight: 900; letter-spacing: .2em; }
-.mafiaVideoHead { margin-bottom: 12px; }
-.mafiaVideoFoot { margin-top: 12px; color: #cbab7b; }
-.mafiaVideoFrame { position: relative; overflow: hidden; width: 100%; aspect-ratio: 16/9; border: 1px solid rgba(186,220,238,.35); background: #081725; box-shadow: 0 35px 90px rgba(1,7,14,.35); }
-.mafiaVideoFrame :global(.media-empty) { background: radial-gradient(ellipse at 50% 40%,rgba(89,142,171,.2),transparent 56%),linear-gradient(130deg,rgba(206,153,88,.08),transparent 42%),#091725; }
-.mafiaVideoFrame :global(.media-empty)::before { border-color: rgba(215,181,129,.4); }
-.mafiaVideoFrame :global(.media-empty-label),.mafiaVideoFrame :global(.media-empty-foot) { color: #c7ac81; }
-.mafiaVideoFrame :global(.media-empty-title) { color: rgba(231,244,251,.55); }
 .litvinScene { padding-top: 80px; padding-bottom: 70px; }
 .litvinLayout { display: grid; grid-template-columns: minmax(0,1.08fr) minmax(0,.92fr); align-items: end; gap: clamp(24px,3vw,50px); min-height: 690px; }
 .litvinContent { position: relative; z-index: 1; min-width: 0; padding: 110px 0 80px; }
@@ -128,7 +124,7 @@
 @media (max-width: 1100px) { .socialLayout { grid-template-columns: minmax(0,1fr) minmax(330px,400px); gap: 3%; } }
 @media (max-width: 700px) { .socialLayout { gap: 10px; } .socialArt { width: 100%; height: auto; padding: 0; } .socialSide { width: 100%; } .phoneShell { width: min(96%,410px); margin: 0 auto; transform: rotate(1deg); } }
 @media (max-width: 700px) { .cinema { height: max(185svh,1100px); } .cinemaSticky { height: auto; min-height: 100svh; justify-content: flex-start; } }
-@media (max-width: 980px) { .mafiaLayout { grid-template-columns: 1fr; gap: 0; } .mafiaArt { width: min(100%,520px); min-height: 0; aspect-ratio: 941/1672; margin: 0 auto; } .mafiaContent { max-width: 700px; padding: 0 0 30px; } .mafiaVideoSection { margin-top: 35px; } }
-@media (max-width: 700px) { .mafiaScene { padding-top: 40px; padding-bottom: 100px; } .mafiaLayout { margin-top: 10px; } .mafiaTitle { font-size: clamp(70px,22vw,110px) !important; } .mafiaArchives { margin-top: 28px; } .mafiaGroupHead strong { font-size: 27px; } .mafiaLinks { grid-template-columns: 1fr; } .mafiaLinks a { min-height: 45px; padding: 10px 14px; } .mafiaVideoHead,.mafiaVideoFoot { font-size: 7px; letter-spacing: .09em; } .mafiaVideoFrame :global(.media-empty-title) { font-size: clamp(24px,7vw,38px); } }
+@media (max-width: 980px) { .mafiaLayout { grid-template-columns: 1fr; gap: 0; } .mafiaArt { width: min(100%,520px); min-height: 0; aspect-ratio: 941/1672; margin: 0 auto; } .mafiaContent { max-width: 700px; padding: 0 0 30px; } }
+@media (max-width: 700px) { .mafiaScene { padding-top: 40px; padding-bottom: 100px; } .mafiaLayout { margin-top: 10px; } .mafiaTitle { font-size: clamp(70px,22vw,110px) !important; } .mafiaArchives { margin-top: 28px; } .mafiaGroupHead strong { font-size: 27px; } .mafiaLinks { grid-template-columns: 1fr; } .mafiaLinks a { min-height: 45px; padding: 10px 14px; } }
 @media (max-width: 1050px) { .litvinLayout { grid-template-columns: 1fr; gap: 0; min-height: 0; } .litvinContent { padding: 65px 0 20px; } .litvinContent p { margin-bottom: 30px; } .litvinArt { width: min(100%,680px); min-height: 0; aspect-ratio: 1456/1088; margin: 0 auto; } .litvinArt img { top: 0; right: -4%; width: 108%; } }
 @media (max-width: 700px) { .litvinScene { padding-top: 50px; padding-bottom: 35px; } .litvinContent { padding: 45px 0 15px; } .litvinContent h3 { font-size: clamp(58px,14vw,86px); } .litvinVideoHead { font-size: 7px; letter-spacing: .12em; } .litvinVideoFrame :global(.media-play-icon) { width: 58px; height: 58px; font-size: 21px; } }

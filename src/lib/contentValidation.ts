@@ -13,7 +13,7 @@ export type Scene = {
   archiveUrl?: string;
   playthroughs?: Playthrough[];
   format: 'cinema' | 'social' | 'split' | 'feature';
-  media: { provider: 'youtube'; url: string; poster?: string } | { provider: 'local-gallery'; items: [LocalVideo, LocalVideo] } | null;
+  media: { provider: 'youtube'; url: string; poster?: string } | { provider: 'local-video'; src: string; fullUrl: string } | { provider: 'local-gallery'; items: [LocalVideo, LocalVideo] } | null;
   verified: boolean;
 };
 
@@ -40,6 +40,9 @@ export function validateScenes(input: unknown): Scene[] {
       const media = value.media as Record<string, unknown>;
       if (media.provider === 'youtube') {
         if (typeof media.url !== 'string' || !/^https:\/\/(www\.)?(youtube\.com|youtu\.be)\//.test(media.url)) throw new Error('Unsupported media URL');
+      } else if (media.provider === 'local-video') {
+        if (typeof media.src !== 'string' || !/^\/assets\/[\w/-]+\.mp4$/.test(media.src)
+          || typeof media.fullUrl !== 'string' || !/^https:\/\/(www\.)?(youtube\.com|youtu\.be)\//.test(media.fullUrl)) throw new Error('Invalid local video');
       } else if (media.provider === 'local-gallery') {
         if (!Array.isArray(media.items) || media.items.length !== 2 || !media.items.every((item: unknown) => {
           if (!item || typeof item !== 'object') return false;

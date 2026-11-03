@@ -7,7 +7,11 @@
     "description": "До Нового года остаются считаные часы! Тем временем в Апшеронске — настоящий снежный апокалипсис. Но Равшану не сидится дома: несмотря на непогоду, он садится за руль своей Lada Niva и отправляется покорять заснеженный город!",
     "archiveUrl": "https://t.me/stayavods/3/27805",
     "format": "cinema",
-    "media": null,
+    "media": {
+      "provider": "local-video",
+      "src": "/assets/january/new-year-stream.mp4",
+      "fullUrl": "https://www.youtube.com/watch?v=WJ7kJ0lyof0"
+    },
     "verified": false
   },
   {
@@ -31,7 +35,7 @@
     "eyebrow": "03 / ИГРА",
     "title": "Mafia 1 и Mafia 2",
     "sourceTitle": "Прохождение Мафии 2+1",
-    "description": "Записи прохождений Mafia 1 и Mafia 2 собраны по частям. Видео для этой сцены появится здесь позже.",
+    "description": "Записи прохождений Mafia 1 и Mafia 2 собраны по частям.",
     "format": "split",
     "playthroughs": [
       {

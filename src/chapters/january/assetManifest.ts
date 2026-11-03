@@ -38,6 +38,11 @@ export const assetManifest: Asset[] = [
     approved: false, alt: 'RavshanN без бороды',
   },
   {
+    assetId: 'january-new-year-video', chapterId: '2026-01', eventId: '2026-01-01', role: 'local New Year stream excerpt',
+    src: '/assets/january/new-year-stream.mp4', kind: 'real', rightsStatus: 'provided-by-user',
+    approved: false, alt: 'Фрагмент новогоднего стрима',
+  },
+  {
     assetId: 'january-brothers-square', chapterId: '2026-01', eventId: '2026-01-02', role: 'square editorial artwork beside video phone',
     src: '/assets/visuals/brothers-square.webp', kind: 'supplied-artwork', rightsStatus: 'provided-by-user',
     approved: false, alt: 'Брат и Брат 2 — двое друзей в кожаных куртках',
@@ -69,9 +74,4 @@ export const assetManifest: Asset[] = [
       approved: false, alt: `Обложка видео ${part}`,
     },
   ])),
-  ...['2026-01-01', '2026-01-03'].map((eventId) => ({
-    assetId: `${eventId}-media`, chapterId: '2026-01', eventId, role: 'documentary event media',
-    src: null, kind: 'placeholder' as const, rightsStatus: 'missing' as const,
-    approved: false, alt: 'Оригинальный материал события ожидается',
-  })),
 ];

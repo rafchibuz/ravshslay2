@@ -5,7 +5,7 @@ import { scenes } from '../src/lib/contentValidation';
 import { februaryScenes, validateFebruaryScenes } from '../src/lib/februaryContent';
 import { derbyStory } from '../src/chapters/february/derbyContent';
 import { marchEnduro, marchMatch } from '../src/chapters/march/marchContent';
-import { julyClay, julyTasting } from '../src/chapters/july/julyContent';
+import { julyClay, julyRocket, julyTasting } from '../src/chapters/july/julyContent';
 
 describe('chronicle navigation', () => {
   it('moves through the hero and January points in both directions', () => {
@@ -20,6 +20,7 @@ describe('chronicle navigation', () => {
     expect(nextPoint('2026-06-05', 1)).toBe('july');
     expect(nextPoint('july', 1)).toBe('2026-07-01');
     expect(nextPoint('2026-07-01', 1)).toBe('2026-07-02');
+    expect(nextPoint('2026-07-02', 1)).toBe('2026-07-03');
     expect(nextPoint('2026-01-02', -1)).toBe('2026-01-01');
     expect(nextPoint('hero', -1)).toBe('hero');
   });
@@ -51,11 +52,19 @@ describe('July clay', () => {
   });
 });
 
+describe('July rocket', () => {
+  it('uses the supplied animation and local launch video in the third scene', () => {
+    expect(julyRocket.id).toBe('2026-07-03');
+    expect(julyRocket.animation).toBe('/assets/july/rocket/LIT_ENERGY_launch_transparent.webp');
+    expect(julyRocket.videoSrc).toBe('/assets/july/rocket/rocket-launch.mp4');
+  });
+});
+
 describe('January editorial data', () => {
   it('keeps the four supplied events in draft status', () => {
     expect(scenes).toHaveLength(4);
     expect(scenes.every((scene) => scene.verified === false)).toBe(true);
-    expect(scenes[0].media).toBeNull();
+    expect(scenes[0].media).toEqual({ provider: 'local-video', src: '/assets/january/new-year-stream.mp4', fullUrl: 'https://www.youtube.com/watch?v=WJ7kJ0lyof0' });
     expect(scenes[1].media?.provider).toBe('local-gallery');
     expect(scenes[2].media).toBeNull();
     expect(scenes[3].media).toEqual({ provider: 'youtube', url: 'https://youtu.be/RzZn5SlTQU8?si=EPwxj6HtWqYQHppc', poster: 'https://i.ytimg.com/vi/RzZn5SlTQU8/hqdefault.jpg' });
@@ -71,6 +80,10 @@ describe('January editorial data', () => {
 
   it('rejects unsafe local video paths', () => {
     expect(() => validateScenes([{ ...scenes[1], media: { provider: 'local-gallery', items: [{ src: 'https://example.com/clip.mp4', poster: '/assets/video/a.webp', label: 'Брат' }] } }])).toThrow('Invalid local video gallery');
+  });
+
+  it('rejects an external path in the New Year local video', () => {
+    expect(() => validateScenes([{ ...scenes[0], media: { provider: 'local-video', src: 'https://example.com/clip.mp4', fullUrl: 'https://www.youtube.com/watch?v=WJ7kJ0lyof0' } }])).toThrow('Invalid local video');
   });
 
   it('keeps each film paired with its Telegram archive', () => {

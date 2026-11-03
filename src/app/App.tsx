@@ -41,7 +41,7 @@ export function App() {
         event.preventDefault(); goToPoint(nextPoint(active, event.key === 'ArrowRight' ? 1 : -1));
       } else if (event.key === 'PageDown' || event.key === 'PageUp') {
         event.preventDefault();
-        const pageStops: Point[] = ['hero', 'january', 'february', 'march', 'april', '2026-04-01', '2026-04-02', '2026-04-03', '2026-04-04', 'may', '2026-05-02', '2026-05-03', '2026-05-04', 'june', '2026-06-01', '2026-06-02', '2026-06-03', '2026-06-vaz', '2026-06-04', '2026-06-05', 'july', '2026-07-01', '2026-07-02'];
+        const pageStops: Point[] = ['hero', 'january', 'february', 'march', 'april', '2026-04-01', '2026-04-02', '2026-04-03', '2026-04-04', 'may', '2026-05-02', '2026-05-03', '2026-05-04', 'june', '2026-06-01', '2026-06-02', '2026-06-03', '2026-06-vaz', '2026-06-04', '2026-06-05', 'july', '2026-07-01', '2026-07-02', '2026-07-03'];
         const direction = event.key === 'PageDown' ? 1 : -1;
         const index = pageStops.indexOf(active);
         const target = index >= 0 ? index + direction : direction > 0 ? pageStops.findIndex((stop) => points.indexOf(stop) > points.indexOf(active)) : pageStops.reduce((found, stop, position) => points.indexOf(stop) < points.indexOf(active) ? position : found, -1);

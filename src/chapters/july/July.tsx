@@ -1,5 +1,6 @@
 import { YouTubePlayer } from '../../components/YouTubePlayer';
-import { julyClay, julyTasting } from './julyContent';
+import { LocalVideoPlayer } from '../../components/LocalVideoPlayer';
+import { julyClay, julyRocket, julyTasting } from './julyContent';
 import styles from './chapter.module.css';
 
 function SummerLeaves({ right = false }: { right?: boolean }) {
@@ -16,7 +17,7 @@ export function July() {
     <SummerLeaves right />
     <header className={styles.monthHeader}>
       <div className={styles.monthIndex}><span>07 / 12</span><i /><span>ГЛАВА СЕДЬМАЯ</span></div>
-      <div className={styles.monthLine}><h2 id="july-title">ИЮЛЬ <span>’26</span></h2><p>Лето набрало вкус. Июль начинается с LIT ENERGY и продолжается за гончарным кругом.</p></div>
+      <div className={styles.monthLine}><h2 id="july-title">ИЮЛЬ <span>’26</span></h2><p>Лето набрало вкус: дегустация LIT ENERGY, гончарный круг и запуск ракеты.</p></div>
     </header>
 
     <article id={julyTasting.id} className={styles.story} aria-labelledby="july-tasting-title">
@@ -61,6 +62,28 @@ export function July() {
           <div className={styles.clayMediaTop}><span>ИРЛ / ОДИН ВЫПУСК</span><span>07.26</span></div>
           <YouTubePlayer videoId={julyClay.videoId} title={julyClay.title} url={julyClay.videoUrl} posterFallback={julyClay.image} label="СМОТРЕТЬ ЛЕПКУ" />
           <span className={styles.clayMediaNote}>ГОНЧАРНЫЙ КРУГ ↗</span>
+        </div>
+      </div>
+    </article>
+    <article id={julyRocket.id} className={styles.rocketStory} aria-labelledby="july-rocket-title">
+      <div className={styles.eventIndex}><span>03 / ЗАПУСК РАКЕТЫ</span><span>ИЮЛЬ 2026</span></div>
+      <div className={styles.rocketHeading}>
+        <span className={styles.rocketKicker}>LIT ENERGY / ВРЕМЯ ВЗЛЕТАТЬ</span>
+        <h3 id="july-rocket-title">ПОЕХАЛИ<span>!</span></h3>
+        <p>Ракета LIT ENERGY готова к старту. Смотри запуск в короткой анимации и в видео рядом.</p>
+      </div>
+      <div className={styles.rocketStage}>
+        <div className={styles.rocketArt}>
+          <span className={styles.rocketOrbit} aria-hidden="true" />
+          <span className={styles.rocketLaunchLine} aria-hidden="true" />
+          <img className={styles.rocketAnimated} src={julyRocket.animation} alt="Анимация запуска ракеты LIT ENERGY" loading="lazy" decoding="async" />
+          <img className={styles.rocketStill} src={julyRocket.still} alt="Ракета LIT ENERGY перед запуском" loading="lazy" decoding="async" />
+          <span className={styles.rocketArtNote}>03 · 02 · 01 · ПУСК</span>
+        </div>
+        <div className={styles.rocketMedia}>
+          <div className={styles.rocketMediaTop}><span>ЗАПУСК / ВИДЕО</span><span>16:9</span></div>
+          <LocalVideoPlayer src={julyRocket.videoSrc} title={julyRocket.title} label="СМОТРЕТЬ ЗАПУСК" />
+          <div className={styles.rocketMediaFoot}><span>ОРИГИНАЛЬНЫЙ ФРАГМЕНТ</span><span>LIT ENERGY ↗</span></div>
         </div>
       </div>
     </article>
