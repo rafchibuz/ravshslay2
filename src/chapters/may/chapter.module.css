@@ -1,0 +1,33 @@
+.chapter{position:relative;isolation:isolate;overflow:clip;color:#f5f2e9;background:linear-gradient(180deg,#0c1820 0%,#162b2a 27%,#263a2e 70%,#263a2e 100%);}
+.chapter::before{content:'';position:absolute;z-index:-1;inset:0;pointer-events:none;background:radial-gradient(ellipse 48% 34% at 82% 39%,rgba(247,183,93,.19),transparent 80%),radial-gradient(ellipse 60% 52% at 12% 70%,rgba(78,126,83,.22),transparent 82%),repeating-linear-gradient(112deg,transparent 0 220px,rgba(229,219,181,.018) 221px 222px);}
+.branch{position:absolute;z-index:-1;top:18px;left:-70px;width:clamp(180px,20vw,290px);height:auto;color:rgba(192,172,126,.35);pointer-events:none;}
+.branchRight{top:250px;left:auto;right:-85px;transform:scaleX(-1);color:rgba(218,191,145,.34);}
+.blossoms{color:rgba(247,189,180,.53);filter:drop-shadow(0 0 12px rgba(255,185,161,.25));}
+.monthHeader{position:relative;padding:105px 10% 60px 14%;}
+.monthIndex{display:flex;align-items:center;gap:16px;color:#cbd9bd;font-size:10px;font-weight:900;letter-spacing:.2em;}
+.monthIndex i{width:56px;height:1px;background:linear-gradient(90deg,#f3c185,transparent);}
+.monthHeader h2{margin:24px 0 20px;color:#f1eee4;font:400 clamp(104px,13vw,190px)/.82 var(--font-display);letter-spacing:-.055em;}
+.monthHeader h2 span{display:inline-block;color:#e8b987;font-size:.42em;vertical-align:top;}
+.monthHeader p{max-width:720px;margin:0;color:#ced8cb;font-size:16px;line-height:1.65;}
+.race{position:relative;padding:26px 10% 102px 14%;scroll-margin-top:0;}
+.race::before{content:'';position:absolute;z-index:-1;inset:0;pointer-events:none;background:radial-gradient(ellipse 44% 53% at 75% 65%,rgba(238,163,82,.14),transparent 82%),linear-gradient(180deg,transparent,rgba(12,27,28,.19));}
+.eventIndex{display:flex;justify-content:space-between;gap:16px;padding-bottom:13px;border-bottom:1px solid rgba(226,219,191,.28);color:#d6ddc7;font-size:10px;font-weight:900;letter-spacing:.2em;}
+.raceHeading{max-width:1160px;margin:29px auto 22px;}
+.kicker{color:#f1b878;font-size:10px;font-weight:900;letter-spacing:.22em;}
+.raceHeading h3{margin:13px 0 10px;color:#f3f0e7;font:400 clamp(55px,7.3vw,108px)/.87 var(--font-display);letter-spacing:-.04em;}
+.raceHeading h3 em{color:#f4bf81;font-style:normal;}
+.raceHeading p{max-width:750px;margin:0;color:#d4dfd0;font-size:15px;line-height:1.6;}
+.raceLayout{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr);align-items:center;gap:clamp(18px,4vw,60px);width:100%;max-width:1160px;margin:0 auto;}
+.video{position:relative;z-index:2;min-width:0;}
+.gesture{position:relative;isolation:isolate;align-self:end;width:100%;height:470px;min-width:0;}
+.gestureGlow{position:absolute;z-index:-2;inset:14% 0 4%;border-radius:50%;background:radial-gradient(ellipse,rgba(230,170,95,.27),rgba(93,142,104,.11) 55%,transparent 76%);filter:blur(18px);}
+.motionArc{position:absolute;z-index:-1;top:4%;left:10%;width:78%;aspect-ratio:1;border:1px solid rgba(242,199,134,.32);border-left-color:transparent;border-bottom-color:transparent;border-radius:50%;transform:rotate(-24deg);box-shadow:0 0 0 24px rgba(251,195,128,.015),0 0 0 74px rgba(251,195,128,.009);}
+.gesture img{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:contain;object-position:center bottom;filter:drop-shadow(0 21px 28px rgba(0,0,0,.32));}
+.readyPose{animation:readyLoop 3.4s ease-in-out infinite;}
+.wavePose{animation:waveLoop 3.4s ease-in-out infinite;}
+.startMark{position:absolute;right:2%;bottom:-22px;color:#e7c596;font-size:9px;font-weight:900;letter-spacing:.19em;white-space:nowrap;text-shadow:0 2px 8px #0b1716;}
+@keyframes readyLoop{0%,37%,100%{opacity:1;transform:translateY(0)}44%,83%{opacity:0;transform:translateY(-8px)}89%{opacity:1;transform:translateY(0)}}
+@keyframes waveLoop{0%,37%,100%{opacity:0;transform:translateY(10px)}44%,83%{opacity:1;transform:translateY(0)}89%{opacity:0;transform:translateY(10px)}}
+@media(max-width:900px){.monthHeader{padding-left:11%}.race{padding-left:11%;padding-right:7%}.raceHeading h3{font-size:clamp(49px,7.7vw,77px)}.gesture{height:390px}}
+@media(max-width:700px){.monthHeader{padding:84px 7% 43px}.monthHeader h2{font-size:clamp(82px,18vw,120px)}.monthHeader p{font-size:13px}.branch{left:-108px;width:210px}.branchRight{right:-105px}.race{padding:26px 7% 76px}.eventIndex,.kicker{font-size:8px}.raceHeading{margin:25px auto 20px}.raceHeading h3{font-size:clamp(48px,12vw,73px)}.raceHeading p{font-size:13px}.raceLayout{grid-template-columns:1fr;gap:10px}.gesture{height:350px}.startMark{right:4%;bottom:-15px;font-size:7px}}
+@media(prefers-reduced-motion:reduce){.readyPose,.wavePose{animation:none}.wavePose{opacity:0}}
