@@ -5,7 +5,7 @@ import { scenes } from '../src/lib/contentValidation';
 import { februaryScenes, validateFebruaryScenes } from '../src/lib/februaryContent';
 import { derbyStory } from '../src/chapters/february/derbyContent';
 import { marchEnduro, marchMatch } from '../src/chapters/march/marchContent';
-import { julyClay, julyRocket, julyTasting } from '../src/chapters/july/julyContent';
+import { julyBmw, julyClay, julyQuiz, julyRocket, julyStaya, julyTasting, julyWorldCup } from '../src/chapters/july/julyContent';
 
 describe('chronicle navigation', () => {
   it('moves through the hero and January points in both directions', () => {
@@ -21,6 +21,10 @@ describe('chronicle navigation', () => {
     expect(nextPoint('july', 1)).toBe('2026-07-01');
     expect(nextPoint('2026-07-01', 1)).toBe('2026-07-02');
     expect(nextPoint('2026-07-02', 1)).toBe('2026-07-03');
+    expect(nextPoint('2026-07-03', 1)).toBe('2026-07-04');
+    expect(nextPoint('2026-07-04', 1)).toBe('2026-07-05');
+    expect(nextPoint('2026-07-05', 1)).toBe('2026-07-07');
+    expect(nextPoint('2026-07-07', 1)).toBe('2026-07-06');
     expect(nextPoint('2026-01-02', -1)).toBe('2026-01-01');
     expect(nextPoint('hero', -1)).toBe('hero');
   });
@@ -57,6 +61,16 @@ describe('July rocket', () => {
     expect(julyRocket.id).toBe('2026-07-03');
     expect(julyRocket.animation).toBe('/assets/july/rocket/LIT_ENERGY_launch_transparent.webp');
     expect(julyRocket.videoSrc).toBe('/assets/july/rocket/rocket-launch.mp4');
+  });
+});
+
+describe('late July stories', () => {
+  it('keeps the supplied episodes, imagery and motorcycle clip paired with each scene', () => {
+    expect(julyQuiz.videoUrl).toBe('https://www.youtube.com/watch?v=qIVhtivg8wg');
+    expect(julyBmw.videos.map(({ id }) => id)).toEqual(['9v1f2KY5EaM', '0EyYtGarbis']);
+    expect(julyWorldCup.reactionImage).toBe('/assets/july/world-cup-reaction.png');
+    expect(julyStaya.clipSrc).toBe('/assets/july/staya-electric-moto.mp4');
+    expect(julyStaya.videoUrl).toBe('https://www.youtube.com/watch?v=bQd2QTE-oAo');
   });
 });
 

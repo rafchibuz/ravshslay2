@@ -81,3 +81,54 @@
 @media(max-width:1000px){.rocketStory{padding-left:11%;padding-right:7%}.rocketStage{min-height:560px}.rocketArt{height:560px}.rocketAnimated,.rocketStill{height:540px}}
 @media(max-width:700px){.rocketStory{padding:24px 7% 72px}.rocketHeading h3{font-size:clamp(90px,17vw,140px)}.rocketHeading p{font-size:14px}.rocketStage{display:flex;flex-direction:column;min-height:0;gap:0}.rocketArt{width:100%;height:440px}.rocketAnimated,.rocketStill{height:420px}.rocketMedia{width:100%;margin:0;padding:12px}.rocketArtNote{display:none}}
 @media(prefers-reduced-motion:reduce){.rocketAnimated{display:none}.rocketStill{display:block}}
+.rocketStage{grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);max-width:1320px;gap:22px}
+.rocketMedia{margin-top:28px}
+.rocketAnimated,.rocketStill{width:min(100%,440px)}
+.newStory{position:relative;padding:46px 10% 105px 14%;background:radial-gradient(ellipse 48% 38% at 76% 62%,rgba(180,226,111,.075),transparent 82%)}
+.newStory>.eventIndex{max-width:1240px}
+.sceneKicker{color:#ddfa82;font-size:10px;font-weight:900;letter-spacing:.21em}
+.quizHeading,.bmwHeading,.worldHeading,.stayaHeading{max-width:1240px;margin:42px auto 0;position:relative;z-index:2}
+.quizHeading h3,.bmwHeading h3,.worldHeading h3,.stayaHeading h3{margin:13px 0 8px;font:400 clamp(78px,9vw,132px)/.9 var(--font-display);letter-spacing:-.025em;color:#f8f9e9}
+.quizHeading h3 span,.bmwHeading h3 span,.worldHeading h3 span,.stayaHeading h3 span{color:#d8f77d}
+.quizHeading p,.bmwHeading p,.worldHeading p,.stayaHeading p{max-width:700px;margin:0;color:#e3eddb;font-size:17px;line-height:1.65}
+.quizStory{background:radial-gradient(ellipse 48% 43% at 74% 58%,rgba(112,84,215,.18),transparent 82%)}
+.quizHeading h3 span{color:#d5a5ff}
+.quizStage{position:relative;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);align-items:center;gap:18px;max-width:1240px;min-height:570px;margin:15px auto 0}
+.quizMedia{position:relative;z-index:2;min-width:0;border-top:2px solid #a879ff;padding:14px;background:linear-gradient(145deg,rgba(28,45,46,.92),rgba(41,34,69,.91));box-shadow:0 28px 70px rgba(9,20,25,.35)}
+.quizImage{display:block;width:114%;max-width:none;max-height:560px;object-fit:contain;filter:drop-shadow(0 28px 34px rgba(14,20,24,.42))}
+.bmwStory{background:radial-gradient(ellipse 48% 35% at 28% 55%,rgba(228,187,104,.1),transparent 85%)}
+.bmwHeading h3 span{color:#e5c389}
+.bmwStage{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:24px;max-width:1240px;margin:30px auto 0;align-items:center}
+.bmwImage{display:block;width:115%;max-width:none;margin-left:-9%;filter:drop-shadow(0 22px 32px rgba(7,23,17,.44));-webkit-mask-image:linear-gradient(180deg,#000 82%,transparent);mask-image:linear-gradient(180deg,#000 82%,transparent)}
+.bmwEpisodes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px;min-width:0}
+.bmwEpisode{min-width:0;padding:10px;border:1px solid rgba(233,207,153,.24);background:rgba(15,43,37,.82)}
+.videoCaption{display:flex;align-items:center;gap:12px;margin-bottom:10px;color:#e3edda;font-size:10px;font-weight:900;letter-spacing:.12em}
+.videoCaption span{color:#d9f871;font:400 35px/.9 var(--font-display)}
+.worldStory{background:radial-gradient(ellipse 55% 55% at 47% 68%,rgba(83,166,191,.14),transparent 82%)}
+.worldHeading h3 span{color:#bce7f3}
+.worldStage{position:relative;max-width:1240px;height:630px;margin:26px auto 0;overflow:hidden;isolation:isolate}
+.worldStage::before{content:'';position:absolute;inset:4% 4% 5%;z-index:-1;border:1px solid rgba(183,226,233,.2);border-radius:50%;box-shadow:0 0 0 80px rgba(183,226,233,.018)}
+.worldFinal{position:absolute;left:0;top:7%;width:76%;height:78%;overflow:hidden;transform:rotate(-2deg);box-shadow:0 26px 60px rgba(7,26,30,.42)}
+.worldFinal img{display:block;width:100%;height:100%;object-fit:cover}
+.worldFinal::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(6,25,31,.72))}
+.worldFinal span{position:absolute;z-index:1;bottom:18px;left:24px;color:white;font-size:11px;font-weight:900;letter-spacing:.2em}
+.worldReaction{position:absolute;z-index:2;right:-2%;bottom:-4%;height:98%;max-width:52%;object-fit:contain;object-position:bottom right;filter:drop-shadow(-22px 16px 28px rgba(5,22,28,.5))}
+.worldStamp{position:absolute;z-index:3;right:3%;top:6%;color:#d7fa7b;font:400 64px/.9 var(--font-display);text-shadow:0 8px 22px rgba(0,0,0,.6)}
+.worldStamp span{display:block;margin-top:8px;color:white;font:900 9px/1.4 sans-serif;letter-spacing:.2em}
+.stayaStory{background:radial-gradient(ellipse 45% 43% at 20% 58%,rgba(247,162,85,.15),transparent 85%)}
+.stayaHeading h3 span{color:#ffd39a}
+.stayaStage{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);align-items:center;gap:34px;max-width:1240px;min-height:620px;margin:24px auto 0}
+.stayaArt{position:relative;min-width:0;align-self:stretch;display:grid;place-items:end center}
+.stayaArt::before{content:'';position:absolute;z-index:-1;inset:12% 3% 8%;border-radius:50%;background:radial-gradient(ellipse,rgba(248,167,85,.26),transparent 70%);filter:blur(20px)}
+.stayaArt img{display:block;width:112%;max-width:none;max-height:600px;object-fit:contain;object-position:bottom;filter:drop-shadow(0 26px 38px rgba(14,26,14,.35))}
+.stayaArt>span{position:absolute;left:0;bottom:15px;color:#f4d59b;font-size:9px;font-weight:900;letter-spacing:.18em}
+.stayaMedia{min-width:0;padding:19px;border:1px solid rgba(246,200,140,.3);border-top:2px solid #f4c78f;background:linear-gradient(140deg,rgba(33,60,39,.91),rgba(24,48,37,.96));box-shadow:0 25px 65px rgba(7,29,21,.26)}
+.fullEpisode{display:flex;align-items:center;justify-content:space-between;margin-top:18px;padding:14px 2px 3px;border-top:1px solid rgba(248,209,158,.28);color:#f3d6ac;text-decoration:none;font-size:11px;font-weight:900;letter-spacing:.17em}
+.fullEpisode:hover{color:#fff}
+@media(max-width:1000px){.newStory{padding-left:11%;padding-right:7%}.quizStage,.bmwStage,.stayaStage{gap:12px}.bmwEpisodes{grid-template-columns:1fr}.bmwImage{width:105%}.worldStage{height:500px}}
+@media(max-width:700px){.rocketStage{display:flex}.newStory{padding:30px 7% 68px}.quizHeading h3,.bmwHeading h3,.worldHeading h3,.stayaHeading h3{font-size:clamp(58px,13vw,90px)}.quizHeading p,.bmwHeading p,.worldHeading p,.stayaHeading p{font-size:14px}.quizStage,.bmwStage,.stayaStage{display:flex;flex-direction:column;min-height:0}.quizImage,.bmwImage{width:100%;margin:0}.quizMedia,.bmwEpisodes,.stayaMedia{width:100%}.worldStage{height:430px}.worldFinal{width:100%;height:72%;top:10%}.worldReaction{height:75%;max-width:65%}.worldStamp{font-size:42px}.stayaArt{width:100%;height:360px}.stayaArt img{max-height:360px}}
+.bmwStage{grid-template-columns:minmax(0,.58fr) minmax(0,1.42fr)}
+.bmwImage{width:130%;margin-left:-18%}
+.stayaArt{place-items:center;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,#000 0%,#000 86%,transparent);mask-image:linear-gradient(90deg,#000 0%,#000 86%,transparent)}
+.stayaArt img{width:160%;max-height:none;transform:translateX(-9%)}
+@media(max-width:700px){.bmwImage{width:100%;margin:0}.stayaArt img{width:100%;transform:none}}

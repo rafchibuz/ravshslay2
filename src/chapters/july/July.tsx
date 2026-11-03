@@ -1,6 +1,6 @@
 import { YouTubePlayer } from '../../components/YouTubePlayer';
 import { LocalVideoPlayer } from '../../components/LocalVideoPlayer';
-import { julyClay, julyRocket, julyTasting } from './julyContent';
+import { julyBmw, julyClay, julyQuiz, julyRocket, julyStaya, julyTasting, julyWorldCup } from './julyContent';
 import styles from './chapter.module.css';
 
 function SummerLeaves({ right = false }: { right?: boolean }) {
@@ -17,7 +17,7 @@ export function July() {
     <SummerLeaves right />
     <header className={styles.monthHeader}>
       <div className={styles.monthIndex}><span>07 / 12</span><i /><span>ГЛАВА СЕДЬМАЯ</span></div>
-      <div className={styles.monthLine}><h2 id="july-title">ИЮЛЬ <span>’26</span></h2><p>Лето набрало вкус: дегустация LIT ENERGY, гончарный круг и запуск ракеты.</p></div>
+      <div className={styles.monthLine}><h2 id="july-title">ИЮЛЬ <span>’26</span></h2><p>Лето набрало скорость: дегустация, ракета, футбольная игра, ЧМ и встречи со СТАЕЙ.</p></div>
     </header>
 
     <article id={julyTasting.id} className={styles.story} aria-labelledby="july-tasting-title">
@@ -86,6 +86,32 @@ export function July() {
           <div className={styles.rocketMediaFoot}><span>ОРИГИНАЛЬНЫЙ ФРАГМЕНТ</span><span>LIT ENERGY ↗</span></div>
         </div>
       </div>
+    </article>
+    <article id={julyQuiz.id} className={`${styles.newStory} ${styles.quizStory}`} aria-labelledby="july-quiz-title">
+      <div className={styles.eventIndex}><span>04 / ФУТБОЛЬНАЯ СВОЯ ИГРА</span><span>ИЮЛЬ 2026</span></div>
+      <div className={styles.quizHeading}><span className={styles.sceneKicker}>БЛОГЕРЫ / ВОПРОСЫ / ФУТБОЛ</span><h3 id="july-quiz-title">СВОЯ <span>ИГРА</span></h3><p>Футбол оказался темой не только на поле. Равшан собрал блогеров на выпуск «Своей игры»: вопросы, азарт и борьба за правильный ответ.</p></div>
+      <div className={styles.quizStage}>
+        <div className={styles.quizMedia}><YouTubePlayer videoId={julyQuiz.videoId} title={julyQuiz.title} url={julyQuiz.videoUrl} posterFallback={julyQuiz.image} label="СМОТРЕТЬ ВЫПУСК" /></div>
+        <img className={styles.quizImage} src={julyQuiz.image} alt="Участники футбольного выпуска шоу «Своя игра»" loading="lazy" decoding="async" />
+      </div>
+    </article>
+    <article id={julyBmw.id} className={`${styles.newStory} ${styles.bmwStory}`} aria-labelledby="july-bmw-title">
+      <div className={styles.eventIndex}><span>05 / BMW X5 M</span><span>ИЮЛЬ 2026</span></div>
+      <div className={styles.bmwHeading}><span className={styles.sceneKicker}>НОВЫЕ КЛЮЧИ / НОВЫЙ МАРШРУТ</span><h3 id="july-bmw-title">X5 <span>M.</span> ЧЕЧНЯ.</h3><p>Покупка BMW X5 M, дорога в Чечню и реакция отца — две части одной истории.</p></div>
+      <div className={styles.bmwStage}>
+        <img className={styles.bmwImage} src={julyBmw.image} alt="Чёрный BMW X5 M у ворот со львами" loading="lazy" decoding="async" />
+        <div className={styles.bmwEpisodes}>{julyBmw.videos.map((video, index) => <div className={styles.bmwEpisode} key={video.id}><div className={styles.videoCaption}><span>0{index + 1}</span><strong>{index === 0 ? 'ПОКУПКА И ПОЕЗДКА' : 'РЕАКЦИЯ ОТЦА'}</strong></div><YouTubePlayer videoId={video.id} title={video.title} url={video.url} posterFallback={julyBmw.image} label={video.label} /></div>)}</div>
+      </div>
+    </article>
+    <article id={julyWorldCup.id} className={`${styles.newStory} ${styles.worldStory}`} aria-labelledby="july-world-title">
+      <div className={styles.eventIndex}><span>06 / ЧМ 2026</span><span>ИЮЛЬ 2026</span></div>
+      <div className={styles.worldHeading}><span className={styles.sceneKicker}>СМОТРЕЛИ ВМЕСТЕ / ПЕРЕЖИВАЛИ ВМЕСТЕ</span><h3 id="july-world-title">ФУТБОЛ <span>НА СТРИМЕ</span></h3><p>Матчи чемпионата мира смотрели вместе на стримах. На экране — финал Испания × Аргентина, у Равшана — эмоции без фильтра.</p></div>
+      <div className={styles.worldStage}><div className={styles.worldFinal}><img src={julyWorldCup.finalImage} alt="Иллюстрация к просмотру финала: Испания и Аргентина" loading="lazy" decoding="async" /><span>ИСПАНИЯ × АРГЕНТИНА</span></div><img className={styles.worldReaction} src={julyWorldCup.reactionImage} alt="Эмоция Равшана во время совместного просмотра футбола" loading="lazy" decoding="async" /><div className={styles.worldStamp}>90:00 <span>ЭМОЦИИ — В ПРЯМОМ ЭФИРЕ</span></div></div>
+    </article>
+    <article id={julyStaya.id} className={`${styles.newStory} ${styles.stayaStory}`} aria-labelledby="july-staya-title">
+      <div className={styles.eventIndex}><span>07 / ВСЯ СТАЯ В СБОРЕ</span><span>ИЮЛЬ 2026</span></div>
+      <div className={styles.stayaHeading}><span className={styles.sceneKicker}>ШАШЛЫК / ДРУЗЬЯ / ПЕРВАЯ ПОЕЗДКА</span><h3 id="july-staya-title">ШАШЛЫКИ <span>СО СТАЕЙ</span></h3><p>Собрались всей СТАЕЙ на шашлыки. Там Равшан впервые сел на электромотоцикл, успел упасть — и всё равно загорелся идеей купить свой.</p></div>
+      <div className={styles.stayaStage}><div className={styles.stayaArt}><img src={julyStaya.image} alt="Равшан готовит шашлыки для СТАИ" loading="lazy" decoding="async" /><span>СНАЧАЛА — ШАШЛЫКИ</span></div><div className={styles.stayaMedia}><div className={styles.videoCaption}><span>01</span><strong>ПЕРВЫЙ ЗАЕЗД / И ПЕРВОЕ ПАДЕНИЕ</strong></div><LocalVideoPlayer src={julyStaya.clipSrc} title="Первый заезд на электромотоцикле и падение" label="СМОТРЕТЬ ФРАГМЕНТ" /><a className={styles.fullEpisode} href={julyStaya.videoUrl} target="_blank" rel="noopener noreferrer">ПОЛНЫЙ ВЫПУСК НА YOUTUBE <span>↗</span></a></div></div>
     </article>
     <div className={styles.monthEnd}><span>07 / 12 — ИЮЛЬ</span><i /><span>ПРОДОЛЖЕНИЕ СЛЕДУЕТ</span></div>
   </section>;
