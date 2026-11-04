@@ -116,7 +116,7 @@
 .poster h3,
 .reality h3 {
   margin: 0;
-  font: 400 clamp(64px, 6.3vw, 112px)/.87 var(--font-display);
+  font: 400 clamp(64px, 6.3vw, 112px)/1.02 var(--font-display);
   letter-spacing: -.03em;
 }
 .poster h3 strong { color: #f6c66e; font-weight: 400; }

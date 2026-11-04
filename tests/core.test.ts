@@ -10,8 +10,10 @@ import { august } from '../src/chapters/august/augustContent';
 import { september } from '../src/chapters/september/septemberContent';
 
 describe('chronicle navigation', () => {
-  it('moves through the hero and January points in both directions', () => {
-    expect(nextPoint('hero', 1)).toBe('january');
+  it('moves through the statistics, hero and January points in both directions', () => {
+    expect(nextPoint('hero', 1)).toBe('statistics');
+    expect(nextPoint('statistics', 1)).toBe('january');
+    expect(nextPoint('january', -1)).toBe('statistics');
     expect(nextPoint('2026-01-02', 1)).toBe('2026-01-03');
     expect(nextPoint('2026-01-03', 1)).toBe('2026-01-04');
     expect(nextPoint('2026-01-04', 1)).toBe('february');

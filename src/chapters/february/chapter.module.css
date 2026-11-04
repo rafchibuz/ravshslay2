@@ -11,7 +11,7 @@
 .meeting { position: relative; padding: 20px 10% 20px 14%; scroll-margin-top: 25px; }
 .sceneTop { display: flex; justify-content: space-between; gap: 18px; color: #b8e7f4; font-size: 10px; font-weight: 900; letter-spacing: .22em; }
 .meetingIntro { margin-top: 14px; }
-.meetingIntro h3 { margin: 0 0 6px; font: 400 clamp(56px,7vw,104px)/.9 var(--font-display); letter-spacing: -.035em; white-space: nowrap; }
+.meetingIntro h3 { margin: 0 0 6px; font: 400 clamp(56px,7vw,104px)/1.02 var(--font-display); letter-spacing: -.035em; white-space: nowrap; }
 .meetingIntro h3 em { color: #ccf26f; font-style: normal; }
 .meetingIntro p { margin: 0; color: #c1dbe8; font-size: 15px; line-height: 1.5; }
 .meetingLayout { position: relative; display: grid; grid-template-columns: minmax(0,680px) minmax(280px,310px); align-items: stretch; justify-content: center; gap: clamp(36px,5vw,84px); margin-top: 12px; }
