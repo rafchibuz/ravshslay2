@@ -18,7 +18,9 @@
 .timeline-fill { position: absolute; top: 0; left: 0; width: 2px; background: var(--gold); box-shadow: 0 0 12px rgba(237,187,98,.9); }
 .timeline-dot { position: absolute; left: 50%; width: 9px; height: 9px; border-radius: 50%; border: 1px solid var(--gold); background: var(--bg); transform: translateX(-50%); pointer-events: auto; }
 .timeline-dot.is-active { background: var(--orange); border-color: var(--orange); box-shadow: 0 0 12px var(--orange); }
-.hero-dot { top: 0; } .january-dot { top: 12.5%; } .february-dot { top: 25%; } .march-dot { top: 37.5%; } .april-dot { top: 50%; } .may-dot { top: 62.5%; } .june-dot { top: 75%; } .july-dot { top: 87.5%; } .august-dot { top: 100%; }
+.hero-dot { top: 0; } .january-dot { top: 11.11%; } .february-dot { top: 22.22%; } .march-dot { top: 33.33%; } .april-dot { top: 44.44%; } .may-dot { top: 55.55%; } .june-dot { top: 66.66%; } .july-dot { top: 77.77%; } .august-dot { top: 88.88%; } .september-dot { top: 100%; }
+@media (min-width: 701px) { .global-nav nav { min-width: 0; overflow-x: auto; scrollbar-width: none; } .global-nav nav::-webkit-scrollbar { display: none; } .global-nav nav a { flex: none; } }
+@media (min-width: 701px) and (max-width: 1400px) { .global-nav nav { gap: 10px; } .global-nav nav a { font-size: 9px; letter-spacing: .08em; } }
 .timeline-label { writing-mode: vertical-rl; font-size: 9px; font-weight: 800; letter-spacing: .2em; }
 .timeline-percent { font-size: 10px; }
 .hero { position: relative; min-height: min(920px, 100svh); min-height: 100svh; isolation: isolate; display: flex; align-items: center; padding: 115px 10% 80px 14%; background: radial-gradient(ellipse at 72% 38%,rgba(112,58,20,.27),transparent 43%),linear-gradient(90deg,#08090b 0%,#101013 51%,#090909 100%); }

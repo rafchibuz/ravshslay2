@@ -91,8 +91,8 @@ export function July() {
       <div className={styles.eventIndex}><span>04 / ФУТБОЛЬНАЯ СВОЯ ИГРА</span><span>ИЮЛЬ 2026</span></div>
       <div className={styles.quizHeading}><span className={styles.sceneKicker}>БЛОГЕРЫ / ВОПРОСЫ / ФУТБОЛ</span><h3 id="july-quiz-title">СВОЯ <span>ИГРА</span></h3><p>Футбол оказался темой не только на поле. Равшан собрал блогеров на выпуск «Своей игры»: вопросы, азарт и борьба за правильный ответ.</p></div>
       <div className={styles.quizStage}>
-        <div className={styles.quizMedia}><YouTubePlayer videoId={julyQuiz.videoId} title={julyQuiz.title} url={julyQuiz.videoUrl} posterFallback={julyQuiz.image} label="СМОТРЕТЬ ВЫПУСК" /></div>
         <img className={styles.quizImage} src={julyQuiz.image} alt="Участники футбольного выпуска шоу «Своя игра»" loading="lazy" decoding="async" />
+        <div className={styles.quizMedia}><YouTubePlayer videoId={julyQuiz.videoId} title={julyQuiz.title} url={julyQuiz.videoUrl} posterFallback={julyQuiz.image} label="СМОТРЕТЬ ВЫПУСК" /></div>
       </div>
     </article>
     <article id={julyBmw.id} className={`${styles.newStory} ${styles.bmwStory}`} aria-labelledby="july-bmw-title">
@@ -113,6 +113,5 @@ export function July() {
       <div className={styles.stayaHeading}><span className={styles.sceneKicker}>ШАШЛЫК / ДРУЗЬЯ / ПЕРВАЯ ПОЕЗДКА</span><h3 id="july-staya-title">ШАШЛЫКИ <span>СО СТАЕЙ</span></h3><p>Собрались всей СТАЕЙ на шашлыки. Там Равшан впервые сел на электромотоцикл, успел упасть — и всё равно загорелся идеей купить свой.</p></div>
       <div className={styles.stayaStage}><div className={styles.stayaArt}><img src={julyStaya.image} alt="Равшан готовит шашлыки для СТАИ" loading="lazy" decoding="async" /><span>СНАЧАЛА — ШАШЛЫКИ</span></div><div className={styles.stayaMedia}><div className={styles.videoCaption}><span>01</span><strong>ПЕРВЫЙ ЗАЕЗД / И ПЕРВОЕ ПАДЕНИЕ</strong></div><LocalVideoPlayer src={julyStaya.clipSrc} title="Первый заезд на электромотоцикле и падение" label="СМОТРЕТЬ ФРАГМЕНТ" /><a className={styles.fullEpisode} href={julyStaya.videoUrl} target="_blank" rel="noopener noreferrer">ПОЛНЫЙ ВЫПУСК НА YOUTUBE <span>↗</span></a></div></div>
     </article>
-    <div className={styles.monthEnd}><span>07 / 12 — ИЮЛЬ</span><i /><span>ПРОДОЛЖЕНИЕ СЛЕДУЕТ</span></div>
   </section>;
 }

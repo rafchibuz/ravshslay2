@@ -7,6 +7,7 @@ import { derbyStory } from '../src/chapters/february/derbyContent';
 import { marchEnduro, marchMatch } from '../src/chapters/march/marchContent';
 import { julyBmw, julyClay, julyQuiz, julyRocket, julyStaya, julyTasting, julyWorldCup } from '../src/chapters/july/julyContent';
 import { august } from '../src/chapters/august/augustContent';
+import { september } from '../src/chapters/september/septemberContent';
 
 describe('chronicle navigation', () => {
   it('moves through the hero and January points in both directions', () => {
@@ -29,6 +30,10 @@ describe('chronicle navigation', () => {
     expect(nextPoint('2026-07-06', 1)).toBe('august');
     expect(nextPoint('august', 1)).toBe('2026-08-01');
     expect(nextPoint('2026-08-05', 1)).toBe('2026-08-06');
+    expect(nextPoint('2026-08-06', 1)).toBe('september');
+    expect(nextPoint('september', 1)).toBe('2026-09-06');
+    expect(nextPoint('2026-09-06', 1)).toBe('2026-09-02');
+    expect(nextPoint('2026-09-03', 1)).toBe('2026-09-05');
     expect(nextPoint('2026-01-02', -1)).toBe('2026-01-01');
     expect(nextPoint('hero', -1)).toBe('hero');
   });
@@ -40,6 +45,14 @@ describe('chronicle navigation', () => {
     expect(pointFromHash('#2026-02-02')).toBe('2026-02-02');
     expect(pointFromHash('#2026-03-01')).toBe('2026-03-01');
     expect(pointFromHash('#2026-03-02')).toBe('2026-03-02');
+  });
+});
+
+describe('September media', () => {
+  it('keeps the nine football photos and the original meme clip with their scenes', () => {
+    expect(september.football.photos).toHaveLength(9);
+    expect(september.football.videoUrl).toBe('https://www.youtube.com/watch?v=UF00M1hfzYA');
+    expect(september.meme.videoSrc).toBe('/assets/september/meme-original.mp4');
   });
 });
 

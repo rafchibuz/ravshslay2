@@ -52,7 +52,7 @@ export function August() {
 
     <article id={august.karting.id} className={`${styles.scene} ${styles.karting}`} aria-labelledby="august-karting-title">
       <SceneIndex number="02" label="КАРТИНГ 1 × 1" />
-      <div className={styles.kartingHeader}><span className={styles.eyebrow}>ДУЭЛЬ НА ТРАССЕ</span><h3 id="august-karting-title">РАВШАН <em>×</em> ЛУНАК</h3><p>После гончарного круга — совсем другие повороты. Картинг один на один, где уже решает скорость.</p></div>
+      <div className={styles.kartingHeader}><span className={styles.eyebrow}>ДУЭЛЬ НА ТРАССЕ</span><h3 id="august-karting-title">КАРТИНГ <em>С ЛУНАКОМ</em></h3><p>После гончарного круга — совсем другие повороты. Картинг один на один, где уже решает скорость.</p></div>
       <div className={styles.kartingStage}>
         <div className={styles.kartingArt}><span className={styles.trackLoop} aria-hidden="true" /><img src={august.karting.image} alt="Равшан и Лунак перед картинговым заездом" loading="lazy" decoding="async" /></div>
         <div className={styles.kartingMedia}><span className={styles.mediaOverline}>ЗАЕЗД / ПОЛНОЕ ВИДЕО</span><Video id={august.karting.videoId} url={august.karting.videoUrl} title={august.karting.title} image={august.karting.image} label="СМОТРЕТЬ ЗАЕЗД" /></div>
@@ -84,15 +84,14 @@ export function August() {
     <article id={august.meme.id} className={`${styles.scene} ${styles.meme}`} aria-labelledby="august-meme-title">
       <SceneIndex number="06" label="МЕМ МЕСЯЦА" />
       <div className={styles.memeGrid}>
-        <div className={styles.memeCopy}><span className={styles.eyebrow}>КОГДА МОНТАЖ УШЁЛ СЛИШКОМ ДАЛЕКО</span><h3 id="august-meme-title">А РОСТ-ТО<br /><em>ГДЕ?</em></h3><p>В соцсетях завирусилась шутка про рост Равшана. Его намеренно уменьшали на фотографиях, и каждый новый монтаж делал его ещё компактнее. Это мем, а не реальное измерение.</p><span className={styles.memeTag}>РЕДАКТОР ФОТО: −30 СМ ↘</span></div>
+        <div className={styles.memeCopy}><span className={styles.eyebrow}>КОГДА МОНТАЖ УШЁЛ СЛИШКОМ ДАЛЕКО</span><h3 id="august-meme-title">А РОСТ-ТО<br /><em>ГДЕ?</em></h3><p>В соцсетях завирусилась шутка про рост Равшана. Его намеренно уменьшали на фотографиях, и каждый новый монтаж делал его ещё компактнее.</p><span className={styles.memeTag}>РЕДАКТОР ФОТО: −30 СМ ↘</span></div>
         <div className={styles.memeChart} aria-label="Стилизованная диаграмма мема: Равшана на фото нарочно делают ниже других">
           <div className={styles.chartTop}><span>ЛЕНТА / АВГУСТ ’26</span><span>ВИРУСНЫЙ ФОРМАТ</span></div>
           <div className={styles.chartTitle}>САМЫЙ<br /><em>КОМПАКТНЫЙ</em></div>
-          <div className={styles.chartBars} aria-hidden="true"><div className={styles.barTall}><span>1,83</span><i /></div><div className={styles.barTallSecond}><span>1,79</span><i /></div><div className={styles.barSmall}><span>1,45*</span><i /><b>R</b></div><div className={styles.barMid}><span>1,75</span><i /></div></div>
-          <div className={styles.chartBottom}><span>* ЦИФРА ИЗ ШУТКИ, НЕ ФАКТ</span><strong>АПШЕРОНСК ↗</strong></div>
+          <div className={styles.chartBars} aria-hidden="true"><div className={styles.barTall}><span>1,83</span><i /></div><div className={styles.barTallSecond}><span>1,79</span><i /></div><div className={styles.barSmall}><span>1,45</span><i /><img src="/assets/real/ravshann-king.png" alt="" /></div><div className={styles.barMid}><span>1,75</span><i /></div></div>
+          <div className={styles.chartBottom}><span>РЕДАКТОР ФОТО ↘</span><strong>АПШЕРОНСК ↗</strong></div>
         </div>
       </div>
     </article>
-    <div className={styles.monthEnd}><span>08 / 12 — АВГУСТ</span><i /><span>ПРОДОЛЖЕНИЕ СЛЕДУЕТ</span></div>
   </section>;
 }

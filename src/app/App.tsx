@@ -8,6 +8,7 @@ import { May } from '../chapters/may/May';
 import { June } from '../chapters/june/June';
 import { July } from '../chapters/july/July';
 import { August } from '../chapters/august/August';
+import { September } from '../chapters/september/September';
 import { goToPoint, nextPoint, pointFromHash, points, type Point } from '../lib/deepLinks';
 import './app.css';
 
@@ -42,7 +43,7 @@ export function App() {
         event.preventDefault(); goToPoint(nextPoint(active, event.key === 'ArrowRight' ? 1 : -1));
       } else if (event.key === 'PageDown' || event.key === 'PageUp') {
         event.preventDefault();
-        const pageStops: Point[] = ['hero', 'january', 'february', 'march', 'april', '2026-04-01', '2026-04-02', '2026-04-03', '2026-04-04', 'may', '2026-05-02', '2026-05-03', '2026-05-04', 'june', '2026-06-01', '2026-06-02', '2026-06-03', '2026-06-vaz', '2026-06-04', '2026-06-05', 'july', '2026-07-01', '2026-07-02', '2026-07-03', '2026-07-04', '2026-07-05', '2026-07-07', '2026-07-06', 'august', '2026-08-01', '2026-08-02', '2026-08-03', '2026-08-04', '2026-08-05', '2026-08-06'];
+        const pageStops: Point[] = ['hero', 'january', 'february', 'march', 'april', '2026-04-01', '2026-04-02', '2026-04-03', '2026-04-04', 'may', '2026-05-02', '2026-05-03', '2026-05-04', 'june', '2026-06-01', '2026-06-02', '2026-06-03', '2026-06-vaz', '2026-06-04', '2026-06-05', 'july', '2026-07-01', '2026-07-02', '2026-07-03', '2026-07-04', '2026-07-05', '2026-07-07', '2026-07-06', 'august', '2026-08-01', '2026-08-02', '2026-08-03', '2026-08-04', '2026-08-05', '2026-08-06', 'september', '2026-09-06', '2026-09-02', '2026-09-03', '2026-09-05'];
         const direction = event.key === 'PageDown' ? 1 : -1;
         const index = pageStops.indexOf(active);
         const target = index >= 0 ? index + direction : direction > 0 ? pageStops.findIndex((stop) => points.indexOf(stop) > points.indexOf(active)) : pageStops.reduce((found, stop, position) => points.indexOf(stop) < points.indexOf(active) ? position : found, -1);
@@ -54,17 +55,17 @@ export function App() {
     return () => removeEventListener('keydown', keyHandler);
   }, [streamMode, active]);
 
-  const activeMonth = active === 'hero' ? 'hero' : active === 'august' || active.startsWith('2026-08-') ? 'august' : active === 'july' || active.startsWith('2026-07-') ? 'july' : active === 'june' || active.startsWith('2026-06-') ? 'june' : active === 'may' || active.startsWith('2026-05-') ? 'may' : active === 'april' || active.startsWith('2026-04-') ? 'april' : active === 'march' || active.startsWith('2026-03-') ? 'march' : active === 'february' || active.startsWith('2026-02-') ? 'february' : 'january';
+  const activeMonth = active === 'hero' ? 'hero' : active === 'september' || active.startsWith('2026-09-') ? 'september' : active === 'august' || active.startsWith('2026-08-') ? 'august' : active === 'july' || active.startsWith('2026-07-') ? 'july' : active === 'june' || active.startsWith('2026-06-') ? 'june' : active === 'may' || active.startsWith('2026-05-') ? 'may' : active === 'april' || active.startsWith('2026-04-') ? 'april' : active === 'march' || active.startsWith('2026-03-') ? 'march' : active === 'february' || active.startsWith('2026-02-') ? 'february' : 'january';
 
   return <div className={`app ${streamMode ? 'stream-mode' : ''}`}>
     <a href="#january" className="skip-link">Перейти к январю</a>
     <header className="global-nav">
       <a className="brand" href="#hero" aria-label="RavshanN — на главную"><span className="brand-symbol">R<span>✦</span></span><span>RAVSHANN <small>/ 2026</small></span></a>
-      <nav aria-label="Главная навигация"><a href="#hero" aria-current={activeMonth === 'hero' ? 'page' : undefined}>ГЛАВНАЯ</a><a href="#january" aria-current={activeMonth === 'january' ? 'page' : undefined}>ЯНВАРЬ</a><a href="#february" aria-current={activeMonth === 'february' ? 'page' : undefined}>ФЕВРАЛЬ</a><a href="#march" aria-current={activeMonth === 'march' ? 'page' : undefined}>МАРТ</a><a href="#april" aria-current={activeMonth === 'april' ? 'page' : undefined}>АПРЕЛЬ</a><a href="#may" aria-current={activeMonth === 'may' ? 'page' : undefined}>МАЙ</a><a href="#june" aria-current={activeMonth === 'june' ? 'page' : undefined}>ИЮНЬ</a><a href="#july" aria-current={activeMonth === 'july' ? 'page' : undefined}>ИЮЛЬ</a><a href="#august" aria-current={activeMonth === 'august' ? 'page' : undefined}>АВГУСТ</a></nav>
+      <nav aria-label="Главная навигация"><a href="#hero" aria-current={activeMonth === 'hero' ? 'page' : undefined}>ГЛАВНАЯ</a><a href="#january" aria-current={activeMonth === 'january' ? 'page' : undefined}>ЯНВАРЬ</a><a href="#february" aria-current={activeMonth === 'february' ? 'page' : undefined}>ФЕВРАЛЬ</a><a href="#march" aria-current={activeMonth === 'march' ? 'page' : undefined}>МАРТ</a><a href="#april" aria-current={activeMonth === 'april' ? 'page' : undefined}>АПРЕЛЬ</a><a href="#may" aria-current={activeMonth === 'may' ? 'page' : undefined}>МАЙ</a><a href="#june" aria-current={activeMonth === 'june' ? 'page' : undefined}>ИЮНЬ</a><a href="#july" aria-current={activeMonth === 'july' ? 'page' : undefined}>ИЮЛЬ</a><a href="#august" aria-current={activeMonth === 'august' ? 'page' : undefined}>АВГУСТ</a><a href="#september" aria-current={activeMonth === 'september' ? 'page' : undefined}>СЕНТЯБРЬ</a></nav>
       <button className="stream-toggle" type="button" aria-pressed={streamMode} onClick={() => setStreamMode((value) => !value)}><span className="stream-dot" />{streamMode ? 'ВЫЙТИ ИЗ ПОКАЗА' : 'РЕЖИМ ПОКАЗА'}</button>
     </header>
 
-    <aside className="timeline" aria-label="Временная дорожка"><span className="timeline-year">2026</span><div className="timeline-track" style={{ '--mobile-progress': `${progress}%` } as CSSProperties}><div className="timeline-fill" style={{ height: `${progress}%` }} /><a className={`timeline-dot hero-dot ${activeMonth === 'hero' ? 'is-active' : ''}`} href="#hero" aria-label="Пролог" /><a className={`timeline-dot january-dot ${activeMonth === 'january' ? 'is-active' : ''}`} href="#january" aria-label="Январь" /><a className={`timeline-dot february-dot ${activeMonth === 'february' ? 'is-active' : ''}`} href="#february" aria-label="Февраль" /><a className={`timeline-dot march-dot ${activeMonth === 'march' ? 'is-active' : ''}`} href="#march" aria-label="Март" /><a className={`timeline-dot april-dot ${activeMonth === 'april' ? 'is-active' : ''}`} href="#april" aria-label="Апрель" /><a className={`timeline-dot may-dot ${activeMonth === 'may' ? 'is-active' : ''}`} href="#may" aria-label="Май" /><a className={`timeline-dot june-dot ${activeMonth === 'june' ? 'is-active' : ''}`} href="#june" aria-label="Июнь" /><a className={`timeline-dot july-dot ${activeMonth === 'july' ? 'is-active' : ''}`} href="#july" aria-label="Июль" /><a className={`timeline-dot august-dot ${activeMonth === 'august' ? 'is-active' : ''}`} href="#august" aria-label="Август" /></div><span className="timeline-label">{activeMonth === 'hero' ? 'ПРОЛОГ' : activeMonth === 'january' ? 'ЯНВАРЬ' : activeMonth === 'february' ? 'ФЕВРАЛЬ' : activeMonth === 'march' ? 'МАРТ' : activeMonth === 'april' ? 'АПРЕЛЬ' : activeMonth === 'may' ? 'МАЙ' : activeMonth === 'june' ? 'ИЮНЬ' : activeMonth === 'july' ? 'ИЮЛЬ' : 'АВГУСТ'}</span><span className="timeline-percent">{String(Math.round(progress)).padStart(2, '0')}%</span></aside>
+      <aside className="timeline" aria-label="Временная дорожка"><span className="timeline-year">2026</span><div className="timeline-track" style={{ '--mobile-progress': `${progress}%` } as CSSProperties}><div className="timeline-fill" style={{ height: `${progress}%` }} /><a className={`timeline-dot hero-dot ${activeMonth === 'hero' ? 'is-active' : ''}`} href="#hero" aria-label="Пролог" /><a className={`timeline-dot january-dot ${activeMonth === 'january' ? 'is-active' : ''}`} href="#january" aria-label="Январь" /><a className={`timeline-dot february-dot ${activeMonth === 'february' ? 'is-active' : ''}`} href="#february" aria-label="Февраль" /><a className={`timeline-dot march-dot ${activeMonth === 'march' ? 'is-active' : ''}`} href="#march" aria-label="Март" /><a className={`timeline-dot april-dot ${activeMonth === 'april' ? 'is-active' : ''}`} href="#april" aria-label="Апрель" /><a className={`timeline-dot may-dot ${activeMonth === 'may' ? 'is-active' : ''}`} href="#may" aria-label="Май" /><a className={`timeline-dot june-dot ${activeMonth === 'june' ? 'is-active' : ''}`} href="#june" aria-label="Июнь" /><a className={`timeline-dot july-dot ${activeMonth === 'july' ? 'is-active' : ''}`} href="#july" aria-label="Июль" /><a className={`timeline-dot august-dot ${activeMonth === 'august' ? 'is-active' : ''}`} href="#august" aria-label="Август" /><a className={`timeline-dot september-dot ${activeMonth === 'september' ? 'is-active' : ''}`} href="#september" aria-label="Сентябрь" /></div><span className="timeline-label">{activeMonth === 'hero' ? 'ПРОЛОГ' : activeMonth === 'january' ? 'ЯНВАРЬ' : activeMonth === 'february' ? 'ФЕВРАЛЬ' : activeMonth === 'march' ? 'МАРТ' : activeMonth === 'april' ? 'АПРЕЛЬ' : activeMonth === 'may' ? 'МАЙ' : activeMonth === 'june' ? 'ИЮНЬ' : activeMonth === 'july' ? 'ИЮЛЬ' : activeMonth === 'august' ? 'АВГУСТ' : 'СЕНТЯБРЬ'}</span><span className="timeline-percent">{String(Math.round(progress)).padStart(2, '0')}%</span></aside>
 
     <main>
       <section id="hero" className="hero" aria-labelledby="hero-title">
@@ -74,9 +75,9 @@ export function App() {
           <span className="hero-overline"><span className="small-diamond">✦</span> ИСТОРИЯ ОДНОГО ГОДА <span className="overline-rule" /></span>
           <h1 id="hero-title">{site.heroTitle}<span className="hero-title-shadow" aria-hidden="true">RAVSHANN</span></h1>
           <div className="hero-subrow"><span className="hero-index">01—26</span><strong>{site.heroSubtitle}</strong></div>
-          <p className="hero-description">Первый кадр большой истории. Пройди месяцы вместе с RavshanN — от новогоднего старта и футбола до летних ИРЛ и августовских гонок.</p>
+          <p className="hero-description">Первый кадр большой истории. Пройди месяцы вместе с RavshanN — от новогоднего старта и футбола до летних ИРЛ и осенних историй.</p>
           <a className="primary-cta" href="#january"><span>ПРОЙТИ ГОД</span><span className="cta-arrow">↗</span></a>
-          <span className="hero-status">ПРОТОТИП / ГЛАВНАЯ + ЯНВАРЬ — АВГУСТ</span>
+          <span className="hero-status">ПРОТОТИП / ГЛАВНАЯ + ЯНВАРЬ — СЕНТЯБРЬ</span>
         </div>
         <div className="portrait-wrap"><div className="portrait-halo" /><img className="hero-portrait" src="/assets/real/ravshann-king.png" alt="RavshanN в короне, очках и королевской мантии" fetchPriority="high" /></div>
         <div className="hero-bottom"><span>ЛИСТАЙ, ЧТОБЫ НАЧАТЬ</span><span className="hero-bottom-line" /><span>01 / 12</span></div>
@@ -90,6 +91,7 @@ export function App() {
       <June />
       <July />
       <August />
+      <September />
     </main>
     <footer className="footer"><span>RAVSHANN / SLAY KING 2026</span><span>НЕОФИЦИАЛЬНЫЙ ПРОТОТИП · КОНТЕНТ НА ПРОВЕРКЕ</span></footer>
   </div>;
