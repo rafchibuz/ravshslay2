@@ -20,9 +20,7 @@ export const october = {
   cashier: {
     id: '2026-10-03',
     sourceTitle: 'Работа из пятёрочки',
-    canImage: '/assets/october/lit-energy-can.png',
     cashierImage: '/assets/october/ravshan-cashier.png',
-    carImage: '/assets/october/lit-energy-vesta.png',
     videoId: 'TTlJUMk0JtM',
     videoUrl: 'https://www.youtube.com/watch?v=TTlJUMk0JtM',
     title: 'Равшан за кассой и вкус Юдзу Сушняк',
