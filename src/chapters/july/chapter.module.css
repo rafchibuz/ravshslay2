@@ -18,6 +18,7 @@
 .copy{position:relative;z-index:2;padding:30px 0 60px}
 .kicker{color:#d7fd80}
 .copy h3{margin:22px 0 21px;color:#fbf9e8;font:400 clamp(72px,8.2vw,120px)/.91 var(--font-display);letter-spacing:-.025em;text-shadow:0 14px 50px rgba(9,40,21,.28)}
+.copy h3{line-height:1.02}
 .copy h3 span{color:#d4f669}
 .copy h3 em{font-style:normal;color:#f8cc7c}
 .copy p{max-width:420px;color:#e4ebdc;font-size:17px;line-height:1.72}
@@ -151,3 +152,4 @@
   .rocketStage{max-width:1380px;grid-template-columns:minmax(0,.72fr) minmax(0,1.28fr)}
   .stayaStage{grid-template-columns:minmax(0,.72fr) minmax(0,1.28fr);max-width:1370px}
 }
+@media(max-width:360px){.rocketHeading h3{font-size:72px}}

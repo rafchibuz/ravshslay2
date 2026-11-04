@@ -61,6 +61,7 @@
 .meme{padding-bottom:140px;background:radial-gradient(ellipse 47% 54% at 80% 58%,rgba(66,194,199,.14),transparent 84%)}
 .memeGrid{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);align-items:center;gap:55px;max-width:1200px;margin:25px auto 0;min-height:660px}
 .memeCopy h3{font-size:clamp(68px,6vw,91px);line-height:.92;margin:20px 0;white-space:nowrap}.memeCopy h3 em{color:#71cbd1}.memeCopy p{max-width:450px}.memeTag{display:inline-block;margin-top:20px;padding:12px 15px;border:1px solid rgba(111,209,210,.35);color:#9bdee0;transform:rotate(-2deg)}
+.purchaseCopy h3,.stuntContent h4,.kartingHeader h3,.trackHeading h3,.judoHeading h3,.collabHeading h3,.memeCopy h3{line-height:1.02}
 .memeChart{position:relative;min-height:575px;padding:28px 33px 24px;border:1px solid rgba(137,212,216,.36);background:linear-gradient(146deg,rgba(11,47,54,.93),rgba(16,55,61,.72) 65%,rgba(28,48,48,.88));box-shadow:18px 20px 0 rgba(121,204,208,.07),0 35px 65px rgba(8,23,27,.28);overflow:hidden}
 .memeChart::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent 0 80px,rgba(177,232,231,.045) 81px 82px),repeating-linear-gradient(0deg,transparent 0 80px,rgba(177,232,231,.045) 81px 82px);pointer-events:none}
 .chartTop,.chartBottom{position:relative;display:flex;justify-content:space-between;gap:10px;color:#a9d9d7}.chartTitle{position:relative;margin:28px 0 5px;font:400 clamp(55px,6.4vw,85px)/.85 var(--font-display);letter-spacing:-.025em}.chartTitle em{font-style:normal;color:#7dd8d5}
@@ -84,3 +85,6 @@
   .memeGrid{grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr)}
 }
 .barSmall img{position:absolute;z-index:1;bottom:0;left:50%;width:105px;height:150px;object-fit:contain;object-position:bottom;transform:translateX(-50%);filter:drop-shadow(0 8px 10px rgba(0,0,0,.4))}
+@media(max-width:700px){.purchaseCopy h3{font-size:clamp(44px,10vw,62px);white-space:normal}.purchaseCopy h3 em{white-space:normal}}
+@media(min-width:701px) and (max-width:1400px){.purchaseCopy h3{font-size:clamp(48px,4.5vw,64px)}}
+@media(min-width:701px) and (max-width:1000px){.purchaseGrid{grid-template-columns:1fr}.purchaseCopy h3{font-size:clamp(60px,8vw,76px)}.purchaseMedia{width:min(100%,760px)}.memeCopy h3{font-size:clamp(55px,7.5vw,68px);white-space:normal}}

@@ -368,3 +368,36 @@
   font-weight: 900;
   letter-spacing: .2em;
 }
+
+.vazCopy h3,.matizHeader h3,.potatoHeader h3{line-height:1.02}
+
+@media(max-width:1000px){
+  .vaz,.matiz,.potato{padding-inline:11% 7%}
+  .vazStage{height:760px}
+  .vazCopy h3,.matizHeader h3,.potatoHeader h3{font-size:clamp(64px,8vw,96px)}
+  .vazPlayer{top:420px}
+}
+
+@media(max-width:700px){
+  .vaz,.matiz,.potato{padding:48px 7% 75px}
+  .index{font-size:8px;letter-spacing:.12em}
+  .kicker{font-size:8px;letter-spacing:.12em}
+  .playerLabel{font-size:7px;letter-spacing:.1em}
+  .vazStage,.matizStage,.potatoStage{display:flex;flex-direction:column;height:auto;margin-top:25px}
+  .vazCopy,.vazArt,.vazPlayer,.vazDetails,.matizArt,.matizVideo,.matizNote,.potatoArt,.potatoVideo,.potatoFoot{position:relative;top:auto;right:auto;bottom:auto;left:auto;max-width:none}
+  .vazCopy{width:100%}
+  .vazCopy h3,.matizHeader h3,.potatoHeader h3{font-size:clamp(47px,12.4vw,72px);line-height:1.02}
+  .vazCopy p,.matizHeader p,.potatoHeader p{max-width:100%;font-size:13px;line-height:1.6}
+  .vazArt{width:112%;margin:15px -6% 0}
+  .vazPlayer{width:100%;padding:9px;margin-top:5px}
+  .vazDetails{justify-content:center;gap:12px;margin-top:24px;font-size:8px}
+  .vazDetails i{width:35px}
+  .vazOutline{top:20%;right:-9%;font-size:180px}
+  .matizHeader,.potatoHeader{display:block;margin-top:26px}
+  .matizHeader p,.potatoHeader p{margin-top:18px}
+  .matizArt{width:112%;height:auto;max-height:none;margin:10px -6% 0}
+  .matizVideo,.potatoVideo{width:100%;padding:9px;margin-top:12px}
+  .matizNote,.potatoFoot{align-self:center;margin-top:24px;font-size:8px;letter-spacing:.12em}
+  .potatoArt{width:115%;margin:8px -7.5% 0}
+  .potatoGlow{left:24%;width:70%}
+}

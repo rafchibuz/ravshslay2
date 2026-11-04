@@ -93,6 +93,7 @@
 .litvinLayout { display: grid; grid-template-columns: minmax(0,1.08fr) minmax(0,.92fr); align-items: end; gap: clamp(24px,3vw,50px); min-height: 690px; }
 .litvinContent { position: relative; z-index: 1; min-width: 0; padding: 110px 0 80px; }
 .litvinContent h3 { max-width: 690px; margin: 18px 0 24px; font-size: clamp(60px,6.4vw,110px); line-height: .86; text-transform: uppercase; }
+.litvinContent h3 { line-height: 1.02; }
 .litvinContent p { max-width: 370px; margin: 0 0 55px; }
 .litvinVideoHead { display: flex; justify-content: space-between; gap: 12px; margin-bottom: 12px; color: #b7e3f8; font-size: 9px; font-weight: 900; letter-spacing: .19em; }
 .litvinVideoFrame { position: relative; width: 100%; aspect-ratio: 16/9; border: 1px solid rgba(181,223,243,.42); background: #091724; box-shadow: 0 28px 80px rgba(0,5,15,.34),0 0 48px rgba(123,198,239,.08); }
@@ -128,3 +129,4 @@
 @media (max-width: 700px) { .mafiaScene { padding-top: 40px; padding-bottom: 100px; } .mafiaLayout { margin-top: 10px; } .mafiaTitle { font-size: clamp(70px,22vw,110px) !important; } .mafiaArchives { margin-top: 28px; } .mafiaGroupHead strong { font-size: 27px; } .mafiaLinks { grid-template-columns: 1fr; } .mafiaLinks a { min-height: 45px; padding: 10px 14px; } }
 @media (max-width: 1050px) { .litvinLayout { grid-template-columns: 1fr; gap: 0; min-height: 0; } .litvinContent { padding: 65px 0 20px; } .litvinContent p { margin-bottom: 30px; } .litvinArt { width: min(100%,680px); min-height: 0; aspect-ratio: 1456/1088; margin: 0 auto; } .litvinArt img { top: 0; right: -4%; width: 108%; } }
 @media (max-width: 700px) { .litvinScene { padding-top: 50px; padding-bottom: 35px; } .litvinContent { padding: 45px 0 15px; } .litvinContent h3 { font-size: clamp(58px,14vw,86px); } .litvinVideoHead { font-size: 7px; letter-spacing: .12em; } .litvinVideoFrame :global(.media-play-icon) { width: 58px; height: 58px; font-size: 21px; } }
+@media (max-width: 360px) { .litvinContent h3 { font-size: 50px; } }

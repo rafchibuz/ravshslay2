@@ -53,6 +53,7 @@
 .buggyKicker{color:#8cd5e9;font-size:10px;font-weight:900;letter-spacing:.22em;}
 .buggyCopy h3{margin:15px 0 14px;color:#f3f2e9;font:400 clamp(88px,10.5vw,157px)/.8 var(--font-display);letter-spacing:-.05em;text-shadow:0 14px 38px rgba(4,18,22,.35);}
 .buggyCopy h3 span{color:#85d7ec;white-space:nowrap;}
+.raceHeading h3,.irlHeading h3,.buggyCopy h3{line-height:.98}
 .buggyCopy p{max-width:470px;margin:0;color:#e0e6dd;font-size:15px;line-height:1.65;text-shadow:0 2px 13px rgba(4,18,22,.8);}
 .buggyArt{position:absolute;z-index:1;top:185px;right:-2%;display:block;width:102%;height:auto;max-height:550px;object-fit:contain;object-position:right center;filter:drop-shadow(0 30px 40px rgba(3,17,21,.47));-webkit-mask-image:linear-gradient(90deg,transparent,#000 7%,#000 96%,transparent),linear-gradient(180deg,#000 0%,#000 87%,transparent);-webkit-mask-composite:source-in;mask-image:linear-gradient(90deg,transparent,#000 7%,#000 96%,transparent),linear-gradient(180deg,#000 0%,#000 87%,transparent);mask-composite:intersect;}
 .buggyVideo{position:absolute;z-index:4;left:0;bottom:0;width:min(52%,560px);padding:14px;background:linear-gradient(140deg,rgba(13,39,47,.96),rgba(22,47,43,.96));border:1px solid rgba(135,210,226,.41);box-shadow:0 28px 64px rgba(2,19,22,.55),0 0 0 7px rgba(117,199,218,.024);}

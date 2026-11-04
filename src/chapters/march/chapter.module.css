@@ -126,6 +126,8 @@
 .realityKicker { color: #d2b37f; font-size: 10px; font-weight: 900; letter-spacing: .2em; }
 .realityStory h3 { margin: 20px 0 18px; font: 400 clamp(66px, 8.7vw, 132px)/.78 var(--font-display); letter-spacing: -.055em; }
 .realityStory h3 span { display: block; margin-top: .12em; color: #a9c7d6; }
+.realityStory h3 { line-height: .98; }
+.enduroHeading h3 { line-height: .98; }
 .realityStory p { max-width: 450px; margin: 0; color: #cad7d6; font-size: 16px; line-height: 1.65; }
 .realityLink { display: inline-flex; align-items: center; gap: 16px; margin-top: 32px; padding: 14px 20px 14px 14px; border: 1px solid rgba(214, 183, 133, .55); color: #fff2dc; background: linear-gradient(115deg, rgba(114, 60, 45, .52), rgba(21, 45, 56, .76)); box-shadow: 0 14px 40px rgba(1, 8, 13, .28); text-decoration: none; transition: border-color .2s, transform .2s, background .2s; }
 .realityLink:hover { transform: translateY(-2px); border-color: #f0c77e; background: linear-gradient(115deg, rgba(135, 67, 46, .65), rgba(24, 56, 69, .86)); }

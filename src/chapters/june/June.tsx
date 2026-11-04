@@ -33,7 +33,6 @@ export function June() {
           <span className={styles.kicker}>БУСТЕР × RAVSHANN / НОВАЯ НИВА</span>
           <h3 id="niva-title">ПЕРВЫЙ<br /><em>ВЫЕЗД.</em><br /><span>ПЕРВЫЙ РЕМОНТ.</span></h3>
           <p>ИРЛ с Бустером на новой Ниве. План был прост: прокатиться и снять контент. Но уже в первый день машина решила добавить сюжету поворот.</p>
-          <div className={styles.storyTrail}><span>01&nbsp; ЗНАКОМСТВО</span><i /><span>02&nbsp; КАПОТ ОТКРЫТ</span></div>
         </div>
         <span className={styles.sunDisc} aria-hidden="true" />
         <span className={styles.loop} aria-hidden="true" />
@@ -43,7 +42,7 @@ export function June() {
       <div className={styles.videoLead}><span>ИСТОРИЯ В ДВУХ ВЫПУСКАХ</span><i /><span>СМОТРЕТЬ ПО ПОРЯДКУ ↓</span></div>
       <div className={styles.videoGrid}>
         {juneNiva.videos.map((video, index) => <div className={styles.videoStory} key={video.id}>
-          <div className={styles.videoHeading}><span className={styles.videoNumber}>0{index + 1}</span><div><span className={styles.videoEyebrow}>{index === 0 ? 'НАЧАЛО / ИРЛ' : 'ПРОДОЛЖЕНИЕ / ПОЛОМКА'}</span><h4>{index === 0 ? 'НОВАЯ НИВА И БУСТЕР' : 'ПЕРВЫЙ ДЕНЬ — И УЖЕ КАПОТ'}</h4></div></div>
+          <div className={styles.videoHeading}><span className={styles.videoNumber}>0{index + 1}</span><div><span className={styles.videoEyebrow}>{index === 0 ? 'НАЧАЛО / ИРЛ' : 'ПРОДОЛЖЕНИЕ / ПОЛОМКА'}</span><h4>{index === 0 ? 'НОВАЯ НИВА И БУСТЕР' : 'ПЕРВЫЙ ДЕНЬ — И УЖЕ ПОЛОМКА'}</h4></div></div>
           <YouTubePlayer videoId={video.id} title={video.title} url={video.url} posterFallback={juneNiva.image} label={video.label} />
         </div>)}
       </div>

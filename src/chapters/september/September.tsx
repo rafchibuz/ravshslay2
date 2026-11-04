@@ -26,16 +26,21 @@ function FootballGallery() {
 
 function MemeReel() {
   const ref = useRef<HTMLVideoElement>(null);
-  const [playing, setPlaying] = useState(false);
-  const toggle = async () => {
+  const [started, setStarted] = useState(false);
+  const play = async () => {
     if (!ref.current) return;
-    if (ref.current.paused) await ref.current.play(); else ref.current.pause();
+    try {
+      await ref.current.play();
+    } catch {
+      setStarted(false);
+    }
   };
   return <div className={styles.reel}>
+    <div className={styles.reelSpeaker} aria-hidden="true" />
     <div className={styles.reelHead}><span className={styles.reelAvatar}>R</span><span><strong>RAVSHANN</strong><small>ОРИГИНАЛЬНЫЙ РОЛИК</small></span><span className={styles.reelMenu}>•••</span></div>
     <div className={styles.reelVideo}>
-      <video ref={ref} src={september.meme.videoSrc} controls playsInline preload="metadata" onPlay={() => setPlaying(true)} onPause={() => setPlaying(false)} onEnded={() => setPlaying(false)} aria-label="Оригинальный ролик мема" />
-      {!playing && <button type="button" className={styles.reelPlay} onClick={toggle} aria-label="Воспроизвести оригинальный ролик">▶</button>}
+      <video ref={ref} src={september.meme.videoSrc} controls={started} playsInline preload="metadata" onPlay={() => setStarted(true)} onEnded={() => setStarted(false)} aria-label="Оригинальный ролик мема" />
+      {!started && <button type="button" className={styles.reelPlay} onClick={play} aria-label="Воспроизвести оригинальный ролик">▶</button>}
     </div>
     <div className={styles.reelFooter}><span>♡　↗　◌</span><strong>МЕМ ВЕРНУЛСЯ В ЛЕНТУ</strong></div>
   </div>;

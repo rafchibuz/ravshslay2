@@ -33,3 +33,18 @@
 @media(max-width:1100px){.monthHeader,.scene{padding-inline:9% 6%}.roomStage{grid-template-columns:1fr 1fr}.roomArt img{width:110%}.footballStage{grid-template-columns:minmax(0,1.25fr) minmax(260px,.72fr);gap:18px}.photoWindow{height:360px}.memeStage{gap:30px}.memeCopy h3{font-size:clamp(70px,8vw,100px)}}
 @media(max-width:700px){.monthHeader{padding:90px 7% 55px}.monthHeader h2{font-size:clamp(75px,14vw,115px)}.monthHeader p{font-size:14px}.scene{padding:28px 7% 75px}.sceneIndex{font-size:8px}.scene p{font-size:14px}.sceneHeading h3,.footballHeading h3{font-size:clamp(60px,10vw,90px)}.roomStage,.footballStage,.memeStage{display:flex;flex-direction:column;gap:20px;min-height:0}.roomArt{width:100%}.roomArt img{width:100%;max-height:390px}.roomMedia,.footballVideo{width:100%}.bmwHeading h3{font-size:125px}.bmwStage>img{width:100%}.bmwVideo{width:100%;margin-top:8px}.phone{width:min(100%,360px)}.memeCopy h3{font-size:clamp(69px,12vw,100px)}.memeOrbit{display:none}.reel{width:min(100%,390px)}}
 @media(prefers-reduced-motion:reduce){.photoWindow img{animation:none}}
+
+/* Keep the editorial headings readable when they wrap. */
+.scene h3{line-height:1.02}
+.memeStage{grid-template-columns:minmax(0,1fr) minmax(0,400px);gap:clamp(28px,4vw,64px);max-width:1300px}
+.memeCopy h3{font-size:clamp(76px,7.2vw,112px);line-height:1.02}
+.memeOrbit{margin-top:22px;font-size:30px;letter-spacing:.8em}
+.reel{box-sizing:border-box;width:100%;max-width:400px;padding:10px 13px 14px;border-radius:36px}
+.reelSpeaker{width:64px;height:4px;margin:0 auto 9px;border-radius:10px;background:#606467}
+.reelHead{min-height:42px;margin-bottom:9px}
+.reelVideo{width:100%;aspect-ratio:9/16;max-height:none;border-radius:12px}
+.reelVideo video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.reelFooter{min-height:26px}
+@media(max-width:1100px){.memeStage{grid-template-columns:minmax(0,1fr) minmax(0,340px);gap:28px}.memeCopy h3{font-size:clamp(64px,7vw,88px)}}
+@media(max-width:700px){.memeStage{display:flex;flex-direction:column;align-items:stretch;gap:22px}.memeCopy h3{font-size:clamp(57px,12vw,78px);line-height:1.02}.reel{width:min(100%,370px);margin-inline:auto}.reelVideo{max-height:none}.roomArt img{width:100%}}
+@media(max-width:360px){.monthHeader h2{font-size:68px}.footballHeading h3{font-size:54px}}
