@@ -1,5 +1,6 @@
 import { LocalVideoPlayer } from '../../components/LocalVideoPlayer';
 import { YouTubePlayer } from '../../components/YouTubePlayer';
+import { AugustFinale } from '../additions/ExtraScenes';
 import { august } from './augustContent';
 import styles from './chapter.module.css';
 
@@ -93,5 +94,6 @@ export function August() {
         </div>
       </div>
     </article>
+    <AugustFinale />
   </section>;
 }

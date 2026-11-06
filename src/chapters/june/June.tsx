@@ -1,4 +1,5 @@
 import { YouTubePlayer } from '../../components/YouTubePlayer';
+import { JuneGiveaway } from '../additions/ExtraScenes';
 import { juneClassico, juneDriving, juneNiva } from './juneContent';
 import { JuneExtra } from './JuneExtra';
 import styles from './chapter.module.css';
@@ -102,6 +103,7 @@ export function June() {
       </div>
     </article>
     <JuneExtra />
+    <JuneGiveaway />
     <div className={styles.monthEnd}><span>06 / 12 — ИЮНЬ</span><i /><span>ЛЕТО ТОЛЬКО НАЧАЛОСЬ</span></div>
   </section>;
 }

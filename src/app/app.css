@@ -18,7 +18,7 @@
 .timeline-fill { position: absolute; top: 0; left: 0; width: 2px; background: var(--gold); box-shadow: 0 0 12px rgba(237,187,98,.9); }
 .timeline-dot { position: absolute; left: 50%; width: 9px; height: 9px; border-radius: 50%; border: 1px solid var(--gold); background: var(--bg); transform: translateX(-50%); pointer-events: auto; }
 .timeline-dot.is-active { background: var(--orange); border-color: var(--orange); box-shadow: 0 0 12px var(--orange); }
-.hero-dot { top: 0; } .statistics-dot { top: 9.09%; } .january-dot { top: 18.18%; } .february-dot { top: 27.27%; } .march-dot { top: 36.36%; } .april-dot { top: 45.45%; } .may-dot { top: 54.55%; } .june-dot { top: 63.64%; } .july-dot { top: 72.73%; } .august-dot { top: 81.82%; } .september-dot { top: 90.91%; } .october-dot { top: 100%; }
+.hero-dot { top: 0; } .statistics-dot { top: 8.33%; } .january-dot { top: 16.67%; } .february-dot { top: 25%; } .march-dot { top: 33.33%; } .april-dot { top: 41.67%; } .may-dot { top: 50%; } .june-dot { top: 58.33%; } .july-dot { top: 66.67%; } .august-dot { top: 75%; } .september-dot { top: 83.33%; } .october-dot { top: 91.67%; } .november-dot { top: 100%; }
 @media (min-width: 701px) { .global-nav nav { min-width: 0; overflow-x: auto; scrollbar-width: none; } .global-nav nav::-webkit-scrollbar { display: none; } .global-nav nav a { flex: none; } }
 @media (min-width: 701px) and (max-width: 1400px) { .global-nav nav { gap: 10px; } .global-nav nav a { font-size: 9px; letter-spacing: .08em; } }
 .timeline-label { writing-mode: vertical-rl; font-size: 9px; font-weight: 800; letter-spacing: .2em; }
@@ -56,7 +56,7 @@
 .hero-bottom-line { flex: 1; height: 1px; background: var(--line); }
 .transition { height: 140px; position: relative; display: grid; place-items: center; background: linear-gradient(var(--bg),#0e1519); color: var(--gold); font-size: 9px; font-weight: 800; letter-spacing: .26em; }
 .transition-thread { position: absolute; top: 0; left: 50%; width: 1px; height: 60px; background: linear-gradient(var(--gold),transparent); box-shadow: 0 0 14px var(--gold); }
-.footer { padding: 35px 6%; display: flex; justify-content: space-between; gap: 20px; border-top: 1px solid var(--line); background: #294b2e; color: #c6c4a8; font-size: 9px; font-weight: 800; letter-spacing: .13em; }
+.footer { padding: 35px 6%; display: flex; justify-content: space-between; gap: 20px; border-top: 1px solid var(--line); background: #1e222e; color: #c6c4a8; font-size: 9px; font-weight: 800; letter-spacing: .13em; }
 .stream-mode .hero-description, .stream-mode article p { font-size: 20px; }
 .stream-mode .hero-status, .stream-mode .source, .stream-mode .concept { opacity: .25; }
 .stream-mode .timeline-label { font-size: 12px; }

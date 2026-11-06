@@ -1,5 +1,6 @@
 import { useRef, useState } from 'react';
 import { YouTubePlayer } from '../../components/YouTubePlayer';
+import { SeptemberQuiz } from '../additions/ExtraScenes';
 import { september } from './septemberContent';
 import styles from './chapter.module.css';
 
@@ -61,20 +62,22 @@ export function September() {
       <div className={styles.roomStage}><div className={styles.roomArt}><span className={styles.roomMeasure}>× 4 МАСШТАБ</span><img src={september.room.image} alt="Равшан сидит среди огромных предметов в комнате, построенной для шутки о росте" loading="lazy" decoding="async" /></div><div className={styles.roomMedia}><span className={styles.mediaLabel}>КАК ЭТО СДЕЛАЛИ / ВИДЕО</span><YouTubePlayer videoId={september.room.videoId} title={september.room.title} url={september.room.videoUrl} posterFallback={september.room.image} label="СМОТРЕТЬ ВИДЕО" /></div></div>
     </article>
 
+    <SeptemberQuiz />
+
     <article id={september.bmw.id} className={`${styles.scene} ${styles.bmw}`} aria-labelledby="september-bmw-title">
-      <div className={styles.sceneIndex}><span>02 / НОВАЯ ПОКУПКА</span><span>СЕНТЯБРЬ 2026</span></div>
+      <div className={styles.sceneIndex}><span>03 / НОВАЯ ПОКУПКА</span><span>СЕНТЯБРЬ 2026</span></div>
       <div className={styles.bmwHeading}><span className={styles.kicker}>ЛЕГЕНДА В НОВОМ ГАРАЖЕ</span><h3 id="september-bmw-title">M5 <em>F10.</em></h3><p>В сентябре у Равшана появилась легендарная BMW M5 F10. Покупку и первые эмоции можно посмотреть в выпуске.</p></div>
       <div className={styles.bmwStage}><div className={styles.bmwGlow} aria-hidden="true" /><img src={september.bmw.image} alt="Синяя BMW M5 F10" loading="lazy" decoding="async" /><div className={styles.bmwVideo}><span className={styles.mediaLabel}>ПОКУПКА BMW M5 F10</span><YouTubePlayer videoId={september.bmw.videoId} title={september.bmw.title} url={september.bmw.videoUrl} posterFallback={september.bmw.image} label="СМОТРЕТЬ ПОКУПКУ" /></div></div>
     </article>
 
     <article id={september.football.id} className={`${styles.scene} ${styles.football}`} aria-labelledby="september-football-title">
-      <div className={styles.sceneIndex}><span>03 / ФУТБОЛ С ЛЕГЕНДАМИ</span><span>СЕНТЯБРЬ 2026</span></div>
+      <div className={styles.sceneIndex}><span>04 / ФУТБОЛ С ЛЕГЕНДАМИ</span><span>СЕНТЯБРЬ 2026</span></div>
       <div className={styles.footballHeading}><span className={styles.kicker}>ВЫЗОВ ПРИНЯТ</span><h3 id="september-football-title">НА ПОЛЕ <em>С ЛЕГЕНДАМИ.</em></h3><p>Футбольные челленджи, игра против сборной России и встреча с легендами российского футбола. Стрим — рядом, фотографии с поля — в галерее.</p></div>
       <div className={styles.footballStage}><div className={styles.footballVideo}><span className={styles.mediaLabel}>СТРИМ / ФУТБОЛЬНЫЕ ЧЕЛЛЕНДЖИ</span><YouTubePlayer videoId={september.football.videoId} title={september.football.title} url={september.football.videoUrl} posterFallback={september.football.photos[1]} label="СМОТРЕТЬ СТРИМ" /><span className={styles.footballRule}>90:00　　RAVSHANN / 030</span></div><FootballGallery /></div>
     </article>
 
     <article id={september.meme.id} className={`${styles.scene} ${styles.meme}`} aria-labelledby="september-meme-title">
-      <div className={styles.sceneIndex}><span>04 / МЕМ ВЕРНУЛСЯ</span><span>СЕНТЯБРЬ 2026</span></div>
+      <div className={styles.sceneIndex}><span>05 / МЕМ ВЕРНУЛСЯ</span><span>СЕНТЯБРЬ 2026</span></div>
       <div className={styles.memeStage}><div className={styles.memeCopy}><span className={styles.kicker}>ИЗ АРХИВА — СНОВА В РЕКОМЕНДАЦИЯХ</span><h3 id="september-meme-title">СТАРЫЙ<br />ПРИКОЛ.<br /><em>НОВАЯ ВОЛНА.</em></h3><p>Старый ролик Равшана снова завирусился. Шутку подхватили в соцсетях и стали повторять далеко за пределами его аудитории. Вот оригинал, с которого всё началось.</p><div className={styles.memeOrbit} aria-hidden="true">↗　♡　↗</div></div><MemeReel /></div>
     </article>
   </section>;
