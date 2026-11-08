@@ -14,7 +14,7 @@ export function SnowBreakout() {
       <div className={styles.introText}>
         <span className={styles.eyebrow}>ГЛАВА ПЕРВАЯ <i /> ЗИМНИЙ ПРОЛОГ</span>
         <h2 id="january-title">ЯНВАРЬ<span>’26</span></h2>
-        <p>Год начинается со снега. Впереди — новогодний стрим и первые истории января.</p>
+        <p>Год начинается со снега. Впереди — танец, ставший мемом, новогодний стрим и первые истории января.</p>
         <span className={styles.concept}>СНЕГ · НОЧЬ · НОВЫЙ ГОД</span>
         <div className={styles.scrollCue}><span className={styles.scrollCueLine} />ЛИСТАЙ К ПЕРВОЙ ИСТОРИИ <span aria-hidden="true">↓</span></div>
       </div>

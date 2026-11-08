@@ -4,6 +4,7 @@ import { LocalVideoPlayer } from '../../components/LocalVideoPlayer';
 import { scenes } from '../../lib/contentValidation';
 import { BrotherPhone } from './BrotherPhone';
 import { SnowBreakout } from './SnowBreakout';
+import { JanuaryDanceMeme } from './JanuaryDanceMeme';
 import { TelegramArchiveLink, TelegramIcon } from './TelegramArchiveLink';
 import styles from './chapter.module.css';
 
@@ -45,6 +46,7 @@ export function January() {
   return <section ref={chapterRef} id="january" className={styles.chapter} aria-labelledby="january-title">
     <div className={styles.winterLight} aria-hidden="true" />
     <SnowBreakout />
+    <JanuaryDanceMeme />
 
     <article ref={cinemaRef} className={`${styles.scene} ${styles.cinema}`} id={opening.id} aria-labelledby={`${opening.id}-title`}>
       <div className={styles.cinemaSticky}>
