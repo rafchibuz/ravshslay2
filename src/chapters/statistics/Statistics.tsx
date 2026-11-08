@@ -1,4 +1,5 @@
 import styles from './statistics.module.css';
+import { SocialStatistics } from './SocialStatistics';
 
 const categories = [
   { name: 'IRL', hours: '317,2', share: '41,3%', className: styles.irl },
@@ -71,8 +72,10 @@ export function Statistics() {
         <div className={styles.channelFoot}><span>{channel.hours} ЧАСА ЭФИРА</span><a href={channel.streamsHref} target="_blank" rel="noopener noreferrer">ИСТОРИЯ СТРИМОВ ↗</a></div>
       </article>)}</div>
 
-      <div className={styles.summary}><div><span>ВМЕСТЕ ЗА 2026</span><strong>≈8,58 млн <small>часов просмотра</small></strong></div><div><span>ПРИРОСТ ДВУХ КАНАЛОВ</span><strong>≈326 тыс. <small>подписок за 2026</small></strong></div><div><span>ОБЩАЯ АУДИТОРИЯ</span><strong>≈1,66 млн <small>подписок на двух каналах</small></strong></div><a href="#january">НАЧАТЬ ИСТОРИЮ ГОДА <span>↘</span></a></div>
+      <div className={styles.summary}><div><span>ВМЕСТЕ ЗА 2026</span><strong>≈8,58 млн <small>часов просмотра</small></strong></div><div><span>ПРИРОСТ ДВУХ КАНАЛОВ</span><strong>≈326 тыс. <small>подписок за 2026</small></strong></div><div><span>ОБЩАЯ АУДИТОРИЯ</span><strong>≈1,66 млн <small>подписок на двух каналах</small></strong></div></div>
       <p className={styles.note}>Срез TwitchTracker на 04.11.2026. Показатели аудитории округлены сервисом; суммарные значения приблизительны. Часы и категории эфира сведены по данным, предоставленным для этой презентации.</p>
+      <SocialStatistics />
+      <a className={styles.next} href="#january">НАЧАТЬ ИСТОРИЮ ГОДА <span>↘</span></a>
     </div>
   </section>;
 }

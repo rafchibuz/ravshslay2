@@ -1,5 +1,6 @@
 import { useRef, useState } from 'react';
 import { YouTubePlayer } from '../../components/YouTubePlayer';
+import { AutumnDecor } from '../../components/AutumnDecor';
 import { SeptemberQuiz } from '../additions/ExtraScenes';
 import { september } from './septemberContent';
 import styles from './chapter.module.css';
@@ -49,11 +50,12 @@ function MemeReel() {
 
 export function September() {
   return <section id="september" className={styles.chapter} aria-labelledby="september-title">
+    <AutumnDecor phase="early" />
     <FallBranch /><FallBranch right />
     <header className={styles.monthHeader}>
       <div className={styles.monthEyebrow}><span>09 / 12</span><i /><span>ГЛАВА ДЕВЯТАЯ</span></div>
       <h2 id="september-title">СЕНТЯБРЬ <em>’26</em></h2>
-      <p>Лето отступает постепенно. Листва желтеет, а истории набирают новый ход: шутка про рост, легендарная М5 и футбол с легендами.</p>
+      <p>Лето отступает постепенно. Листва желтеет, а истории набирают новый ход: шутка про рост, собственный вкус LIT ENERGY, легендарная М5 и футбол с легендами.</p>
     </header>
 
     <article id={september.room.id} className={`${styles.scene} ${styles.room}`} aria-labelledby="september-room-title">
@@ -64,20 +66,28 @@ export function September() {
 
     <SeptemberQuiz />
 
+    <article id="2026-09-07" className={`${styles.scene} ${styles.flavor}`} aria-labelledby="september-flavor-title">
+      <div className={styles.sceneIndex}><span>03 / ЗАПУСК ВКУСА</span><span>СЕНТЯБРЬ 2026</span></div>
+      <div className={styles.flavorStage}>
+        <div className={styles.flavorCopy}><span className={styles.kicker}>LIT ENERGY × RAVSHANN</span><h3 id="september-flavor-title">ЮДЗУ<br /><em>СУШНЯК.</em></h3><p>Равшан выпустил собственный вкус LIT ENERGY. Юдзу-Сушняк за считанный месяц стал вкусом № 1 по продажам в линейке бренда.</p><span className={styles.flavorSign}>АВТОРСКИЙ ВКУС / 2026</span></div>
+        <div className={styles.flavorArt}><span className={styles.flavorHalo} aria-hidden="true" /><img src="/assets/september/lit-energy-yuzu.png" alt="Банка LIT ENERGY Юдзу-Сушняк, вкус Равшана" loading="lazy" decoding="async" /><span className={styles.flavorSticker}>№ 1 <small>ПО ПРОДАЖАМ<br />ЗА МЕСЯЦ</small></span></div>
+      </div>
+    </article>
+
     <article id={september.bmw.id} className={`${styles.scene} ${styles.bmw}`} aria-labelledby="september-bmw-title">
-      <div className={styles.sceneIndex}><span>03 / НОВАЯ ПОКУПКА</span><span>СЕНТЯБРЬ 2026</span></div>
+      <div className={styles.sceneIndex}><span>04 / НОВАЯ ПОКУПКА</span><span>СЕНТЯБРЬ 2026</span></div>
       <div className={styles.bmwHeading}><span className={styles.kicker}>ЛЕГЕНДА В НОВОМ ГАРАЖЕ</span><h3 id="september-bmw-title">M5 <em>F10.</em></h3><p>В сентябре у Равшана появилась легендарная BMW M5 F10. Покупку и первые эмоции можно посмотреть в выпуске.</p></div>
       <div className={styles.bmwStage}><div className={styles.bmwGlow} aria-hidden="true" /><img src={september.bmw.image} alt="Синяя BMW M5 F10" loading="lazy" decoding="async" /><div className={styles.bmwVideo}><span className={styles.mediaLabel}>ПОКУПКА BMW M5 F10</span><YouTubePlayer videoId={september.bmw.videoId} title={september.bmw.title} url={september.bmw.videoUrl} posterFallback={september.bmw.image} label="СМОТРЕТЬ ПОКУПКУ" /></div></div>
     </article>
 
     <article id={september.football.id} className={`${styles.scene} ${styles.football}`} aria-labelledby="september-football-title">
-      <div className={styles.sceneIndex}><span>04 / ФУТБОЛ С ЛЕГЕНДАМИ</span><span>СЕНТЯБРЬ 2026</span></div>
+      <div className={styles.sceneIndex}><span>05 / ФУТБОЛ С ЛЕГЕНДАМИ</span><span>СЕНТЯБРЬ 2026</span></div>
       <div className={styles.footballHeading}><span className={styles.kicker}>ВЫЗОВ ПРИНЯТ</span><h3 id="september-football-title">НА ПОЛЕ <em>С ЛЕГЕНДАМИ.</em></h3><p>Футбольные челленджи, игра против сборной России и встреча с легендами российского футбола. Стрим — рядом, фотографии с поля — в галерее.</p></div>
       <div className={styles.footballStage}><div className={styles.footballVideo}><span className={styles.mediaLabel}>СТРИМ / ФУТБОЛЬНЫЕ ЧЕЛЛЕНДЖИ</span><YouTubePlayer videoId={september.football.videoId} title={september.football.title} url={september.football.videoUrl} posterFallback={september.football.photos[1]} label="СМОТРЕТЬ СТРИМ" /><span className={styles.footballRule}>90:00　　RAVSHANN / 030</span></div><FootballGallery /></div>
     </article>
 
     <article id={september.meme.id} className={`${styles.scene} ${styles.meme}`} aria-labelledby="september-meme-title">
-      <div className={styles.sceneIndex}><span>05 / МЕМ ВЕРНУЛСЯ</span><span>СЕНТЯБРЬ 2026</span></div>
+      <div className={styles.sceneIndex}><span>06 / МЕМ ВЕРНУЛСЯ</span><span>СЕНТЯБРЬ 2026</span></div>
       <div className={styles.memeStage}><div className={styles.memeCopy}><span className={styles.kicker}>ИЗ АРХИВА — СНОВА В РЕКОМЕНДАЦИЯХ</span><h3 id="september-meme-title">СТАРЫЙ<br />ПРИКОЛ.<br /><em>НОВАЯ ВОЛНА.</em></h3><p>Старый ролик Равшана снова завирусился. Шутку подхватили в соцсетях и стали повторять далеко за пределами его аудитории. Вот оригинал, с которого всё началось.</p><div className={styles.memeOrbit} aria-hidden="true">↗　♡　↗</div></div><MemeReel /></div>
     </article>
   </section>;

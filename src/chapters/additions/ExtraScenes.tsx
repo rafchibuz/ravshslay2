@@ -1,4 +1,5 @@
 import { YouTubePlayer } from '../../components/YouTubePlayer';
+import { AutumnDecor } from '../../components/AutumnDecor';
 import styles from './extraScenes.module.css';
 
 function Video({ id, title, image, label }: { id: string; title: string; image: string; label: string }) {
@@ -62,6 +63,7 @@ export function OctoberWebsite() {
 
 export function November() {
   return <section id="november" className={styles.november} aria-labelledby="november-title">
+    <AutumnDecor phase="late" />
     <header className={styles.monthHeader}><span className={styles.kicker}>11 / 12 — ГЛАВА ОДИННАДЦАТАЯ</span><h2 id="november-title">НОЯБРЬ <em>’26</em></h2><p>Осень становится холоднее, а события — громче: гонки, неожиданная дуэль, большое интервью и новый розыгрыш.</p></header>
     <article id="2026-11-01" className={`${styles.scene} ${styles.race}`} aria-labelledby="november-race-title">
       <Index number="01" month="НОЯБРЬ" label="ЛИТВИН VS ТАМАЕВ" />

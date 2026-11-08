@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { YouTubePlayer } from '../../components/YouTubePlayer';
+import { AutumnDecor } from '../../components/AutumnDecor';
 import { OctoberCasting, OctoberParadeevich, OctoberWebsite } from '../additions/ExtraScenes';
 import { october } from './octoberContent';
 import styles from './chapter.module.css';
@@ -22,6 +23,7 @@ function OdysseyPlayer() {
 
 export function October() {
   return <section id="october" className={styles.chapter} aria-labelledby="october-title">
+    <AutumnDecor phase="deep" />
     <header className={styles.monthHeader}>
       <div className={styles.monthEyebrow}><span>10 / 12</span><i /><span>ГЛАВА ДЕСЯТАЯ</span></div>
       <h2 id="october-title">ОКТЯБРЬ <em>’26</em></h2>

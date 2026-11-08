@@ -1,0 +1,22 @@
+.autumn-decor{position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none;color:#d8b663}
+.autumn-decor--early{color:#bbd078}
+.autumn-decor--deep{color:#dd985c}
+.autumn-decor--late{color:#ab8d75}
+.autumn-branch{position:absolute;width:clamp(280px,33vw,560px);height:auto;opacity:.42;filter:drop-shadow(0 0 24px currentColor)}
+.autumn-branch--one{top:0;left:-7%;transform:rotate(-10deg)}
+.autumn-branch--two{top:18%;right:-10%;transform:scaleX(-1) rotate(12deg);opacity:.32}
+.autumn-branch--three{top:36%;left:-9%;transform:rotate(11deg);opacity:.36}
+.autumn-branch--four{top:54%;right:-12%;transform:scaleX(-1) rotate(-8deg);opacity:.3}
+.autumn-branch--five{top:72%;left:-8%;transform:rotate(-15deg);opacity:.34}
+.autumn-branch--six{bottom:-1%;right:-9%;transform:scaleX(-1) rotate(10deg);opacity:.4}
+.autumn-lines{position:absolute;inset:0;background:repeating-radial-gradient(ellipse 80% 19% at 90% 24%,transparent 0 80px,rgba(225,184,123,.055) 81px 82px,transparent 83px 165px),linear-gradient(104deg,transparent 12%,rgba(255,221,168,.035) 28%,transparent 40%,transparent 66%,rgba(255,204,142,.03) 83%,transparent 95%);mask-image:linear-gradient(180deg,transparent,#000 8%,#000 92%,transparent)}
+.autumn-leaf{position:absolute;display:block;width:clamp(24px,2.8vw,44px);height:auto;color:currentColor;opacity:.48;transform:rotate(35deg);animation:autumn-sway 8s ease-in-out infinite alternate}
+.autumn-leaf--1{top:9%;left:14%}.autumn-leaf--2{top:16%;right:8%;animation-delay:-2s;transform:rotate(-31deg)}
+.autumn-leaf--3{top:24%;left:7%;animation-delay:-4s}.autumn-leaf--4{top:32%;right:18%;animation-delay:-6s;transform:rotate(95deg)}
+.autumn-leaf--5{top:41%;left:21%;animation-delay:-1s}.autumn-leaf--6{top:49%;right:5%;animation-delay:-3s}
+.autumn-leaf--7{top:57%;left:9%;animation-delay:-5s;transform:rotate(-48deg)}.autumn-leaf--8{top:64%;right:21%;animation-delay:-7s}
+.autumn-leaf--9{top:72%;left:24%;animation-delay:-2.5s}.autumn-leaf--10{top:79%;right:6%;animation-delay:-4.5s;transform:rotate(86deg)}
+.autumn-leaf--11{top:86%;left:11%;animation-delay:-6.5s}.autumn-leaf--12{top:94%;right:17%;animation-delay:-1.5s}
+@keyframes autumn-sway{to{translate:14px 18px;rotate:10deg}}
+@media(max-width:700px){.autumn-branch{width:280px;opacity:.24}.autumn-branch--one,.autumn-branch--three,.autumn-branch--five{left:-37%}.autumn-branch--two,.autumn-branch--four,.autumn-branch--six{right:-38%}.autumn-leaf{opacity:.28}}
+@media(prefers-reduced-motion:reduce){.autumn-leaf{animation:none}}

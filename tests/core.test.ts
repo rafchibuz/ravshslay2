@@ -10,8 +10,10 @@ import { august } from '../src/chapters/august/augustContent';
 import { september } from '../src/chapters/september/septemberContent';
 
 describe('chronicle navigation', () => {
-  it('moves through the statistics, hero and January points in both directions', () => {
-    expect(nextPoint('hero', 1)).toBe('statistics');
+  it('moves through the prologue, statistics and January points in both directions', () => {
+    expect(nextPoint('hero', 1)).toBe('prologue');
+    expect(nextPoint('prologue', 1)).toBe('statistics');
+    expect(nextPoint('statistics', -1)).toBe('prologue');
     expect(nextPoint('statistics', 1)).toBe('january');
     expect(nextPoint('january', -1)).toBe('statistics');
     expect(nextPoint('2026-01-02', 1)).toBe('2026-01-03');
@@ -37,7 +39,8 @@ describe('chronicle navigation', () => {
     expect(nextPoint('2026-08-08', 1)).toBe('september');
     expect(nextPoint('september', 1)).toBe('2026-09-06');
     expect(nextPoint('2026-09-06', 1)).toBe('2026-09-01');
-    expect(nextPoint('2026-09-01', 1)).toBe('2026-09-02');
+    expect(nextPoint('2026-09-01', 1)).toBe('2026-09-07');
+    expect(nextPoint('2026-09-07', 1)).toBe('2026-09-02');
     expect(nextPoint('2026-09-03', 1)).toBe('2026-09-05');
     expect(nextPoint('2026-10-02', 1)).toBe('2026-10-06');
     expect(nextPoint('2026-10-04', 1)).toBe('2026-10-07');
