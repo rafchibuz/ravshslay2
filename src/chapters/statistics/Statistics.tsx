@@ -39,12 +39,12 @@ const channels = [
 export function Statistics() {
   return <section id="statistics" className={styles.chapter} aria-labelledby="statistics-title">
     <div className={styles.inner}>
-      <div className={styles.topline}><span>00 / ПРОЛОГ В ЦИФРАХ</span><span>01.01 — 04.11.2026</span></div>
+      <div className={styles.topline}><span>00 / ПРОЛОГ В ЦИФРАХ</span></div>
       <header className={styles.heading}>
         <div>
           <span className={styles.eyebrow}>ДВА КАНАЛА. ОДИН ГОД.</span>
           <h2 id="statistics-title">ГОД <em>В ЭФИРЕ.</em></h2>
-          <p>IRL, разговоры и игры — всё, что Равшан успел показать на двух Twitch-каналах к началу ноября.</p>
+          <p>IRL, разговоры и игры — всё, что Равшан успел показать на двух Twitch-каналах за 2026 год.</p>
         </div>
         <div className={styles.totalTime}><strong>768,6</strong><span>ЧАСА ЭФИРА<br />НА ДВУХ КАНАЛАХ</span></div>
       </header>
@@ -57,7 +57,6 @@ export function Statistics() {
         <div className={styles.categoryGrid}>{categories.map((category) => <div className={styles.category} key={category.name}>
           <span className={`${styles.categoryMarker} ${category.className}`} /><div><strong>{category.name}</strong><span>{category.hours} ч</span></div><b>{category.share}</b>
         </div>)}</div>
-        <p className={styles.method}>Доли рассчитаны по часам трансляций обоих каналов. Это время эфира, а не часы просмотра зрителями.</p>
       </div>
 
       <div className={styles.channelGrid}>{channels.map((channel, index) => <article className={styles.channel} key={channel.name}>
@@ -73,7 +72,6 @@ export function Statistics() {
       </article>)}</div>
 
       <div className={styles.summary}><div><span>ВМЕСТЕ ЗА 2026</span><strong>≈8,58 млн <small>часов просмотра</small></strong></div><div><span>ПРИРОСТ ДВУХ КАНАЛОВ</span><strong>≈326 тыс. <small>подписок за 2026</small></strong></div><div><span>ОБЩАЯ АУДИТОРИЯ</span><strong>≈1,66 млн <small>подписок на двух каналах</small></strong></div></div>
-      <p className={styles.note}>Срез TwitchTracker на 04.11.2026. Показатели аудитории округлены сервисом; суммарные значения приблизительны. Часы и категории эфира сведены по данным, предоставленным для этой презентации.</p>
       <SocialStatistics />
       <a className={styles.next} href="#january">НАЧАТЬ ИСТОРИЮ ГОДА <span>↘</span></a>
     </div>
