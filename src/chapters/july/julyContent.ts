@@ -30,7 +30,6 @@ export const julyRocket = {
 
 export const julyQuiz = {
   id: '2026-07-04', sourceTitle: 'Своя игра Футбольная тематика',
-  image: '/assets/july/football-quiz.png',
   videoId: 'qIVhtivg8wg', videoUrl: 'https://www.youtube.com/watch?v=qIVhtivg8wg',
   title: 'Своя игра: футбольный выпуск с блогерами',
 } as const;

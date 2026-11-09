@@ -105,7 +105,7 @@ export function March() {
         </div>
         <EnduroVideo />
       </div>
-      <div className={styles.enduroTrail} aria-hidden="true"><span>КУПИЛ</span><i /><span>ПОЕХАЛ</span><i /><span>ПОЗНАКОМИЛСЯ С ГРЯЗЬЮ</span></div>
+      <div className={styles.enduroTrail} aria-hidden="true"><span>КУПИЛ</span><i /><span>ПОЕХАЛ</span><i /><span>ПОЗНАКОМИЛСЯ С АСФАЛЬТОМ</span></div>
     </article>
 
     <article id={marchAlfReality.id} className={styles.reality} aria-labelledby="reality-title">

@@ -63,7 +63,6 @@ export function January() {
               <img className={styles.faceReveal} src="/assets/visuals/ravshann-face-clean.webp" alt="" decoding="async" />
               <span className={styles.faceWipe} aria-hidden="true" />
             </div>
-            <figcaption>ОБРАЗ МЕНЯЕТСЯ ПРИ ПРОКРУТКЕ <span>01 → 02</span></figcaption>
           </figure>
           <div className={styles.sceneCopy}>
             <div><span className={styles.tag}>СЛЕДОМ ЗА СНЕГОМ / ВИДЕО</span><h3 id={`${opening.id}-title`}>{opening.title}</h3></div>

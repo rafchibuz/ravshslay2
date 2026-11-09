@@ -91,8 +91,7 @@ export function July() {
       <div className={styles.eventIndex}><span>04 / ФУТБОЛЬНАЯ СВОЯ ИГРА</span><span>ИЮЛЬ 2026</span></div>
       <div className={styles.quizHeading}><span className={styles.sceneKicker}>БЛОГЕРЫ / ВОПРОСЫ / ФУТБОЛ</span><h3 id="july-quiz-title">СВОЯ <span>ИГРА</span></h3><p>Футбол оказался темой не только на поле. Равшан собрал блогеров на выпуск «Своей игры»: вопросы, азарт и борьба за правильный ответ.</p></div>
       <div className={styles.quizStage}>
-        <img className={styles.quizImage} src={julyQuiz.image} alt="Участники футбольного выпуска шоу «Своя игра»" loading="lazy" decoding="async" />
-        <div className={styles.quizMedia}><YouTubePlayer videoId={julyQuiz.videoId} title={julyQuiz.title} url={julyQuiz.videoUrl} posterFallback={julyQuiz.image} label="СМОТРЕТЬ ВЫПУСК" /></div>
+        <div className={styles.quizMedia}><YouTubePlayer videoId={julyQuiz.videoId} title={julyQuiz.title} url={julyQuiz.videoUrl} posterFallback={`https://i.ytimg.com/vi/${julyQuiz.videoId}/hqdefault.jpg`} label="СМОТРЕТЬ ВЫПУСК" /></div>
       </div>
     </article>
     <article id={julyBmw.id} className={`${styles.newStory} ${styles.bmwStory}`} aria-labelledby="july-bmw-title">
