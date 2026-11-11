@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { YouTubePlayer } from '../../components/YouTubePlayer';
 import { LocalVideoPlayer } from '../../components/LocalVideoPlayer';
 import { AutumnDecor } from '../../components/AutumnDecor';
@@ -92,8 +93,9 @@ function NovemberFootball() {
       </div>
       <img className={styles.footballArt} src="/assets/november/uzbekistan-footballer.png" alt="Равшан в красной футбольной форме ведёт мяч" loading="lazy" decoding="async" />
       <div className={styles.footballClip}>
-        <span className={styles.clipLabel}>МОМЕНТ С ПОЛЯ / ВИДЕО</span>
-        <LocalVideoPlayer src="/assets/november/uzbekistan-match.mp4" title="Фрагмент матча России против Узбекистана" label="СМОТРЕТЬ ФРАГМЕНТ" />
+        <div className={styles.reelHeader}><span className={styles.reelAvatar} aria-hidden="true">R</span><div><strong>ravshann</strong><small>Узбекистан · матч</small></div><span className={styles.reelMenu} aria-hidden="true">•••</span></div>
+        <div className={styles.footballReel}><LocalVideoPlayer src="/assets/november/uzbekistan-match.mp4" title="Вертикальный фрагмент матча России против Узбекистана" label="СМОТРЕТЬ МОМЕНТ" /></div>
+        <div className={styles.reelFooter}><span aria-hidden="true">♡ &nbsp; ◯ &nbsp; ↗</span><strong>МОМЕНТ С ПОЛЯ</strong></div>
       </div>
     </div>
     <div className={styles.streamsHeader}><span>ПОСЛЕ МАТЧА</span><h4>ИРЛ ИЗ УЗБЕКИСТАНА</h4><p>Три эфира из поездки — открывай любой.</p></div>
@@ -104,14 +106,36 @@ function NovemberFootball() {
   </article>;
 }
 
+function NovemberRace() {
+  const [part, setPart] = useState(0);
+  const videos = [
+    { id: 'bY2bcUKAK0c', title: 'Литвин против Тамаева: гонки с участием Равшана — часть 1' },
+    { id: '-wmioOZKs4s', title: 'Литвин против Тамаева: гонки с участием Равшана — часть 2' },
+  ];
+  const selected = videos[part];
+
+  return <article id="2026-11-01" className={`${styles.scene} ${styles.race}`} aria-labelledby="november-race-title">
+    <Index number="01" month="НОЯБРЬ" label="ЛИТВИН VS ТАМАЕВ" />
+    <div className={styles.split}>
+      <div className={styles.copy}>
+        <span className={styles.kicker}>ГОНОЧНЫЙ ВЫПУСК АСХАБА ТАМАЕВА</span>
+        <h3 id="november-race-title">ГОНКА.<br /><em>КОНФЛИКТ.</em></h3>
+        <p>Равшан принял участие в выпуске «Литвин vs Тамаев», который набрал около 10 млн просмотров. На съёмках между Равшаном и Тамаевым возник конфликт — позже эта история может продолжиться уже в бою.</p>
+        <div className={styles.raceSwitcher} role="group" aria-label="Выбрать часть гонки">
+          {videos.map((video, index) => <button key={video.id} type="button" className={part === index ? styles.racePartActive : styles.racePart} aria-pressed={part === index} onClick={() => setPart(index)}>{String(index + 1).padStart(2, '0')} <span>ЧАСТЬ</span></button>)}
+        </div>
+        <div className={styles.videoInCopy}><Video key={selected.id} id={selected.id} title={selected.title} image={`https://i.ytimg.com/vi/${selected.id}/hqdefault.jpg`} label={`СМОТРЕТЬ ${part + 1} ЧАСТЬ`} /></div>
+      </div>
+      <img className={styles.cutout} src="/assets/november/tamaev-standoff.png" alt="Равшан и Асхаб Тамаев стоят друг напротив друга" loading="lazy" decoding="async" />
+    </div>
+  </article>;
+}
+
 export function November() {
   return <section id="november" className={styles.november} aria-labelledby="november-title">
     <AutumnDecor phase="late" />
     <header className={styles.monthHeader}><span className={styles.kicker}>11 / 12 — ГЛАВА ОДИННАДЦАТАЯ</span><h2 id="november-title">НОЯБРЬ <em>’26</em></h2><p>Осень становится холоднее, а события — громче: гонки, новые коллаборации, матч за медиа сборную и розыгрыш.</p></header>
-    <article id="2026-11-01" className={`${styles.scene} ${styles.race}`} aria-labelledby="november-race-title">
-      <Index number="01" month="НОЯБРЬ" label="ЛИТВИН VS ТАМАЕВ" />
-      <div className={styles.split}><div className={styles.copy}><span className={styles.kicker}>ГОНОЧНЫЙ ВЫПУСК АСХАБА ТАМАЕВА</span><h3 id="november-race-title">ГОНКА.<br /><em>КОНФЛИКТ.</em></h3><p>Равшан принял участие в выпуске «Литвин vs Тамаев», который набрал около 10 млн просмотров. На съёмках между Равшаном и Тамаевым возник конфликт — позже эта история может продолжиться уже в бою.</p><div className={styles.videoInCopy}><Video id="bY2bcUKAK0c" title="Литвин против Тамаева: гонки с участием Равшана" image="/assets/november/tamaev-standoff.png" label="СМОТРЕТЬ ГОНКУ" /></div><a className={styles.secondPart} href="https://www.youtube.com/watch?v=-wmioOZKs4s" target="_blank" rel="noopener noreferrer">СМОТРЕТЬ 2 ЧАСТЬ <span aria-hidden="true">↗</span></a></div><img className={styles.cutout} src="/assets/november/tamaev-standoff.png" alt="Равшан и Асхаб Тамаев стоят друг напротив друга" loading="lazy" decoding="async" /></div>
-    </article>
+    <NovemberRace />
     <article id="2026-11-02" className={`${styles.scene} ${styles.bus}`} aria-labelledby="november-bus-title">
       <Index number="02" month="НОЯБРЬ" label="ГОНКА НА АВТОБУСАХ" />
       <div className={styles.split}><div className={styles.gifStage}><img src="/assets/november/uberi-telefon.gif" alt="Гелоди из мема «Убери телефон» жестикулирует за рулём" loading="lazy" decoding="async" /><span>УБЕРИ ТЕЛИФОН ↗</span></div><div className={styles.copy}><span className={styles.kicker}>ГЕЛОДИ × RAVSHANN</span><h3 id="november-bus-title">АВТОБУСЫ.<br /><em>НА СТАРТ!</em></h3><p>Соперник Равшана — Гелоди, автор мема «Убери телифон». Теперь они встретились не в ленте, а на автобусной трассе.</p><Video id="mb0_jeBmEzk" title="Гонка на автобусах против Гелоди" image="/assets/november/uberi-telefon.gif" label="СМОТРЕТЬ ЗАЕЗД" /></div></div>
