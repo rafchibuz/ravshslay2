@@ -1,4 +1,5 @@
 import { YouTubePlayer } from '../../components/YouTubePlayer';
+import { LocalVideoPlayer } from '../../components/LocalVideoPlayer';
 import { AutumnDecor } from '../../components/AutumnDecor';
 import styles from './extraScenes.module.css';
 
@@ -61,13 +62,55 @@ export function OctoberWebsite() {
   </article>;
 }
 
+function NovemberLitvin() {
+  return <article id="2026-11-litvin" className={`${styles.scene} ${styles.litvin}`} aria-labelledby="november-litvin-title">
+    <Index number="04" month="НОЯБРЬ" label="В РОЛИКЕ ЛИТВИНА" />
+    <div className={styles.centered}>
+      <span className={styles.kicker}>ЕЩЁ ОДНА КОЛЛАБОРАЦИЯ</span>
+      <h3 id="november-litvin-title">ВМЕСТЕ С <em>ЛИТВИНЫМ.</em></h3>
+      <p>После «Вопроса ребром» Равшан появился в новом ролике Литвина. Смотри полный выпуск прямо здесь.</p>
+      <div className={styles.wideVideo}><Video id="Nx4RUArual4" title="Равшан в ролике Литвина" image="https://i.ytimg.com/vi/Nx4RUArual4/hqdefault.jpg" label="СМОТРЕТЬ ВЫПУСК" /></div>
+    </div>
+  </article>;
+}
+
+function NovemberFootball() {
+  const streams = [
+    { id: 'fpQXuzDwoek', title: 'ИРЛ-стрим из Узбекистана — часть 1' },
+    { id: 'Mlads-hymoc', title: 'ИРЛ-стрим из Узбекистана — часть 2' },
+    { id: 'gtKvu0EXmCA', title: 'ИРЛ-стрим из Узбекистана — часть 3' },
+  ];
+
+  return <article id="2026-11-football" className={`${styles.scene} ${styles.football}`} aria-labelledby="november-football-title">
+    <Index number="05" month="НОЯБРЬ" label="РОССИЯ × УЗБЕКИСТАН" />
+    <div className={styles.footballIntro}>
+      <div className={styles.footballCopy}>
+        <span className={styles.kicker}>МЕДИАСБОРНАЯ РОССИИ / ВЫЕЗДНОЙ МАТЧ</span>
+        <h3 id="november-football-title">НА ПОЛЕ.<br /><em>В УЗБЕКИСТАНЕ.</em></h3>
+        <p>Равшан сыграл за медиа сборную России против Узбекистана. Поездка продолжилась за пределами поля: команда провела серию ИРЛ-стримов.</p>
+        <a className={styles.matchLink} href="https://vksport.vkvideo.ru/video-29809500_456252174" target="_blank" rel="noopener noreferrer">ПОЛНЫЙ МАТЧ НА VK ВИДЕО <span aria-hidden="true">↗</span></a>
+      </div>
+      <img className={styles.footballArt} src="/assets/november/uzbekistan-footballer.png" alt="Равшан в красной футбольной форме ведёт мяч" loading="lazy" decoding="async" />
+      <div className={styles.footballClip}>
+        <span className={styles.clipLabel}>МОМЕНТ С ПОЛЯ / ВИДЕО</span>
+        <LocalVideoPlayer src="/assets/november/uzbekistan-match.mp4" title="Фрагмент матча России против Узбекистана" label="СМОТРЕТЬ ФРАГМЕНТ" />
+      </div>
+    </div>
+    <div className={styles.streamsHeader}><span>ПОСЛЕ МАТЧА</span><h4>ИРЛ ИЗ УЗБЕКИСТАНА</h4><p>Три эфира из поездки — открывай любой.</p></div>
+    <div className={styles.streamsGrid}>{streams.map((stream, index) => <div className={styles.streamCard} key={stream.id}>
+      <span className={styles.streamNumber}>ЭФИР {String(index + 1).padStart(2, '0')} / 03</span>
+      <Video id={stream.id} title={stream.title} image={`https://i.ytimg.com/vi/${stream.id}/hqdefault.jpg`} label="СМОТРЕТЬ ЭФИР" />
+    </div>)}</div>
+  </article>;
+}
+
 export function November() {
   return <section id="november" className={styles.november} aria-labelledby="november-title">
     <AutumnDecor phase="late" />
-    <header className={styles.monthHeader}><span className={styles.kicker}>11 / 12 — ГЛАВА ОДИННАДЦАТАЯ</span><h2 id="november-title">НОЯБРЬ <em>’26</em></h2><p>Осень становится холоднее, а события — громче: гонки, неожиданная дуэль, большое интервью и новый розыгрыш.</p></header>
+    <header className={styles.monthHeader}><span className={styles.kicker}>11 / 12 — ГЛАВА ОДИННАДЦАТАЯ</span><h2 id="november-title">НОЯБРЬ <em>’26</em></h2><p>Осень становится холоднее, а события — громче: гонки, новые коллаборации, матч за медиа сборную и розыгрыш.</p></header>
     <article id="2026-11-01" className={`${styles.scene} ${styles.race}`} aria-labelledby="november-race-title">
       <Index number="01" month="НОЯБРЬ" label="ЛИТВИН VS ТАМАЕВ" />
-      <div className={styles.split}><div className={styles.copy}><span className={styles.kicker}>ГОНОЧНЫЙ ВЫПУСК АСХАБА ТАМАЕВА</span><h3 id="november-race-title">ГОНКА.<br /><em>КОНФЛИКТ.</em></h3><p>Равшан принял участие в выпуске «Литвин vs Тамаев», который набрал около 10 млн просмотров. На съёмках между Равшаном и Тамаевым возник конфликт — позже эта история может продолжиться уже в бою.</p><div className={styles.videoInCopy}><Video id="bY2bcUKAK0c" title="Литвин против Тамаева: гонки с участием Равшана" image="/assets/november/tamaev-standoff.png" label="СМОТРЕТЬ ГОНКУ" /></div></div><img className={styles.cutout} src="/assets/november/tamaev-standoff.png" alt="Равшан и Асхаб Тамаев стоят друг напротив друга" loading="lazy" decoding="async" /></div>
+      <div className={styles.split}><div className={styles.copy}><span className={styles.kicker}>ГОНОЧНЫЙ ВЫПУСК АСХАБА ТАМАЕВА</span><h3 id="november-race-title">ГОНКА.<br /><em>КОНФЛИКТ.</em></h3><p>Равшан принял участие в выпуске «Литвин vs Тамаев», который набрал около 10 млн просмотров. На съёмках между Равшаном и Тамаевым возник конфликт — позже эта история может продолжиться уже в бою.</p><div className={styles.videoInCopy}><Video id="bY2bcUKAK0c" title="Литвин против Тамаева: гонки с участием Равшана" image="/assets/november/tamaev-standoff.png" label="СМОТРЕТЬ ГОНКУ" /></div><a className={styles.secondPart} href="https://www.youtube.com/watch?v=-wmioOZKs4s" target="_blank" rel="noopener noreferrer">СМОТРЕТЬ 2 ЧАСТЬ <span aria-hidden="true">↗</span></a></div><img className={styles.cutout} src="/assets/november/tamaev-standoff.png" alt="Равшан и Асхаб Тамаев стоят друг напротив друга" loading="lazy" decoding="async" /></div>
     </article>
     <article id="2026-11-02" className={`${styles.scene} ${styles.bus}`} aria-labelledby="november-bus-title">
       <Index number="02" month="НОЯБРЬ" label="ГОНКА НА АВТОБУСАХ" />
@@ -77,8 +120,10 @@ export function November() {
       <Index number="03" month="НОЯБРЬ" label="ВОПРОС РЕБРОМ" />
       <div className={styles.centered}><span className={styles.kicker}>В ГОСТЯХ У БАСТЫ</span><h3 id="november-basta-title">ВОПРОС <em>РЕБРОМ.</em></h3><p>Равшан стал гостем шоу Басты. Полный выпуск — здесь.</p><div className={styles.wideVideo}><Video id="LsHPC1esgWg" title="Равшан в шоу Басты Вопрос ребром" image="https://i.ytimg.com/vi/LsHPC1esgWg/hqdefault.jpg" label="СМОТРЕТЬ ШОУ" /></div></div>
     </article>
+    <NovemberLitvin />
+    <NovemberFootball />
     <article id="2026-11-04" className={`${styles.scene} ${styles.vesta}`} aria-labelledby="november-vesta-title">
-      <Index number="04" month="НОЯБРЬ" label="РОЗЫГРЫШ LIT ENERGY" />
+      <Index number="06" month="НОЯБРЬ" label="РОЗЫГРЫШ LIT ENERGY" />
       <div className={styles.split}><div className={styles.copy}><span className={styles.kicker}>СВОЯ ВЕСТА — ДЛЯ СТАИ</span><h3 id="november-vesta-title">ВЕСТА<br /><em>SPORT ’26.</em></h3><p>Вместе с LIT Energy Равшан запустил розыгрыш своей Lada Vesta Sport 2026 года. Яркая оклейка «Юдзу Сушняк» превратила автомобиль в продолжение собственного вкуса.</p><span className={styles.stat}>LIT <small>ENERGY × RAVSHANN</small></span></div><img className={styles.cutout} src="/assets/november/vesta-giveaway.png" alt="Lada Vesta Sport в зелёно-жёлтой оклейке вкуса LIT Energy" loading="lazy" decoding="async" /></div>
     </article>
   </section>;
