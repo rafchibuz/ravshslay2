@@ -46,7 +46,8 @@ describe('chronicle navigation', () => {
     expect(nextPoint('2026-10-04', 1)).toBe('2026-10-07');
     expect(nextPoint('2026-10-08', 1)).toBe('november');
     expect(nextPoint('november', 1)).toBe('2026-11-01');
-    expect(nextPoint('2026-11-04', 1)).toBe('2026-11-04');
+    expect(nextPoint('2026-11-04', 1)).toBe('2026-11-reality');
+    expect(nextPoint('2026-11-reality', 1)).toBe('2026-11-reality');
     expect(nextPoint('2026-01-02', -1)).toBe('2026-01-01');
     expect(nextPoint('hero', -1)).toBe('hero');
   });

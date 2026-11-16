@@ -57,7 +57,10 @@ export function App() {
           <h1 id="hero-title">{site.heroTitle}<span className="hero-title-shadow" aria-hidden="true">RAVSHANN</span></h1>
           <div className="hero-subrow"><strong>{site.heroSubtitle}</strong></div>
           <p className="hero-description">Первый кадр большой истории. Пройди месяцы вместе с RavshanN — от новогоднего старта и футбола до летних ИРЛ и осенних историй.</p>
-          <a className="primary-cta" href="#prologue"><span>ПРОЙТИ ГОД</span><span className="cta-arrow">↗</span></a>
+          <div className="hero-actions">
+            <a className="primary-cta" href="#prologue"><span>ПРОЙТИ ГОД</span><span className="cta-arrow">↗</span></a>
+            <a className="vote-cta vote-cta--hero" href="https://slay-award.ru/" target="_blank" rel="noopener noreferrer" aria-label="Перейти на сайт голосования Slay Award"><span>ГОЛОСОВАТЬ</span><span aria-hidden="true">↗</span></a>
+          </div>
           <span className="hero-status">2026 / ИСТОРИЯ В ЦИФРАХ И СОБЫТИЯХ</span>
         </div>
         <div className="portrait-wrap"><div className="portrait-halo" /><img className="hero-portrait" src="/assets/real/ravshann-king.png" alt="RavshanN в короне, очках и королевской мантии" fetchPriority="high" /></div>
@@ -78,6 +81,10 @@ export function App() {
       <October />
       <November />
     </main>
+    <section className="vote-finale" aria-labelledby="vote-finale-title">
+      <div><span>SLAY AWARD 2026</span><h2 id="vote-finale-title">ТВОЙ ГОЛОС<br /><em>РЕШАЕТ.</em></h2><p>Поддержи Равшана на сайте премии.</p></div>
+      <a className="vote-cta vote-cta--finale" href="https://slay-award.ru/" target="_blank" rel="noopener noreferrer" aria-label="Открыть сайт голосования Slay Award"><span>ПЕРЕЙТИ К ГОЛОСОВАНИЮ</span><span aria-hidden="true">↗</span></a>
+    </section>
     <footer className="footer"><span>RAVSHANN / SLAY KING 2026</span><span>НЕОФИЦИАЛЬНЫЙ ПРОТОТИП · КОНТЕНТ НА ПРОВЕРКЕ</span></footer>
   </div>;
 }

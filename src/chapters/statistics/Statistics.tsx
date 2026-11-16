@@ -2,9 +2,9 @@ import styles from './statistics.module.css';
 import { SocialStatistics } from './SocialStatistics';
 
 const categories = [
-  { name: 'IRL', hours: '317,2', share: '41,3%', className: styles.irl },
-  { name: 'Just Chatting', hours: '235', share: '30,6%', className: styles.chatting },
-  { name: 'Games', hours: '216,4', share: '28,2%', className: styles.games },
+  { name: 'IRL', hours: '≈335,6', share: '42,6%', className: styles.irl },
+  { name: 'Just Chatting', hours: '≈235,3', share: '29,9%', className: styles.chatting },
+  { name: 'Games', hours: '≈217,1', share: '27,5%', className: styles.games },
 ];
 
 const channels = [
@@ -13,13 +13,13 @@ const channels = [
     role: 'ОСНОВНОЙ КАНАЛ',
     href: 'https://twitchtracker.com/ravshann/statistics',
     streamsHref: 'https://twitchtracker.com/ravshann/streams',
-    hours: '563,6',
-    followers: '≈1,36 млн',
-    gained: '≈285 тыс.',
-    watched: '7,91 млн',
-    average: '14 036',
+    hours: '583',
+    followers: '≈1,37 млн',
+    gained: '≈297 тыс.',
+    watched: '8,19 млн',
+    average: '14 054',
     peak: '50 399',
-    days: '152',
+    days: '157',
   },
   {
     name: 'RAVSHANBTW',
@@ -46,13 +46,13 @@ export function Statistics() {
           <h2 id="statistics-title">ГОД <em>В ЭФИРЕ.</em></h2>
           <p>IRL, разговоры и игры — всё, что Равшан успел показать на двух Twitch-каналах за 2026 год.</p>
         </div>
-        <div className={styles.totalTime}><strong>768,6</strong><span>ЧАСА ЭФИРА<br />НА ДВУХ КАНАЛАХ</span></div>
+        <div className={styles.totalTime}><strong>788</strong><span>ЧАСОВ ЭФИРА<br />НА ДВУХ КАНАЛАХ</span></div>
       </header>
 
       <div className={styles.distribution} aria-label="Распределение времени эфира по трём категориям">
-        <div className={styles.distributionHeader}><h3>ИЗ ЧЕГО СОСТОЯЛ ЭФИР</h3><span>ДОЛЯ ОТ 768,6 ЧАСА</span></div>
-        <div className={styles.bar} role="img" aria-label="IRL — 317,2 часа, 41,3 процента; Just Chatting — 235 часов, 30,6 процента; Games — 216,4 часа, 28,2 процента">
-          <span className={styles.irl} style={{ flex: 317.2 }} /><span className={styles.chatting} style={{ flex: 235 }} /><span className={styles.games} style={{ flex: 216.4 }} />
+        <div className={styles.distributionHeader}><h3>ИЗ ЧЕГО СОСТОЯЛ ЭФИР</h3><span>ДОЛЯ ОТ 788 ЧАСОВ</span></div>
+        <div className={styles.bar} role="img" aria-label="IRL — около 335,6 часа, 42,6 процента; Just Chatting — около 235,3 часа, 29,9 процента; Games — около 217,1 часа, 27,5 процента">
+          <span className={styles.irl} style={{ flex: 335.6 }} /><span className={styles.chatting} style={{ flex: 235.3 }} /><span className={styles.games} style={{ flex: 217.1 }} />
         </div>
         <div className={styles.categoryGrid}>{categories.map((category) => <div className={styles.category} key={category.name}>
           <span className={`${styles.categoryMarker} ${category.className}`} /><div><strong>{category.name}</strong><span>{category.hours} ч</span></div><b>{category.share}</b>
@@ -71,7 +71,7 @@ export function Statistics() {
         <div className={styles.channelFoot}><span>{channel.hours} ЧАСА ЭФИРА</span><a href={channel.streamsHref} target="_blank" rel="noopener noreferrer">ИСТОРИЯ СТРИМОВ ↗</a></div>
       </article>)}</div>
 
-      <div className={styles.summary}><div><span>ВМЕСТЕ ЗА 2026</span><strong>≈8,58 млн <small>часов просмотра</small></strong></div><div><span>ПРИРОСТ ДВУХ КАНАЛОВ</span><strong>≈326 тыс. <small>подписок за 2026</small></strong></div><div><span>ОБЩАЯ АУДИТОРИЯ</span><strong>≈1,66 млн <small>подписок на двух каналах</small></strong></div></div>
+      <div className={styles.summary}><div><span>ВМЕСТЕ ЗА 2026</span><strong>≈8,86 млн <small>часов просмотра</small></strong></div><div><span>ПРИРОСТ ДВУХ КАНАЛОВ</span><strong>≈338 тыс. <small>подписок за 2026</small></strong></div><div><span>ОБЩАЯ АУДИТОРИЯ</span><strong>≈1,67 млн <small>подписок на двух каналах</small></strong></div></div>
       <SocialStatistics />
       <a className={styles.next} href="#january">НАЧАТЬ ИСТОРИЮ ГОДА <span>↘</span></a>
     </div>

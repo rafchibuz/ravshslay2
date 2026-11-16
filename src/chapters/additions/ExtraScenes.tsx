@@ -150,5 +150,16 @@ export function November() {
       <Index number="06" month="НОЯБРЬ" label="РОЗЫГРЫШ LIT ENERGY" />
       <div className={styles.split}><div className={styles.copy}><span className={styles.kicker}>СВОЯ ВЕСТА — ДЛЯ СТАИ</span><h3 id="november-vesta-title">ВЕСТА<br /><em>SPORT ’26.</em></h3><p>Вместе с LIT Energy Равшан запустил розыгрыш своей Lada Vesta Sport 2026 года. Яркая оклейка «Юдзу Сушняк» превратила автомобиль в продолжение собственного вкуса.</p><span className={styles.stat}>LIT <small>ENERGY × RAVSHANN</small></span></div><img className={styles.cutout} src="/assets/november/vesta-giveaway.png" alt="Lada Vesta Sport в зелёно-жёлтой оклейке вкуса LIT Energy" loading="lazy" decoding="async" /></div>
     </article>
+    <article id="2026-11-reality" className={`${styles.scene} ${styles.realityFinale}`} aria-labelledby="november-reality-title">
+      <Index number="07" month="БУДУЩИЙ ПРОЕКТ" label="ПОСЛЕ SLAY" />
+      <div className={styles.split}>
+        <img className={styles.cutout} src="/assets/additions/ravsh-reality.png" alt="Логотип бойцовского реалити-шоу «Равш Реалити»" loading="lazy" decoding="async" />
+        <div className={styles.copy}>
+          <span className={styles.kicker}>СЛЕДУЮЩАЯ ГЛАВА</span>
+          <h3 id="november-reality-title">РАВШ<br /><em>РЕАЛИТИ.</em></h3>
+          <p>Сразу после SLAY Равшан планирует запустить «Равш Реалити» — собственное бойцовское шоу. Кастинг уже прошёл, а впереди — реализация проекта.</p>
+        </div>
+      </div>
+    </article>
   </section>;
 }

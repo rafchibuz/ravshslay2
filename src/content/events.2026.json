@@ -1208,6 +1208,24 @@
           "actualMediaOnlyForProof": true,
           "assetManifest": [],
           "reviewStatus": "pending_review"
+        },
+        {
+          "id": "2026-11-reality",
+          "sourceTitle": "Равш Реалити — будущий проект",
+          "title": "Равш Реалити после SLAY",
+          "description": "Будущее бойцовское шоу Равшана, которое планируется реализовать сразу после SLAY.",
+          "day": null,
+          "priority": "unassigned",
+          "layout": "auto",
+          "media": [],
+          "externalLinks": [],
+          "poster": "/assets/additions/ravsh-reality.png",
+          "status": "needs_editorial_review",
+          "verified": false,
+          "featuredQuote": null,
+          "actualMediaOnlyForProof": true,
+          "assetManifest": [],
+          "reviewStatus": "pending_review"
         }
       ],
       "designBrief": {
