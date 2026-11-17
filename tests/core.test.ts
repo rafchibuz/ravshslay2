@@ -124,7 +124,7 @@ describe('January editorial data', () => {
     expect(scenes[0].media).toEqual({ provider: 'local-video', src: '/assets/january/new-year-stream.mp4', fullUrl: 'https://www.youtube.com/watch?v=WJ7kJ0lyof0' });
     expect(scenes[1].media?.provider).toBe('local-gallery');
     expect(scenes[2].media).toBeNull();
-    expect(scenes[3].media).toEqual({ provider: 'youtube', url: 'https://youtu.be/RzZn5SlTQU8?si=EPwxj6HtWqYQHppc', poster: 'https://i.ytimg.com/vi/RzZn5SlTQU8/hqdefault.jpg' });
+    expect(scenes[3].media).toEqual({ provider: 'youtube', url: 'https://youtu.be/RzZn5SlTQU8?si=EPwxj6HtWqYQHppc', poster: '/assets/youtube/RzZn5SlTQU8.jpg' });
   });
 
   it('rejects duplicate scene IDs', () => {

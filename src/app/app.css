@@ -59,7 +59,7 @@
 .transition { height: 140px; position: relative; display: grid; place-items: center; background: linear-gradient(var(--bg),#0e1519); color: var(--gold); font-size: 9px; font-weight: 800; letter-spacing: .26em; }
 .transition-thread { position: absolute; top: 0; left: 50%; width: 1px; height: 60px; background: linear-gradient(var(--gold),transparent); box-shadow: 0 0 14px var(--gold); }
 .footer { padding: 35px 6%; display: flex; justify-content: space-between; gap: 20px; border-top: 1px solid var(--line); background: #1e222e; color: #c6c4a8; font-size: 9px; font-weight: 800; letter-spacing: .13em; }
-.vote-finale { display: flex; align-items: end; justify-content: space-between; gap: 50px; padding: 110px max(7%,calc((100vw - 1460px)/2)) 120px; border-top: 1px solid rgba(245,185,90,.25); background: radial-gradient(ellipse 65% 125% at 75% 65%,rgba(188,123,33,.3),transparent 70%),#111116; color: #f8f0e3; }
+.vote-finale { display: flex; align-items: end; justify-content: space-between; gap: 50px; padding: 110px max(7%,calc((100vw - 1460px)/2)) 120px; background: radial-gradient(ellipse 65% 125% at 75% 65%,rgba(188,123,33,.3),transparent 70%),linear-gradient(180deg,#1e222e 0%,#111116 70%); color: #f8f0e3; }
 .vote-finale > div > span { color: #f2c378; font-size: 11px; font-weight: 900; letter-spacing: .2em; }
 .vote-finale h2 { margin: 20px 0 16px; font: 400 clamp(70px,8vw,128px)/.9 var(--font-display); letter-spacing: -.025em; }
 .vote-finale h2 em { color: #f2c378; font-style: normal; }

@@ -81,10 +81,10 @@ export function App() {
       <October />
       <November />
     </main>
-    <section className="vote-finale" aria-labelledby="vote-finale-title">
+    <section id="vote" className="vote-finale" aria-labelledby="vote-finale-title">
       <div><span>SLAY AWARD 2026</span><h2 id="vote-finale-title">ТВОЙ ГОЛОС<br /><em>РЕШАЕТ.</em></h2><p>Поддержи Равшана на сайте премии.</p></div>
       <a className="vote-cta vote-cta--finale" href="https://slay-award.ru/" target="_blank" rel="noopener noreferrer" aria-label="Открыть сайт голосования Slay Award"><span>ПЕРЕЙТИ К ГОЛОСОВАНИЮ</span><span aria-hidden="true">↗</span></a>
     </section>
-    <footer className="footer"><span>RAVSHANN / SLAY KING 2026</span><span>НЕОФИЦИАЛЬНЫЙ ПРОТОТИП · КОНТЕНТ НА ПРОВЕРКЕ</span></footer>
+    <footer className="footer"><span>RAVSHANN / SLAY KING 2026</span><span>ИСТОРИЯ 2026 ГОДА</span></footer>
   </div>;
 }

@@ -10,10 +10,17 @@ type Props = {
   playlistId?: string;
 };
 
+const bundledPosters = new Set([
+  'RzZn5SlTQU8', 'E36Qw2QIqnw', 'qIVhtivg8wg', 'kgLupuR6CpQ',
+  'V54CKqWQlpA', 'bY2bcUKAK0c', '-wmioOZKs4s', 'LsHPC1esgWg',
+  'Nx4RUArual4', 'fpQXuzDwoek', 'Mlads-hymoc', 'gtKvu0EXmCA',
+]);
+
 export function YouTubePlayer({ videoId, title, url, posterFallback, label, playlistId }: Props) {
   const [playing, setPlaying] = useState(false);
   const [posterIndex, setPosterIndex] = useState(0);
   const posters = [
+    ...(bundledPosters.has(videoId) ? [`/assets/youtube/${videoId}.jpg`] : []),
     `https://i.ytimg.com/vi/${videoId}/maxresdefault.jpg`,
     `https://i.ytimg.com/vi/${videoId}/sddefault.jpg`,
     `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`,

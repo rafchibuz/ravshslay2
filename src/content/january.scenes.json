@@ -68,7 +68,7 @@
     "media": {
       "provider": "youtube",
       "url": "https://youtu.be/RzZn5SlTQU8?si=EPwxj6HtWqYQHppc",
-      "poster": "https://i.ytimg.com/vi/RzZn5SlTQU8/hqdefault.jpg"
+      "poster": "/assets/youtube/RzZn5SlTQU8.jpg"
     },
     "verified": false
   }

@@ -1,3 +1,11 @@
+@font-face {
+  font-family: 'Anton';
+  src: url('/fonts/Anton-Regular.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
 :root {
   --bg: #0b0c0f;
   --panel: #191b21;
@@ -7,6 +15,6 @@
   --muted: #a9a9ab;
   --ice: #9cd4ed;
   --line: rgba(237, 187, 98, .25);
-  --font-display: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  --font-display: 'Anton', Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   --font-body: 'Segoe UI', Arial, sans-serif;
 }

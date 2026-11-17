@@ -45,8 +45,7 @@ function EnduroVideo() {
 
 export function March() {
   const [playing, setPlaying] = useState(false);
-  const [posterFallback, setPosterFallback] = useState(false);
-  const poster = `https://i.ytimg.com/vi/${marchMatch.videoId}/${posterFallback ? 'hqdefault' : 'maxresdefault'}.jpg`;
+  const poster = `/assets/youtube/${marchMatch.videoId}.jpg`;
 
   return <section id="march" className={styles.chapter} aria-labelledby="march-title">
     <div className={styles.springLight} aria-hidden="true" />
@@ -72,7 +71,7 @@ export function March() {
           <div className={styles.videoMeta}><span>ЭФИР / YOUTUBE</span><span>16:9</span></div>
           <div className={styles.videoFrame}>
             {playing ? <iframe title="Стрим Равшана: 2DROTS против LIT ENERGY" src={`https://www.youtube-nocookie.com/embed/${marchMatch.videoId}?autoplay=1`} allow="autoplay; encrypted-media; picture-in-picture" allowFullScreen referrerPolicy="strict-origin-when-cross-origin" /> : <button type="button" className={styles.playButton} onClick={() => setPlaying(true)} aria-label="Смотреть стрим Равшана: 2DROTS против LIT ENERGY">
-              <img src={poster} alt="" onError={() => { if (!posterFallback) setPosterFallback(true); }} />
+              <img src={poster} alt="" />
               <span className={styles.playCircle} aria-hidden="true">▶</span>
               <strong>СМОТРЕТЬ СТРИМ</strong>
             </button>}
