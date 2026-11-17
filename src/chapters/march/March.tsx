@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { YouTubePlayer } from '../../components/YouTubePlayer';
+import { MarchBilliards } from '../additions/RallyAndBilliards';
 import { marchAlfReality, marchEnduro, marchMatch } from './marchContent';
 import styles from './chapter.module.css';
 
@@ -125,5 +126,6 @@ export function March() {
       </div>
       <div className={styles.realityVideo}><YouTubePlayer videoId={marchAlfReality.videoId} playlistId={marchAlfReality.playlistId} title="Плейлист ALF REALITY" url={marchAlfReality.playlistUrl} posterFallback={marchAlfReality.image} label="СМОТРЕТЬ ПЛЕЙЛИСТ" /></div>
     </article>
+    <MarchBilliards />
   </section>;
 }

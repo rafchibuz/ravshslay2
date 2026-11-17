@@ -55,7 +55,7 @@ export function DerbyStory() {
     <div className={styles.stage} style={{ '--red-reveal': realityOpacity } as CSSProperties}>
       <div className={styles.grid} aria-hidden="true" />
       <div className={styles.stageTop}>
-        <span>02 / ФЕВРАЛЬ 2026</span>
+        <span>03 / ФЕВРАЛЬ 2026</span>
         <span className={styles.stageTopRule} />
         <span>ОЖИДАНИЕ <i>→</i> РЕАЛЬНОСТЬ</span>
       </div>

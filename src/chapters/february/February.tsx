@@ -1,6 +1,7 @@
 import { februaryScenes } from '../../lib/februaryContent';
 import { ReelGallery } from './ReelGallery';
 import { DerbyStory } from './DerbyStory';
+import { FebruaryRally } from '../additions/RallyAndBilliards';
 import styles from './chapter.module.css';
 
 export function February() {
@@ -11,10 +12,11 @@ export function February() {
     <header className={styles.chapterHeader}>
       <div className={styles.chapterOverline}><span>02 / 12</span><i /><span>ГЛАВА ВТОРАЯ</span></div>
       <h2 id="february-title">ФЕВРАЛЬ <span>’26</span></h2>
-      <p>Зима продолжается. Начало месяца было активным, но будем честны, месяц не особо удачный вышел.</p>
+      <p>Зима продолжается: медиа ралли, встреча с Хамзатом и история дерби.</p>
     </header>
+    <FebruaryRally />
     <article id={meeting.id} className={styles.meeting} aria-labelledby={`${meeting.id}-title`}>
-      <div className={styles.sceneTop}><span>01 / ВСТРЕЧА</span><span>ФЕВРАЛЬ 2026</span></div>
+      <div className={styles.sceneTop}><span>02 / ВСТРЕЧА</span><span>ФЕВРАЛЬ 2026</span></div>
       <div className={styles.meetingIntro}>
         <h3 id={`${meeting.id}-title`}>ХАМЗАТ <em>×</em> RAVSHANN</h3>
         <p>{meeting.description}</p>

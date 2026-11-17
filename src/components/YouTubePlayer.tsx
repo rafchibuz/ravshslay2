@@ -8,15 +8,18 @@ type Props = {
   posterFallback: string;
   label: string;
   playlistId?: string;
+  startSeconds?: number;
 };
 
 const bundledPosters = new Set([
   'RzZn5SlTQU8', 'E36Qw2QIqnw', 'qIVhtivg8wg', 'kgLupuR6CpQ',
   'V54CKqWQlpA', 'bY2bcUKAK0c', '-wmioOZKs4s', 'LsHPC1esgWg',
   'Nx4RUArual4', 'fpQXuzDwoek', 'Mlads-hymoc', 'gtKvu0EXmCA',
+  'LHgOeXnJ24k', 'edgAyDhC6Fg', 'oZxR8ORn4fg', 'u_AjayHKEZw',
+  's8u1xJLJn_c', 'Za6jW1SD4nw', 'm9rtQpzVpQE', 'jQcbQWFOIBU',
 ]);
 
-export function YouTubePlayer({ videoId, title, url, posterFallback, label, playlistId }: Props) {
+export function YouTubePlayer({ videoId, title, url, posterFallback, label, playlistId, startSeconds }: Props) {
   const [playing, setPlaying] = useState(false);
   const [posterIndex, setPosterIndex] = useState(0);
   const posters = [
@@ -29,6 +32,7 @@ export function YouTubePlayer({ videoId, title, url, posterFallback, label, play
   const tryNextPoster = () => setPosterIndex((index) => Math.min(index + 1, posters.length - 1));
   const embed = new URL(`https://www.youtube-nocookie.com/embed/${videoId}`);
   embed.searchParams.set('autoplay', '1');
+  if (startSeconds) embed.searchParams.set('start', String(startSeconds));
   if (playlistId) embed.searchParams.set('list', playlistId);
 
   return <div className={styles.player}>
